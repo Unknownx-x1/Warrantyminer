@@ -393,7 +393,7 @@ Narrative: "{narrative}"
 
 def process_claim_extractions(db: Session, force: bool = False) -> int:
     """
-    Extracts failure signatures for all claims using Ollama (if enabled & active) or hybrid domain engine.
+    Extracts failure signatures for all claims using high-performance domain-grounded NLP engine.
     """
     if force:
         db.query(FailureSignature).delete()
@@ -407,19 +407,9 @@ def process_claim_extractions(db: Session, force: bool = False) -> int:
     if not unprocessed_claims:
         return 0
 
-    use_ollama = is_ollama_available()
-    if settings.USE_OLLAMA and not use_ollama:
-        logger.warning(f"Ollama is configured (USE_OLLAMA=true) but not reachable at {settings.OLLAMA_BASE_URL}. Falling back to domain engine.")
-
     signatures_to_add = []
     for claim in unprocessed_claims:
-        sig_data = None
-        if use_ollama:
-            sig_data = call_ollama_sync(claim.narrative)
-        
-        # Fallback to deterministic domain engine if Ollama is disabled or didn't return
-        if not sig_data:
-            sig_data = extract_signature_rule_based(claim.narrative)
+        sig_data = extract_signature_rule_based(claim.narrative)
 
         sig_obj = FailureSignature(
             claim_id=claim.id,
@@ -430,7 +420,7 @@ def process_claim_extractions(db: Session, force: bool = False) -> int:
             inferred_failure=sig_data.get("inferred_failure"),
             contributing_factors=sig_data.get("contributing_factors", []),
             extraction_confidence=sig_data.get("confidence", 0.85),
-            model_version=sig_data.get("model_version", "v1.0"),
+            model_version=sig_data.get("model_version", "hybrid-domain-v1.0"),
             raw_output=json.dumps(sig_data)
         )
         signatures_to_add.append(sig_obj)
