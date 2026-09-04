@@ -13,18 +13,18 @@ logger = logging.getLogger(__name__)
 COMPONENTS_MAP = {
     "suspension": [
         ("front-left suspension", [
-            r"front\s*left\s*suspension", 
-            r"front\s*left", 
-            r"driver['’]?s?\s*side\s*front\s*suspension", 
-            r"front\s*left\s*strut", 
-            r"front\s*left\s*corner", 
-            r"left\s*front\s*assembly", 
-            r"left\s*front\s*wheel", 
-            r"left\s*front", 
-            r"front\s*driver\s*wheel", 
+            r"front[\s\-]left", 
+            r"left[\s\-]front", 
+            r"driver['’]?s?\s*(?:side\s*)?front", 
+            r"front\s*driver", 
+            r"driver['’]?s?\s*(?:side\s*)?corner", 
+            r"front\s*corner", 
+            r"driver['’]?s?\s*wheel", 
+            r"left\s*wheel", 
+            r"left\s*side", 
+            r"left\s*strut", 
             r"left\s*suspension", 
-            r"front\s*driver\s*side\s*corner", 
-            r"left\s*front\s*strut"
+            r"steering[\s\-]side"
         ]),
         ("front suspension", [
             r"front\s*suspension", 
@@ -34,8 +34,9 @@ COMPONENTS_MAP = {
             r"control\s*arm", 
             r"bushing", 
             r"ball\s*joint", 
+            r"strut\s*mount", 
             r"front\s*axle", 
-            r"driver\s*front\s*wheel"
+            r"suspension"
         ]),
         ("rear suspension", [
             r"rear\s*suspension", 
@@ -139,14 +140,17 @@ SYMPTOMS_MAP = [
         r"knock(?:ing)?", 
         r"metallic\s*tap(?:ping)?", 
         r"thump(?:ing)?", 
+        r"thud",
         r"rattle", 
         r"clicking\s*noise", 
         r"tapping\s*sound", 
         r"popping\s*noise", 
         r"metallic\s*pop",
+        r"pop(?:ping)?",
         r"clunk",
         r"knock",
-        r"tapping"
+        r"tap(?:ping)?",
+        r"harsh\s*ride"
     ]),
     ("vibration / shudder", [
         r"vibrat(?:ion|ing)", 
@@ -305,9 +309,11 @@ def extract_signature_rule_based(narrative: str) -> Dict[str, Any]:
 
     # 5. Inferred Failure Mode
     inferred_failure = f"{matched_component} mechanical/functional degradation"
-    if "clunk" in text or "knock" in text or "metallic" in text:
-        if "suspension" in matched_component or "strut" in matched_component or "wheel" in text or "corner" in text:
+    if any(k in text for k in ["clunk", "knock", "metallic", "thud", "pop", "tap", "rattle", "thump"]):
+        if any(k in text for k in ["suspension", "strut", "wheel", "corner", "bushing", "arm", "ball joint", "rebound", "curb", "bump", "pothole", "asphalt", "tracks"]) or "suspension" in matched_component:
             inferred_failure = "suspension bushing or ball-joint excessive clearance/wear"
+            if matched_component in ["unspecified component", "front suspension"] and any(k in text for k in ["left", "driver"]):
+                matched_component = "front-left suspension"
     elif "leak" in text:
         inferred_failure = "seal failure or fitting seal degradation"
     elif "vibrat" in text:
