@@ -1,0 +1,66 @@
+{
+  "dataset_name": "canonical_warranty_claims_v1",
+  "generated_at": "2026-09-04T18:31:57.459701",
+  "total_claims": 585,
+  "ground_truth_clusters": [
+    {
+      "name": "front_left_suspension_knocking",
+      "description": "Front-left suspension bushing excessive clearance causing clunking/knocking",
+      "claim_ids": [
+        "C-9001",
+        "C-9002",
+        "C-9003",
+        "C-9004",
+        "C-9005",
+        "C-9006",
+        "C-9007",
+        "C-9008",
+        "C-9009",
+        "C-9010",
+        "C-9011",
+        "C-9012",
+        "C-9013",
+        "C-9014",
+        "C-9015",
+        "C-9016",
+        "C-9017",
+        "C-9018",
+        "C-9019",
+        "C-9020",
+        "C-9021",
+        "C-9022",
+        "C-9023",
+        "C-9024",
+        "C-9025",
+        "C-9026",
+        "C-9027",
+        "C-9028",
+        "C-9029",
+        "C-9030",
+        "C-9031",
+        "C-9032",
+        "C-9033",
+        "C-9034",
+        "C-9035"
+      ],
+      "expected_total_count": 35,
+      "expected_july_count": 17,
+      "expected_july_code_distribution": {
+        "OTHER": 5,
+        "RIDE QUALITY": 4,
+        "SUSPENSION": 3,
+        "ELECTRICAL-NFF": 3,
+        "STEERING": 2
+      },
+      "expected_timeline": {
+        "2026-01": 1,
+        "2026-02": 1,
+        "2026-03": 2,
+        "2026-04": 2,
+        "2026-05": 4,
+        "2026-06": 8,
+        "2026-07": 17
+      }
+    }
+  ]
+}
