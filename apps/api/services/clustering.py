@@ -11,23 +11,32 @@ from apps.api.models.cluster import Cluster, ClusterClaim
 
 logger = logging.getLogger(__name__)
 
-def run_density_clustering(vectors: np.ndarray, min_cluster_size: int = 4, min_samples: int = 2) -> Tuple[np.ndarray, np.ndarray]:
+def run_density_clustering(
+    vectors: np.ndarray, 
+    min_cluster_size: Optional[int] = None, 
+    min_samples: Optional[int] = None
+) -> Tuple[np.ndarray, np.ndarray]:
     """
     Runs HDBSCAN clustering on normalized embeddings using euclidean/cosine distance.
     Returns: (labels, probabilities)
     """
     n_samples = len(vectors)
-    if n_samples < min_cluster_size:
+    if n_samples == 0:
+        return np.empty(0, dtype=int), np.empty(0, dtype=float)
+
+    effective_min_size = min_cluster_size or max(6, min(10, n_samples // 35))
+    if n_samples < effective_min_size:
         return np.full(n_samples, -1), np.zeros(n_samples)
 
-    effective_min_size = min(min_cluster_size, max(2, n_samples // 4))
+    effective_min_samples = min_samples or 2
 
     try:
         clusterer = HDBSCAN(
             min_cluster_size=effective_min_size,
-            min_samples=min_samples,
+            min_samples=effective_min_samples,
             metric="euclidean",
-            cluster_selection_epsilon=0.55,
+            cluster_selection_method="eom",
+            cluster_selection_epsilon=0.35,
             copy=True
         )
         labels = clusterer.fit_predict(vectors)

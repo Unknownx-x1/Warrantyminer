@@ -140,6 +140,9 @@ export interface DashboardSummary {
     primary_symptom?: string;
     significance_score?: number;
     cusum_score?: number;
+    baseline_volume?: number;
+    current_volume?: number;
+    code_distribution?: Record<string, number>;
     why_alerted?: string;
     time_series?: TimePoint[];
     representative_claims: Array<{

@@ -242,8 +242,8 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
               <div className="space-y-2 font-mono">
                 <div>
                   <div className="flex justify-between text-xs text-slate-700 mb-1">
-                    <span>July Surge Volume</span>
-                    <span className="font-bold text-red-700">17 claims / mo</span>
+                    <span>Recent Period Volume</span>
+                    <span className="font-bold text-red-700">{hero.current_volume} claims / mo</span>
                   </div>
                   <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
                     <div className="bg-red-600 h-full rounded-full" style={{ width: '100%' }}></div>
@@ -253,10 +253,13 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                 <div>
                   <div className="flex justify-between text-xs text-slate-500 mb-1">
                     <span>Historical Monthly Baseline</span>
-                    <span>3.0 claims / mo</span>
+                    <span>{hero.baseline_volume} claims / mo</span>
                   </div>
                   <div className="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
-                    <div className="bg-slate-400 h-full rounded-full" style={{ width: '18%' }}></div>
+                    <div 
+                      className="bg-slate-400 h-full rounded-full" 
+                      style={{ width: `${Math.min(100, hero.current_volume > 0 ? (hero.baseline_volume / hero.current_volume) * 100 : 20)}%` }}
+                    ></div>
                   </div>
                 </div>
               </div>
@@ -267,7 +270,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                   Taxonomy Fragmentation:
                 </span>
                 <p className="text-xs">
-                  These 35 claims were fragmented across <strong className="text-slate-900">5 different dealership failure codes</strong> (OTHER: 10, RIDE QUALITY: 8, SUSPENSION: 7, STEERING: 5, ELECTRICAL: 5). Because no single code exceeded 10 claims, legacy systems stayed silent while semantic clustering flagged the surge.
+                  These {hero.claim_count} claims were fragmented across <strong className="text-slate-900">{hero.cross_code_count} different dealership failure codes</strong> ({Object.entries(hero.code_distribution || {}).map(([k, v]) => `${k}: ${v}`).join(', ')}). Because no single code exceeded 10 claims, legacy systems stayed silent while semantic clustering flagged the surge.
                 </p>
               </div>
             </div>

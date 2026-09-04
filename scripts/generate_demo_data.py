@@ -341,7 +341,7 @@ HIDDEN_CLUSTER_CLAIMS = [
     }
 ]
 
-def generate_dataset(n_background: int = 550) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
+def generate_dataset(n_background: int = 365) -> Tuple[List[Dict[str, Any]], Dict[str, Any]]:
     claims = []
     
     # 1. Add Canonical Injected Defect Claims (35 claims total, 17 in July surge)
@@ -416,7 +416,7 @@ def generate_dataset(n_background: int = 550) -> Tuple[List[Dict[str, Any]], Dic
     return claims, ground_truth
 
 def main():
-    claims, ground_truth = generate_dataset(n_background=550)
+    claims, ground_truth = generate_dataset(n_background=365)
 
     csv_path = RAW_DATA_DIR / "canonical_warranty_claims.csv"
     with open(csv_path, "w", newline="", encoding="utf-8") as f:

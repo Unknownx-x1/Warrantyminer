@@ -1,7 +1,7 @@
 {
   "dataset_name": "canonical_warranty_claims_v1",
-  "generated_at": "2026-09-05T00:46:34.175566",
-  "total_claims": 585,
+  "generated_at": "2026-09-05T01:21:46.372389",
+  "total_claims": 400,
   "ground_truth_clusters": [
     {
       "name": "front_left_suspension_knocking",

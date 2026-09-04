@@ -21,10 +21,13 @@ COMPONENTS_MAP = {
             r"front\s*corner", 
             r"driver['’]?s?\s*wheel", 
             r"left\s*wheel", 
-            r"left\s*side", 
             r"left\s*strut", 
-            r"left\s*suspension", 
-            r"steering[\s\-]side"
+            r"left\s*side\s*suspension", 
+            r"left\s*front\s*corner",
+            r"left\s*front\s*suspension",
+            r"steering[\s\-]side\s*front",
+            r"driver\s*wheel\s*well",
+            r"front\s*left\s*wheel\s*area"
         ]),
         ("front suspension", [
             r"front\s*suspension", 
@@ -52,9 +55,9 @@ COMPONENTS_MAP = {
             r"steering\s*rack", 
             r"power\s*steering", 
             r"tie\s*rod", 
-            r"steering\s*wheel\s*play", 
+            r"steering\s*wheel", 
+            r"steering\s*gear",
             r"steering\s*side\s*assembly",
-            r"steering\s*wheel",
             r"steering"
         ]),
     ],
@@ -71,7 +74,6 @@ COMPONENTS_MAP = {
             r"abs\s*module", 
             r"master\s*cylinder", 
             r"brake\s*pedal", 
-            r"braking\s*distance",
             r"braking"
         ]),
     ],
@@ -84,7 +86,7 @@ COMPONENTS_MAP = {
             r"apple\s*carplay", 
             r"radio",
             r"display\s*screen",
-            r"screen"
+            r"\bscreen\b"
         ]),
         ("battery / charging", [
             r"12v\s*battery", 
@@ -92,8 +94,8 @@ COMPONENTS_MAP = {
             r"charging\s*port", 
             r"alternator", 
             r"battery\s*drain", 
-            r"bms",
-            r"battery"
+            r"\bbms\b",
+            r"\bbattery\b"
         ]),
         ("lighting / wiring", [
             r"headlight", 
@@ -103,13 +105,28 @@ COMPONENTS_MAP = {
             r"sensor\s*fault"
         ]),
     ],
+    "climate": [
+        ("hvac / climate system", [
+            r"air\s*condition", 
+            r"a/c", 
+            r"hvac", 
+            r"heater\s*core", 
+            r"heater\s*matrix", 
+            r"blower\s*motor", 
+            r"refrigerant",
+            r"defrost",
+            r"climate\s*control",
+            r"heater",
+            r"cabin\s*heat",
+            r"climate"
+        ]),
+    ],
     "powertrain": [
         ("engine / motor", [
             r"engine", 
             r"misfire", 
             r"cylinder", 
             r"oil\s*leak", 
-            r"coolant\s*leak", 
             r"turbocharger", 
             r"electric\s*motor"
         ]),
@@ -118,53 +135,69 @@ COMPONENTS_MAP = {
             r"gearbox", 
             r"gear\s*shift", 
             r"clutch", 
-            r"slipping\s*gear", 
-            r"torque\s*converter"
+            r"slipping\s*gear"
         ]),
+        ("cooling / thermal", [
+            r"radiator", 
+            r"water\s*pump", 
+            r"engine\s*coolant",
+            r"coolant\s*leak",
+            r"antifreeze", 
+            r"coolant"
+        ])
     ],
-    "climate": [
-        ("hvac compressor / blower", [
-            r"air\s*condition", 
-            r"a/c", 
-            r"hvac", 
-            r"heater\s*core", 
-            r"blower\s*motor", 
-            r"refrigerant"
-        ]),
+    "body": [
+        ("door / latch / window", [
+            r"door\s*latch", 
+            r"window\s*regulator", 
+            r"sunroof", 
+            r"\bdoor\b", 
+            r"\bwindow\b",
+            r"windshield",
+            r"water\s*leak\s*in\s*cabin"
+        ])
     ]
 }
 
 SYMPTOMS_MAP = [
     ("clunking / knocking noise", [
-        r"clunk(?:ing)?", 
-        r"knock(?:ing)?", 
+        r"\bclunk(?:ing|s)?\b", 
+        r"\bknock(?:ing|s)?\b", 
         r"metallic\s*tap(?:ping)?", 
-        r"thump(?:ing)?", 
-        r"thud",
-        r"rattle", 
-        r"clicking\s*noise", 
+        r"\bthump(?:ing|s)?\b", 
+        r"\bthud(?:s)?\b", 
+        r"\brattle(?:s|ing)?\b", 
         r"tapping\s*sound", 
         r"popping\s*noise", 
-        r"metallic\s*pop",
-        r"pop(?:ping)?",
-        r"clunk",
-        r"knock",
-        r"tap(?:ping)?",
+        r"metallic\s*pop", 
+        r"\bpop(?:ping|s)?\b", 
+        r"\btap(?:ping|s)?\b", 
         r"harsh\s*ride"
     ]),
     ("vibration / shudder", [
-        r"vibrat(?:ion|ing)", 
-        r"shudder(?:ing)?", 
-        r"shimmy", 
-        r"wobble", 
-        r"shake", 
+        r"\bvibrat(?:ion|ing|e)?\b", 
+        r"\bshudder(?:ing)?\b", 
+        r"\bshimmy\b", 
+        r"\bwobble\b", 
+        r"\bshake\b", 
         r"rough\s*ride"
     ]),
     ("fluid leak", [
-        r"leak(?:ing|age)?", 
+        r"\bleak(?:ing|age|s)?\b", 
         r"fluid\s*puddle", 
         r"dripping", 
-        r"oil\s*seep"
+        r"oil\s*seep", 
+        r"damp",
+        r"antifreeze\s*smell",
+        r"glycol",
+        r"pink\s*coolant"
+    ]),
+    ("abnormal odor", [
+        r"\bodor\b", 
+        r"\bsmell\b", 
+        r"burning\s*smell", 
+        r"sweet\s*smell", 
+        r"antifreeze\s*odor"
     ]),
     ("intermittent loss of function", [
         r"flicker(?:ing)?", 
@@ -174,20 +207,19 @@ SYMPTOMS_MAP = [
         r"went\s*black", 
         r"reboot(?:ed)?", 
         r"unresponsive", 
-        r"non-responsive", 
         r"freeze"
     ]),
     ("squeal / grinding noise", [
-        r"squeal(?:ing)?", 
-        r"grind(?:ing)?", 
-        r"screech(?:ing)?", 
-        r"scraping",
-        r"squeak(?:s|ing)?"
+        r"\bsqueal(?:ing)?\b", 
+        r"\bgrind(?:ing)?\b", 
+        r"\bscreech(?:ing)?\b", 
+        r"\bscraping\b", 
+        r"\bsqueak(?:s|ing)?\b"
     ]),
     ("warning light / error code", [
         r"check\s*engine", 
         r"warning\s*light", 
-        r"dtc", 
+        r"\bdtc\b", 
         r"error\s*message", 
         r"fault\s*code"
     ]),
@@ -203,23 +235,26 @@ SYMPTOMS_MAP = [
 CONDITIONS_MAP = [
     ("rough roads / uneven surface", [
         r"rough\s*roads?", 
-        r"bumps?", 
         r"speed\s*bumps?", 
         r"potholes?", 
-        r"uneven\s*surfaces?", 
+        r"uneven\s*(?:surfaces?|pavement|roads?|asphalt)", 
         r"cobblestone", 
         r"gravel", 
         r"railroad", 
-        r"speed\s*humps?",
-        r"rough"
+        r"speed\s*humps?", 
+        r"rough\s*asphalt", 
+        r"undulating", 
+        r"\bbumps?\b", 
+        r"road\s*dips?"
     ]),
     ("turning / steering maneuver", [
-        r"turn(?:ing)?", 
         r"sharp\s*turn", 
         r"cornering", 
         r"full\s*lock", 
         r"parking\s*maneuver", 
-        r"driveway"
+        r"turning\s*into", 
+        r"when\s*turning", 
+        r"during\s*turns?"
     ]),
     ("braking / deceleration", [
         r"braking", 
@@ -307,28 +342,34 @@ def extract_signature_rule_based(narrative: str) -> Dict[str, Any]:
         if matched_severity != "moderate":
             break
 
-    # 5. Inferred Failure Mode
-    inferred_failure = f"{matched_component} mechanical/functional degradation"
-    if any(k in text for k in ["clunk", "knock", "metallic", "thud", "pop", "tap", "rattle", "thump"]):
-        if any(k in text for k in ["suspension", "strut", "wheel", "corner", "bushing", "arm", "ball joint", "rebound", "curb", "bump", "pothole", "asphalt", "tracks"]) or "suspension" in matched_component:
+    # 5. Inferred Failure Mode - dynamically grounded in physical system interactions
+    if "suspension" in matched_component or any(k in text for k in ["suspension", "strut", "control arm", "bushing", "ball joint", "corner"]):
+        if matched_symptom == "clunking / knocking noise":
             inferred_failure = "suspension bushing or ball-joint excessive clearance/wear"
-            if matched_component in ["unspecified component", "front suspension"] and any(k in text for k in ["left", "driver"]):
+            if matched_component == "unspecified component" and any(k in text for k in ["left", "driver"]):
                 matched_component = "front-left suspension"
-    elif "leak" in text:
-        inferred_failure = "seal failure or fitting seal degradation"
-    elif "vibrat" in text:
-        inferred_failure = "imbalance, rotor runout, or driveline oscillation"
-    elif "flicker" in text or "black" in text or "screen" in text or "reboot" in text:
-        inferred_failure = "display unit communication bus or power rail fault"
+        else:
+            inferred_failure = f"{matched_component} mechanical wear/degradation"
+    elif "brak" in matched_component:
+        inferred_failure = "brake friction assembly / rotor surface degradation"
+    elif "climate" in matched_component or "hvac" in matched_component:
+        if matched_symptom in ["fluid leak", "abnormal odor"]:
+            inferred_failure = "hvac heater core matrix leakage or refrigerant breach"
+        else:
+            inferred_failure = "climate control / blower functional degradation"
+    elif "fluid leak" in matched_symptom:
+        inferred_failure = "hydraulic or coolant circuit seal degradation"
+    else:
+        inferred_failure = f"{matched_component} {matched_symptom} degradation"
 
     contributing_factors = []
-    if "rough" in text or "bump" in text or "pothole" in text:
+    if any(k in text for k in ["rough", "bump", "pothole", "asphalt", "railroad", "curb"]):
         contributing_factors.append("road surface impact loading")
-    if "heat" in text or "hot" in text:
+    if any(k in text for k in ["heat", "hot"]):
         contributing_factors.append("thermal stress")
     if "cold" in text:
         contributing_factors.append("low-temperature stiffness")
-    if "water" in text or "rain" in text or "wet" in text:
+    if any(k in text for k in ["water", "rain", "wet"]):
         contributing_factors.append("moisture ingress")
 
     confidence = min(0.96, round(confidence, 2))

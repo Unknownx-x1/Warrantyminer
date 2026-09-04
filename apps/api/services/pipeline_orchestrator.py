@@ -46,7 +46,7 @@ def execute_full_pipeline(
 
     # 1. Claims Check
     t0 = time.time()
-    all_claims = db.query(Claim).all()
+    all_claims = db.query(Claim).order_by(Claim.id).all()
     total_claims = len(all_claims)
     if total_claims == 0:
         log_event("Error: No claims found in database. Ingest claims first.")
@@ -90,7 +90,7 @@ def execute_full_pipeline(
     # 4. Generate Semantic Embeddings
     t0 = time.time()
     n_embeddings = process_embeddings(db, force=force_recompute)
-    embeddings_list = db.query(Embedding).all()
+    embeddings_list = db.query(Embedding).order_by(Embedding.claim_id).all()
     signatures_map = {s.claim_id: s for s in db.query(FailureSignature).all()}
     claims_map = {c.id: c for c in all_claims}
 
@@ -107,7 +107,7 @@ def execute_full_pipeline(
     t0 = time.time()
     labels, probs = run_density_clustering(
         vectors=vectors,
-        min_cluster_size=effective_min_size,
+        min_cluster_size=min_cluster_size,
         min_samples=settings.MIN_SAMPLES
     )
 

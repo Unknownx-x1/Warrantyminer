@@ -125,7 +125,7 @@ export const BaselineCompare: React.FC<BaselineCompareProps> = ({ onSelectCluste
             <span>Dealer Misclassification</span>
           </div>
           <p className="text-slate-600 leading-relaxed">
-            Dealership technicians assigned 5 different failure codes (OTHER, RIDE QUALITY, SUSPENSION, STEERING, ELECTRICAL-NFF) to the same physical suspension knocking noise.
+            Dealership technicians assigned {data.cross_code_count} different failure codes ({data.traditional_monitoring?.code_buckets.map(b => b.code).join(', ') || 'multiple codes'}) to the same underlying physical defect.
           </p>
         </div>
 
@@ -145,7 +145,7 @@ export const BaselineCompare: React.FC<BaselineCompareProps> = ({ onSelectCluste
             <span>Semantic AI Consolidation</span>
           </div>
           <p className="text-slate-600 leading-relaxed">
-            WarrantyPatternMiner reads verbatim complaint narratives, groups the 35 claims by physical meaning, and exposes the +466.7% surge 69 days before traditional systems notice.
+            WarrantyPatternMiner reads verbatim complaint narratives, groups the {data.total_cluster_claims} claims by physical meaning, and exposes the +{data.growth_rate}% surge {data.lead_time_days ? `${data.lead_time_days} days ` : ''}before traditional systems notice.
           </p>
         </div>
       </div>

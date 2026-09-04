@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-004")
     
     # Statistical and Clustering Thresholds
-    MIN_CLUSTER_SIZE: int = 4
+    MIN_CLUSTER_SIZE: int = 8
     MIN_SAMPLES: int = 2
     ALERT_SCORE_THRESHOLD: float = 60.0
     CRITICAL_SCORE_THRESHOLD: float = 80.0

@@ -1,586 +1,401 @@
 claim_id,date,product_model,plant,failure_code,narrative
-C-10049,2026-04-19,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10091,2026-04-21,Apex SUV,Plant C - Leipzig,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10482,2026-02-22,Model X,Plant A - Fremont,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10089,2026-06-05,Cruiser Pro,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10505,2026-01-05,Titan EV,Plant D - Yokohama,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10186,2026-04-29,Model X,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
-C-10155,2026-07-01,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10096,2026-05-21,Sedan Alpha,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10423,2026-05-02,Apex SUV,Plant B - Austin,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10228,2026-02-21,Titan EV,Plant C - Leipzig,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10325,2026-02-11,Apex SUV,Plant B - Austin,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10512,2026-04-16,Apex SUV,Plant B - Austin,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10204,2026-04-23,Titan EV,Plant D - Yokohama,ELECTRICAL,Customer reports: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-9029,2026-07-22,Model X,Plant A - Fremont,RIDE QUALITY,Pronounced knocking vibration from left front suspension over cobblestone road.
-C-10222,2026-01-03,Titan EV,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10069,2026-02-04,Model X,Plant A - Fremont,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10095,2026-06-23,Titan EV,Plant C - Leipzig,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10462,2026-06-29,Titan EV,Plant B - Austin,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10426,2026-01-05,Sedan Alpha,Plant D - Yokohama,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
-C-10027,2026-07-12,Apex SUV,Plant C - Leipzig,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10022,2026-04-20,Sedan Alpha,Plant B - Austin,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-9021,2026-07-06,Model X,Plant A - Fremont,SUSPENSION,Technician reproduced knocking/clunking from front left suspension strut mount over bumps.
-C-10137,2026-01-28,Sedan Alpha,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10457,2026-07-05,Sedan Alpha,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10527,2026-05-20,Model Y,Plant C - Leipzig,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10062,2026-02-22,Model Y,Plant C - Leipzig,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10503,2026-07-14,Model Y,Plant C - Leipzig,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10409,2026-04-21,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10203,2026-01-10,Titan EV,Plant C - Leipzig,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10111,2026-03-12,Model X,Plant C - Leipzig,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
-C-10210,2026-04-24,Apex SUV,Plant C - Leipzig,ELECTRICAL,Customer reports: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10358,2026-04-02,Apex SUV,Plant C - Leipzig,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10070,2026-02-09,Sedan Alpha,Plant B - Austin,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10124,2026-04-27,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10277,2026-03-31,Model Y,Plant B - Austin,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10357,2026-05-02,Model X,Plant B - Austin,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10544,2026-07-05,Titan EV,Plant B - Austin,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10156,2026-05-22,Apex SUV,Plant B - Austin,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10411,2026-05-24,Sedan Alpha,Plant C - Leipzig,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10174,2026-02-01,Apex SUV,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
-C-10138,2026-04-22,Apex SUV,Plant C - Leipzig,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10398,2026-04-23,Cruiser Pro,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10039,2026-03-05,Model X,Plant C - Leipzig,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10496,2026-03-10,Apex SUV,Plant A - Fremont,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10032,2026-03-24,Model X,Plant A - Fremont,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10434,2026-03-23,Sedan Alpha,Plant C - Leipzig,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10148,2026-04-14,Sedan Alpha,Plant C - Leipzig,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10385,2026-03-23,Cruiser Pro,Plant D - Yokohama,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10449,2026-05-10,Sedan Alpha,Plant B - Austin,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-10494,2026-03-04,Model Y,Plant C - Leipzig,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10225,2026-06-10,Apex SUV,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10481,2026-01-09,Titan EV,Plant A - Fremont,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10342,2026-07-18,Model Y,Plant C - Leipzig,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10028,2026-03-17,Model Y,Plant D - Yokohama,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10116,2026-04-10,Titan EV,Plant D - Yokohama,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10072,2026-01-14,Apex SUV,Plant D - Yokohama,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-9030,2026-07-24,Model X,Plant B - Austin,OTHER,Driver reports audible clunking in driver front wheel well when accelerating over road dips.
-C-10249,2026-02-25,Sedan Alpha,Plant B - Austin,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10057,2026-01-15,Titan EV,Plant D - Yokohama,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10160,2026-05-06,Titan EV,Plant A - Fremont,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10056,2026-02-25,Titan EV,Plant A - Fremont,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10365,2026-04-25,Apex SUV,Plant C - Leipzig,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-9004,2026-03-22,Model X,Plant A - Fremont,OTHER,Loud knocking noise in front driver corner during low speed turns over bumpy parking lots.
-C-10487,2026-06-19,Cruiser Pro,Plant C - Leipzig,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10208,2026-01-10,Model Y,Plant C - Leipzig,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10540,2026-01-23,Cruiser Pro,Plant D - Yokohama,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10537,2026-04-08,Apex SUV,Plant D - Yokohama,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10340,2026-04-25,Model X,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10007,2026-03-13,Model Y,Plant C - Leipzig,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10353,2026-07-19,Apex SUV,Plant D - Yokohama,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
-C-10097,2026-04-21,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10221,2026-03-17,Model X,Plant D - Yokohama,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10031,2026-04-06,Titan EV,Plant A - Fremont,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10542,2026-04-01,Titan EV,Plant C - Leipzig,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10005,2026-02-20,Model Y,Plant D - Yokohama,BODY,Driver side door latch requires extra force to shut completely.
-C-10313,2026-04-23,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10104,2026-04-13,Model Y,Plant A - Fremont,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10163,2026-04-08,Cruiser Pro,Plant C - Leipzig,BODY,Passenger window makes grinding sound when rolling down.
-C-10045,2026-02-18,Model X,Plant D - Yokohama,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10370,2026-01-09,Apex SUV,Plant D - Yokohama,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10491,2026-04-07,Titan EV,Plant D - Yokohama,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10285,2026-04-21,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10223,2026-07-18,Titan EV,Plant C - Leipzig,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10520,2026-01-21,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10068,2026-07-26,Apex SUV,Plant C - Leipzig,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10545,2026-02-13,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10465,2026-05-21,Titan EV,Plant B - Austin,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10424,2026-05-30,Model Y,Plant D - Yokohama,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10016,2026-07-06,Model Y,Plant D - Yokohama,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-9008,2026-05-12,Model X,Plant B - Austin,OTHER,Front end knocks severely over speed humps. Technician inspected front left control arm area.
-C-9006,2026-04-27,Model X,Plant C - Leipzig,STEERING,Steering-side front assembly produces knocking noise when driving across railroad tracks.
-C-10330,2026-05-09,Model Y,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
-C-10139,2026-07-26,Cruiser Pro,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10286,2026-06-20,Model X,Plant B - Austin,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-9009,2026-05-19,Model X,Plant A - Fremont,SUSPENSION,Front-left suspension knocking noise when decelerating on rough pavement.
-C-10246,2026-01-24,Apex SUV,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10121,2026-02-02,Cruiser Pro,Plant A - Fremont,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10256,2026-05-09,Titan EV,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10231,2026-04-30,Model Y,Plant B - Austin,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10275,2026-05-24,Titan EV,Plant C - Leipzig,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10333,2026-01-22,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10112,2026-03-11,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Tech notes: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10347,2026-05-27,Model Y,Plant A - Fremont,BODY,Driver side door latch requires extra force to shut completely.
-C-10429,2026-03-25,Titan EV,Plant D - Yokohama,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10076,2026-01-10,Titan EV,Plant B - Austin,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10019,2026-01-17,Titan EV,Plant C - Leipzig,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10099,2026-06-18,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10085,2026-04-13,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10281,2026-07-18,Model X,Plant B - Austin,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10212,2026-04-06,Model Y,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
-C-10012,2026-06-19,Sedan Alpha,Plant A - Fremont,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10226,2026-07-21,Model X,Plant C - Leipzig,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
-C-10298,2026-02-26,Model Y,Plant A - Fremont,POWERTRAIN,Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-9010,2026-05-28,Model X,Plant A - Fremont,STEERING,Customer reports front driver side knocking when turning into uneven driveways.
-C-10451,2026-07-03,Model X,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10431,2026-04-01,Titan EV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10086,2026-03-31,Apex SUV,Plant C - Leipzig,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10274,2026-07-15,Titan EV,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10548,2026-04-03,Model Y,Plant D - Yokohama,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10507,2026-05-26,Cruiser Pro,Plant C - Leipzig,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10279,2026-01-24,Cruiser Pro,Plant D - Yokohama,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10442,2026-05-21,Cruiser Pro,Plant D - Yokohama,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10201,2026-07-18,Model X,Plant C - Leipzig,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10080,2026-02-11,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10094,2026-05-22,Model Y,Plant D - Yokohama,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10539,2026-04-24,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Tech notes: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10533,2026-01-08,Cruiser Pro,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10509,2026-02-13,Model Y,Plant B - Austin,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10470,2026-07-05,Cruiser Pro,Plant C - Leipzig,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10323,2026-07-21,Titan EV,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10284,2026-03-11,Titan EV,Plant A - Fremont,ELECTRICAL-NFF,"Driver stated Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10179,2026-01-11,Cruiser Pro,Plant D - Yokohama,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-9007,2026-05-04,Model X,Plant A - Fremont,RIDE QUALITY,Heavy metallic clunking felt in floorboard around driver-side front strut when going over potholes.
-C-10211,2026-01-12,Model X,Plant C - Leipzig,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10239,2026-05-07,Model X,Plant B - Austin,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10233,2026-03-09,Cruiser Pro,Plant C - Leipzig,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10317,2026-06-19,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10029,2026-07-04,Titan EV,Plant B - Austin,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10360,2026-04-09,Model Y,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10258,2026-05-03,Cruiser Pro,Plant A - Fremont,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10463,2026-06-24,Titan EV,Plant D - Yokohama,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10443,2026-06-16,Sedan Alpha,Plant C - Leipzig,ELECTRICAL-NFF,"Driver stated Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10430,2026-02-14,Titan EV,Plant C - Leipzig,BODY,Passenger window makes grinding sound when rolling down.
-C-10515,2026-01-05,Titan EV,Plant D - Yokohama,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10128,2026-01-06,Model Y,Plant B - Austin,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10530,2026-04-10,Cruiser Pro,Plant B - Austin,POWERTRAIN,Customer reports: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10134,2026-06-28,Apex SUV,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10499,2026-07-11,Model Y,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10324,2026-07-16,Titan EV,Plant D - Yokohama,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10378,2026-07-02,Model X,Plant C - Leipzig,BODY,Driver stated Passenger window makes grinding sound when rolling down.
-C-10235,2026-06-22,Cruiser Pro,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10344,2026-01-29,Titan EV,Plant A - Fremont,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10433,2026-03-18,Apex SUV,Plant B - Austin,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10418,2026-06-06,Model Y,Plant D - Yokohama,POWERTRAIN,Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10417,2026-05-13,Model Y,Plant B - Austin,BODY,Driver stated Passenger window makes grinding sound when rolling down.
-C-10143,2026-02-24,Sedan Alpha,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10206,2026-05-01,Sedan Alpha,Plant D - Yokohama,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10101,2026-07-26,Model Y,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-9018,2026-06-29,Model X,Plant A - Fremont,SUSPENSION,Front left suspension bushing worn; loud clunk over uneven railway crossings.
-C-10002,2026-02-27,Apex SUV,Plant A - Fremont,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10450,2026-03-26,Apex SUV,Plant D - Yokohama,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10063,2026-02-03,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10001,2026-06-13,Model X,Plant C - Leipzig,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10042,2026-03-26,Titan EV,Plant B - Austin,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10486,2026-06-03,Model Y,Plant C - Leipzig,POWERTRAIN,Tech notes: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10046,2026-04-19,Cruiser Pro,Plant A - Fremont,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10237,2026-06-12,Apex SUV,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
-C-9027,2026-07-18,Model X,Plant C - Leipzig,SUSPENSION,"Left front suspension control arm bushing deteriorated, causing loud mechanical thud."
-C-10448,2026-03-14,Apex SUV,Plant D - Yokohama,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
-C-10064,2026-01-03,Titan EV,Plant A - Fremont,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-10543,2026-01-04,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-9019,2026-07-02,Model X,Plant A - Fremont,OTHER,Front-left suspension produces heavy clunking noise over speed bumps at low speeds.
-C-10152,2026-01-31,Model Y,Plant B - Austin,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10525,2026-01-25,Model Y,Plant B - Austin,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10492,2026-02-27,Apex SUV,Plant B - Austin,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10535,2026-06-19,Model X,Plant C - Leipzig,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10427,2026-04-16,Cruiser Pro,Plant D - Yokohama,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10401,2026-03-03,Model X,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
-C-10408,2026-05-07,Sedan Alpha,Plant A - Fremont,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10079,2026-04-01,Titan EV,Plant B - Austin,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10453,2026-05-12,Model X,Plant D - Yokohama,POWERTRAIN,Customer reports: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10098,2026-06-22,Titan EV,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10341,2026-02-25,Titan EV,Plant D - Yokohama,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10476,2026-06-24,Apex SUV,Plant C - Leipzig,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10181,2026-05-01,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-9020,2026-07-04,Model X,Plant B - Austin,RIDE QUALITY,Continuous knocking noise from front left corner when driving on gravel or uneven pavement.
-C-10361,2026-04-05,Model X,Plant D - Yokohama,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10485,2026-02-05,Model Y,Plant C - Leipzig,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10189,2026-04-23,Model X,Plant A - Fremont,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-9025,2026-07-14,Model X,Plant B - Austin,RIDE QUALITY,Severe clunking and knocking in front left wheel area during low-speed maneuvers.
-C-10396,2026-05-04,Apex SUV,Plant D - Yokohama,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10251,2026-03-06,Model X,Plant A - Fremont,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10480,2026-03-30,Sedan Alpha,Plant B - Austin,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10205,2026-07-04,Cruiser Pro,Plant B - Austin,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10359,2026-02-01,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10159,2026-03-06,Model X,Plant A - Fremont,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10263,2026-07-04,Cruiser Pro,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10151,2026-03-01,Apex SUV,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10044,2026-05-28,Model Y,Plant D - Yokohama,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10195,2026-02-07,Model Y,Plant B - Austin,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10413,2026-06-24,Model Y,Plant A - Fremont,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-9014,2026-06-15,Model X,Plant A - Fremont,ELECTRICAL-NFF,"Scanned for suspension control module error; no active DTCs, verified mechanical clunking from front-left strut."
-C-10439,2026-01-28,Model Y,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10315,2026-01-17,Model X,Plant D - Yokohama,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10497,2026-02-18,Cruiser Pro,Plant B - Austin,ELECTRICAL-NFF,"Driver stated Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10502,2026-05-12,Cruiser Pro,Plant A - Fremont,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10289,2026-01-31,Cruiser Pro,Plant D - Yokohama,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10432,2026-03-05,Titan EV,Plant C - Leipzig,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10058,2026-05-16,Model X,Plant A - Fremont,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10441,2026-03-26,Model X,Plant B - Austin,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-9024,2026-07-12,Model X,Plant A - Fremont,STEERING,Customer complained of front steering area rattle; inspection showed front-left suspension bushing knocking.
-C-10350,2026-03-06,Sedan Alpha,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10188,2026-02-22,Titan EV,Plant B - Austin,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10043,2026-06-21,Model Y,Plant B - Austin,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10392,2026-05-29,Model Y,Plant C - Leipzig,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10207,2026-03-26,Sedan Alpha,Plant D - Yokohama,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10142,2026-01-08,Sedan Alpha,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
 C-10017,2026-03-11,Apex SUV,Plant C - Leipzig,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10218,2026-05-31,Apex SUV,Plant D - Yokohama,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-9001,2026-01-14,Model X,Plant A - Fremont,OTHER,Customer reports faint clunking sound from front left when driving over rough neighborhood roads.
-C-10528,2026-02-23,Apex SUV,Plant D - Yokohama,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10387,2026-04-21,Model X,Plant B - Austin,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10006,2026-03-13,Model Y,Plant D - Yokohama,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10270,2026-04-01,Apex SUV,Plant A - Fremont,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-9032,2026-07-27,Model X,Plant A - Fremont,OTHER,Front left suspension makes sharp popping/clunking noise over neighborhood speed bumps.
 C-10328,2026-05-17,Sedan Alpha,Plant D - Yokohama,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10083,2026-02-26,Cruiser Pro,Plant C - Leipzig,ELECTRICAL-NFF,"Driver stated Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10510,2026-05-06,Titan EV,Plant A - Fremont,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10379,2026-07-01,Titan EV,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10363,2026-01-27,Sedan Alpha,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10479,2026-04-19,Model Y,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10444,2026-06-15,Model X,Plant B - Austin,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-9013,2026-06-10,Model X,Plant C - Leipzig,SUSPENSION,Front-left lower control arm / bushing exhibiting excessive play and clunking over bumps.
-C-10161,2026-02-08,Model X,Plant B - Austin,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10140,2026-03-10,Model Y,Plant A - Fremont,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10194,2026-05-04,Model Y,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10501,2026-05-17,Sedan Alpha,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10242,2026-06-07,Sedan Alpha,Plant A - Fremont,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10435,2026-02-01,Cruiser Pro,Plant C - Leipzig,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10428,2026-06-30,Titan EV,Plant B - Austin,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10110,2026-06-13,Titan EV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-9034,2026-07-29,Model X,Plant B - Austin,ELECTRICAL-NFF,"Customer stated front suspension sensor alert; diagnostics clear, physical knocking from front-left lower control arm."
-C-10549,2026-06-07,Cruiser Pro,Plant A - Fremont,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10306,2026-05-10,Sedan Alpha,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10295,2026-02-13,Apex SUV,Plant C - Leipzig,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-10395,2026-06-13,Cruiser Pro,Plant C - Leipzig,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10262,2026-05-10,Model X,Plant A - Fremont,BODY,Driver side door latch requires extra force to shut completely.
-C-10048,2026-03-05,Model Y,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10364,2026-04-25,Model Y,Plant D - Yokohama,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10290,2026-02-03,Titan EV,Plant B - Austin,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10020,2026-06-17,Cruiser Pro,Plant D - Yokohama,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10177,2026-03-06,Model X,Plant B - Austin,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10493,2026-01-15,Cruiser Pro,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10459,2026-04-14,Apex SUV,Plant A - Fremont,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10483,2026-06-03,Model Y,Plant A - Fremont,BRAKES,Field complaint: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10169,2026-03-15,Apex SUV,Plant D - Yokohama,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10511,2026-01-09,Apex SUV,Plant A - Fremont,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10446,2026-01-10,Cruiser Pro,Plant B - Austin,STEERING,Driver stated Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10301,2026-03-07,Model Y,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10234,2026-05-30,Apex SUV,Plant C - Leipzig,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-9002,2026-02-18,Model X,Plant A - Fremont,RIDE QUALITY,Driver notes unusual metallic tap near driver's front wheel when traversing speed bumps.
-C-10133,2026-07-03,Model X,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10436,2026-03-16,Sedan Alpha,Plant A - Fremont,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10303,2026-06-14,Apex SUV,Plant C - Leipzig,POWERTRAIN,Tech notes: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10127,2026-07-19,Model X,Plant B - Austin,BRAKES,Tech notes: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10282,2026-07-13,Apex SUV,Plant A - Fremont,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-9001,2026-01-14,Model X,Plant A - Fremont,OTHER,Customer reports faint clunking sound from front left when driving over rough neighborhood roads.
+C-9026,2026-07-16,Model X,Plant A - Fremont,OTHER,Clunk noise on left front side during speed bump compression.
 C-10198,2026-04-25,Sedan Alpha,Plant C - Leipzig,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10154,2026-02-28,Model Y,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10404,2026-05-28,Model Y,Plant B - Austin,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10254,2026-05-15,Apex SUV,Plant A - Fremont,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10172,2026-07-31,Model X,Plant A - Fremont,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10013,2026-01-26,Sedan Alpha,Plant D - Yokohama,STEERING,Driver stated Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10004,2026-02-25,Titan EV,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10452,2026-05-26,Model Y,Plant D - Yokohama,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10158,2026-05-03,Sedan Alpha,Plant B - Austin,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
+C-10133,2026-07-03,Model X,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10332,2026-05-22,Apex SUV,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10098,2026-06-22,Titan EV,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10244,2026-01-26,Titan EV,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10159,2026-03-06,Model X,Plant A - Fremont,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10063,2026-02-03,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-9002,2026-02-18,Model X,Plant A - Fremont,RIDE QUALITY,Driver notes unusual metallic tap near driver's front wheel when traversing speed bumps.
+C-10144,2026-06-02,Titan EV,Plant A - Fremont,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10278,2026-06-18,Model X,Plant B - Austin,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10184,2026-01-10,Model X,Plant C - Leipzig,BODY,Driver stated Passenger window makes grinding sound when rolling down.
+C-10067,2026-02-10,Titan EV,Plant C - Leipzig,BODY,Passenger window makes grinding sound when rolling down.
+C-10146,2026-05-23,Apex SUV,Plant D - Yokohama,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10195,2026-02-07,Model Y,Plant B - Austin,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10178,2026-05-31,Apex SUV,Plant C - Leipzig,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10189,2026-04-23,Model X,Plant A - Fremont,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10268,2026-01-25,Model Y,Plant A - Fremont,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10025,2026-01-17,Cruiser Pro,Plant D - Yokohama,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10062,2026-02-22,Model Y,Plant C - Leipzig,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-9010,2026-05-28,Model X,Plant A - Fremont,STEERING,Customer reports front driver side knocking when turning into uneven driveways.
+C-10079,2026-04-01,Titan EV,Plant B - Austin,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
+C-10023,2026-05-11,Model X,Plant A - Fremont,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10213,2026-04-16,Model Y,Plant B - Austin,ELECTRICAL,Customer reports: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10348,2026-04-03,Titan EV,Plant A - Fremont,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10135,2026-07-20,Sedan Alpha,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10122,2026-06-14,Model Y,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
+C-10338,2026-07-02,Model Y,Plant B - Austin,POWERTRAIN,Customer reports: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-9023,2026-07-10,Model X,Plant A - Fremont,ELECTRICAL-NFF,Customer suspected front radar loose; technician verified noise is front-left suspension ball joint clunk.
+C-10264,2026-04-16,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10070,2026-02-09,Sedan Alpha,Plant B - Austin,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10125,2026-07-12,Sedan Alpha,Plant A - Fremont,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10045,2026-02-18,Model X,Plant D - Yokohama,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10120,2026-06-21,Apex SUV,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10074,2026-02-11,Titan EV,Plant D - Yokohama,BODY,Passenger window makes grinding sound when rolling down.
+C-10102,2026-03-04,Titan EV,Plant A - Fremont,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10191,2026-05-22,Titan EV,Plant D - Yokohama,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10139,2026-07-26,Cruiser Pro,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10359,2026-02-01,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10360,2026-04-09,Model Y,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10001,2026-06-13,Model X,Plant C - Leipzig,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10157,2026-01-27,Titan EV,Plant C - Leipzig,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10363,2026-01-27,Sedan Alpha,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-9009,2026-05-19,Model X,Plant A - Fremont,SUSPENSION,Front-left suspension knocking noise when decelerating on rough pavement.
+C-10011,2026-04-03,Apex SUV,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10051,2026-06-16,Model X,Plant B - Austin,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10012,2026-06-19,Sedan Alpha,Plant A - Fremont,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10311,2026-04-26,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10020,2026-06-17,Cruiser Pro,Plant D - Yokohama,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10209,2026-07-11,Cruiser Pro,Plant A - Fremont,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10365,2026-04-25,Apex SUV,Plant C - Leipzig,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10287,2026-06-03,Model X,Plant B - Austin,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10104,2026-04-13,Model Y,Plant A - Fremont,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10065,2026-05-18,Titan EV,Plant C - Leipzig,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10220,2026-01-28,Cruiser Pro,Plant C - Leipzig,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10272,2026-05-10,Model Y,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-9027,2026-07-18,Model X,Plant C - Leipzig,SUSPENSION,"Left front suspension control arm bushing deteriorated, causing loud mechanical thud."
+C-10201,2026-07-18,Model X,Plant C - Leipzig,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10289,2026-01-31,Cruiser Pro,Plant D - Yokohama,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10210,2026-04-24,Apex SUV,Plant C - Leipzig,ELECTRICAL,Customer reports: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10022,2026-04-20,Sedan Alpha,Plant B - Austin,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10192,2026-02-27,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10214,2026-06-06,Titan EV,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10110,2026-06-13,Titan EV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10091,2026-04-21,Apex SUV,Plant C - Leipzig,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10170,2026-06-25,Sedan Alpha,Plant B - Austin,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10117,2026-01-02,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10182,2026-06-21,Model Y,Plant C - Leipzig,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10215,2026-05-30,Model Y,Plant D - Yokohama,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10225,2026-06-10,Apex SUV,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10140,2026-03-10,Model Y,Plant A - Fremont,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10358,2026-04-02,Apex SUV,Plant C - Leipzig,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-9007,2026-05-04,Model X,Plant A - Fremont,RIDE QUALITY,Heavy metallic clunking felt in floorboard around driver-side front strut when going over potholes.
+C-10362,2026-04-21,Titan EV,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10306,2026-05-10,Sedan Alpha,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10181,2026-05-01,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10179,2026-01-11,Cruiser Pro,Plant D - Yokohama,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10317,2026-06-19,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10199,2026-07-15,Cruiser Pro,Plant C - Leipzig,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-9004,2026-03-22,Model X,Plant A - Fremont,OTHER,Loud knocking noise in front driver corner during low speed turns over bumpy parking lots.
+C-10276,2026-02-16,Apex SUV,Plant C - Leipzig,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10330,2026-05-09,Model Y,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
+C-10163,2026-04-08,Cruiser Pro,Plant C - Leipzig,BODY,Passenger window makes grinding sound when rolling down.
+C-10219,2026-04-27,Model Y,Plant D - Yokohama,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10224,2026-06-12,Titan EV,Plant C - Leipzig,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10312,2026-06-15,Model X,Plant B - Austin,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10088,2026-01-28,Sedan Alpha,Plant C - Leipzig,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10239,2026-05-07,Model X,Plant B - Austin,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10261,2026-06-09,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10242,2026-06-07,Sedan Alpha,Plant A - Fremont,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-10071,2026-02-22,Titan EV,Plant D - Yokohama,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10134,2026-06-28,Apex SUV,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10137,2026-01-28,Sedan Alpha,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
+C-10258,2026-05-03,Cruiser Pro,Plant A - Fremont,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10269,2026-05-24,Apex SUV,Plant A - Fremont,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10322,2026-02-27,Model Y,Plant A - Fremont,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10233,2026-03-09,Cruiser Pro,Plant C - Leipzig,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10009,2026-06-04,Model X,Plant D - Yokohama,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10041,2026-01-19,Model Y,Plant A - Fremont,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10361,2026-04-05,Model X,Plant D - Yokohama,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10177,2026-03-06,Model X,Plant B - Austin,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10077,2026-02-02,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10333,2026-01-22,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-9021,2026-07-06,Model X,Plant A - Fremont,SUSPENSION,Technician reproduced knocking/clunking from front left suspension strut mount over bumps.
+C-10357,2026-05-02,Model X,Plant B - Austin,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10147,2026-04-25,Model X,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10257,2026-03-19,Apex SUV,Plant A - Fremont,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
+C-10090,2026-01-12,Model X,Plant B - Austin,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-10255,2026-04-25,Titan EV,Plant A - Fremont,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10286,2026-06-20,Model X,Plant B - Austin,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10206,2026-05-01,Sedan Alpha,Plant D - Yokohama,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-9020,2026-07-04,Model X,Plant B - Austin,RIDE QUALITY,Continuous knocking noise from front left corner when driving on gravel or uneven pavement.
+C-10320,2026-05-11,Model X,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10252,2026-01-04,Model Y,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10335,2026-03-31,Cruiser Pro,Plant A - Fremont,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10116,2026-04-10,Titan EV,Plant D - Yokohama,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10008,2026-01-24,Model X,Plant C - Leipzig,STEERING,Driver stated Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10057,2026-01-15,Titan EV,Plant D - Yokohama,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10347,2026-05-27,Model Y,Plant A - Fremont,BODY,Driver side door latch requires extra force to shut completely.
+C-9005,2026-04-10,Model X,Plant A - Fremont,ELECTRICAL-NFF,"Customer suspected sensor issue due to rattle; no electrical fault found, technician heard mechanical tapping from front left suspension."
+C-10145,2026-02-18,Model Y,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-9011,2026-06-02,Model X,Plant A - Fremont,RIDE QUALITY,Driver hears persistent knocking sound from left front wheel area on uneven asphalt.
+C-10236,2026-05-24,Titan EV,Plant B - Austin,POWERTRAIN,Customer reports: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10291,2026-05-24,Model X,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10096,2026-05-21,Sedan Alpha,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10016,2026-07-06,Model Y,Plant D - Yokohama,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10166,2026-06-19,Model Y,Plant B - Austin,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10251,2026-03-06,Model X,Plant A - Fremont,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10229,2026-05-09,Model Y,Plant C - Leipzig,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
 C-10318,2026-02-03,Sedan Alpha,Plant D - Yokohama,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10518,2026-05-15,Model Y,Plant B - Austin,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10550,2026-03-19,Cruiser Pro,Plant C - Leipzig,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10240,2026-02-04,Cruiser Pro,Plant C - Leipzig,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10165,2026-07-09,Model Y,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-9033,2026-07-28,Model X,Plant A - Fremont,SUSPENSION,Front-left strut mount assembly knocking during rebound on undulating pavement.
+C-9031,2026-07-26,Model X,Plant C - Leipzig,STEERING,Steering wheel twitch and knocking sound from front-left suspension area on uneven roads.
+C-10283,2026-04-24,Cruiser Pro,Plant D - Yokohama,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10234,2026-05-30,Apex SUV,Plant C - Leipzig,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10168,2026-04-26,Sedan Alpha,Plant A - Fremont,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10350,2026-03-06,Sedan Alpha,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10281,2026-07-18,Model X,Plant B - Austin,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10301,2026-03-07,Model Y,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10207,2026-03-26,Sedan Alpha,Plant D - Yokohama,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10107,2026-04-27,Cruiser Pro,Plant C - Leipzig,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10058,2026-05-16,Model X,Plant A - Fremont,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10015,2026-06-29,Titan EV,Plant B - Austin,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10265,2026-07-06,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10238,2026-01-30,Model X,Plant A - Fremont,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10280,2026-03-29,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10180,2026-02-16,Apex SUV,Plant D - Yokohama,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
+C-9012,2026-06-06,Model X,Plant B - Austin,OTHER,Metallic tapping noise audible inside cabin originating from front left strut assembly.
+C-10161,2026-02-08,Model X,Plant B - Austin,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10200,2026-06-28,Titan EV,Plant D - Yokohama,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
 C-10314,2026-04-10,Sedan Alpha,Plant A - Fremont,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-10033,2026-07-26,Model Y,Plant A - Fremont,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10345,2026-05-28,Apex SUV,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10076,2026-01-10,Titan EV,Plant B - Austin,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10174,2026-02-01,Apex SUV,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
+C-9003,2026-03-05,Model X,Plant B - Austin,SUSPENSION,Intermittent clunk from left front suspension assembly over uneven road surfaces.
+C-10103,2026-04-17,Apex SUV,Plant D - Yokohama,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10351,2026-03-03,Titan EV,Plant C - Leipzig,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10344,2026-01-29,Titan EV,Plant A - Fremont,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10118,2026-05-18,Cruiser Pro,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10092,2026-03-22,Apex SUV,Plant C - Leipzig,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10038,2026-06-21,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10136,2026-01-18,Model X,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10315,2026-01-17,Model X,Plant D - Yokohama,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10056,2026-02-25,Titan EV,Plant A - Fremont,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10115,2026-04-30,Model X,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10021,2026-03-09,Model Y,Plant C - Leipzig,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10202,2026-06-30,Cruiser Pro,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10083,2026-02-26,Cruiser Pro,Plant C - Leipzig,ELECTRICAL-NFF,"Driver stated Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10095,2026-06-23,Titan EV,Plant C - Leipzig,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10267,2026-01-18,Model X,Plant A - Fremont,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10222,2026-01-03,Titan EV,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-9006,2026-04-27,Model X,Plant C - Leipzig,STEERING,Steering-side front assembly produces knocking noise when driving across railroad tracks.
+C-10148,2026-04-14,Sedan Alpha,Plant C - Leipzig,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10356,2026-03-22,Titan EV,Plant D - Yokohama,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10288,2026-02-24,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10171,2026-01-30,Apex SUV,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10266,2026-06-20,Sedan Alpha,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10212,2026-04-06,Model Y,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
+C-10158,2026-05-03,Sedan Alpha,Plant B - Austin,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
+C-10014,2026-02-11,Sedan Alpha,Plant B - Austin,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10185,2026-03-24,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10308,2026-06-15,Titan EV,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10113,2026-02-08,Cruiser Pro,Plant B - Austin,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10049,2026-04-19,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10310,2026-06-04,Titan EV,Plant B - Austin,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
 C-10167,2026-05-22,Model Y,Plant A - Fremont,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10331,2026-02-05,Model X,Plant D - Yokohama,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10073,2026-01-12,Sedan Alpha,Plant B - Austin,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10123,2026-01-13,Cruiser Pro,Plant C - Leipzig,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10064,2026-01-03,Titan EV,Plant A - Fremont,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
+C-10208,2026-01-10,Model Y,Plant C - Leipzig,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-9013,2026-06-10,Model X,Plant C - Leipzig,SUSPENSION,Front-left lower control arm / bushing exhibiting excessive play and clunking over bumps.
+C-9025,2026-07-14,Model X,Plant B - Austin,RIDE QUALITY,Severe clunking and knocking in front left wheel area during low-speed maneuvers.
+C-10186,2026-04-29,Model X,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
+C-10254,2026-05-15,Apex SUV,Plant A - Fremont,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10241,2026-04-18,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10034,2026-05-26,Model X,Plant D - Yokohama,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-9032,2026-07-27,Model X,Plant A - Fremont,OTHER,Front left suspension makes sharp popping/clunking noise over neighborhood speed bumps.
+C-10085,2026-04-13,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10027,2026-07-12,Apex SUV,Plant C - Leipzig,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10183,2026-06-27,Sedan Alpha,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-9028,2026-07-20,Model X,Plant A - Fremont,ELECTRICAL-NFF,"Customer heard knocking near driver wheel; tested electronic damper, no error code, mechanical clunking confirmed."
+C-10109,2026-07-10,Cruiser Pro,Plant C - Leipzig,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10097,2026-04-21,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10060,2026-01-31,Titan EV,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10160,2026-05-06,Titan EV,Plant A - Fremont,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10271,2026-06-03,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10284,2026-03-11,Titan EV,Plant A - Fremont,ELECTRICAL-NFF,"Driver stated Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10300,2026-03-31,Model Y,Plant A - Fremont,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10326,2026-01-12,Sedan Alpha,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10353,2026-07-19,Apex SUV,Plant D - Yokohama,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
+C-10149,2026-05-22,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10290,2026-02-03,Titan EV,Plant B - Austin,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10002,2026-02-27,Apex SUV,Plant A - Fremont,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10232,2026-07-25,Model X,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10227,2026-01-24,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10018,2026-02-28,Sedan Alpha,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10084,2026-07-30,Model Y,Plant A - Fremont,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10337,2026-04-06,Model X,Plant C - Leipzig,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10216,2026-04-28,Apex SUV,Plant A - Fremont,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10078,2026-04-02,Apex SUV,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10327,2026-06-06,Apex SUV,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10352,2026-01-12,Titan EV,Plant C - Leipzig,POWERTRAIN,Tech notes: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10339,2026-03-15,Apex SUV,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-9019,2026-07-02,Model X,Plant A - Fremont,OTHER,Front-left suspension produces heavy clunking noise over speed bumps at low speeds.
+C-10082,2026-02-10,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10042,2026-03-26,Titan EV,Plant B - Austin,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10069,2026-02-04,Model X,Plant A - Fremont,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10141,2026-04-26,Cruiser Pro,Plant D - Yokohama,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10203,2026-01-10,Titan EV,Plant C - Leipzig,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10172,2026-07-31,Model X,Plant A - Fremont,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10285,2026-04-21,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10089,2026-06-05,Cruiser Pro,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10043,2026-06-21,Model Y,Plant B - Austin,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
 C-10130,2026-06-29,Sedan Alpha,Plant B - Austin,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
 C-10040,2026-05-31,Titan EV,Plant B - Austin,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10093,2026-03-21,Sedan Alpha,Plant D - Yokohama,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10033,2026-07-26,Model Y,Plant A - Fremont,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10030,2026-01-28,Apex SUV,Plant B - Austin,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10107,2026-04-27,Cruiser Pro,Plant C - Leipzig,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10265,2026-07-06,Sedan Alpha,Plant D - Yokohama,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10176,2026-01-11,Apex SUV,Plant C - Leipzig,BODY,Driver side door latch requires extra force to shut completely.
-C-10402,2026-03-05,Model X,Plant A - Fremont,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10014,2026-02-11,Sedan Alpha,Plant B - Austin,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10229,2026-05-09,Model Y,Plant C - Leipzig,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10102,2026-03-04,Titan EV,Plant A - Fremont,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10114,2026-01-17,Cruiser Pro,Plant C - Leipzig,BODY,Driver side door latch requires extra force to shut completely.
-C-10547,2026-03-12,Sedan Alpha,Plant D - Yokohama,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10131,2026-06-05,Model Y,Plant C - Leipzig,ELECTRICAL,Customer reports: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10419,2026-07-09,Titan EV,Plant C - Leipzig,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10304,2026-04-23,Cruiser Pro,Plant D - Yokohama,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10109,2026-07-10,Cruiser Pro,Plant C - Leipzig,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10238,2026-01-30,Model X,Plant A - Fremont,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10403,2026-04-09,Model Y,Plant B - Austin,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10257,2026-03-19,Apex SUV,Plant A - Fremont,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-9031,2026-07-26,Model X,Plant C - Leipzig,STEERING,Steering wheel twitch and knocking sound from front-left suspension area on uneven roads.
-C-10272,2026-05-10,Model Y,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10405,2026-05-12,Cruiser Pro,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
-C-10454,2026-02-17,Cruiser Pro,Plant C - Leipzig,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10474,2026-04-15,Model Y,Plant D - Yokohama,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10410,2026-04-04,Cruiser Pro,Plant A - Fremont,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10145,2026-02-18,Model Y,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10267,2026-01-18,Model X,Plant A - Fremont,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10517,2026-05-09,Model Y,Plant A - Fremont,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10087,2026-01-30,Model Y,Plant C - Leipzig,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10362,2026-04-21,Titan EV,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10455,2026-01-02,Cruiser Pro,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10010,2026-02-01,Model X,Plant C - Leipzig,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10506,2026-02-09,Sedan Alpha,Plant B - Austin,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10388,2026-02-12,Sedan Alpha,Plant B - Austin,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10332,2026-05-22,Apex SUV,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10307,2026-01-10,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10369,2026-03-02,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10092,2026-03-22,Apex SUV,Plant C - Leipzig,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10397,2026-04-27,Apex SUV,Plant A - Fremont,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10183,2026-06-27,Sedan Alpha,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10500,2026-03-03,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10245,2026-04-12,Model Y,Plant A - Fremont,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10191,2026-05-22,Titan EV,Plant D - Yokohama,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-9022,2026-07-08,Model X,Plant C - Leipzig,OTHER,Metallic clunk sound near driver front wheel when crossing driveway curb.
-C-10243,2026-02-25,Cruiser Pro,Plant B - Austin,BODY,Driver stated Passenger window makes grinding sound when rolling down.
-C-10393,2026-01-11,Model X,Plant A - Fremont,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10244,2026-01-26,Titan EV,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10103,2026-04-17,Apex SUV,Plant D - Yokohama,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10377,2026-02-01,Model X,Plant D - Yokohama,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10259,2026-07-02,Model X,Plant A - Fremont,BODY,Driver stated Passenger window makes grinding sound when rolling down.
-C-10023,2026-05-11,Model X,Plant A - Fremont,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10354,2026-07-27,Model X,Plant D - Yokohama,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10247,2026-07-21,Model Y,Plant B - Austin,POWERTRAIN,Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10320,2026-05-11,Model X,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10311,2026-04-26,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10508,2026-07-15,Apex SUV,Plant D - Yokohama,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10052,2026-04-15,Cruiser Pro,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10336,2026-05-09,Model Y,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10415,2026-02-20,Titan EV,Plant A - Fremont,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10081,2026-07-08,Cruiser Pro,Plant B - Austin,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10106,2026-04-29,Titan EV,Plant B - Austin,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-9017,2026-06-25,Model X,Plant C - Leipzig,STEERING,Knocking vibration felt through steering column when going over potholes; front left strut loose.
-C-10115,2026-04-30,Model X,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10078,2026-04-02,Apex SUV,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-9016,2026-06-22,Model X,Plant A - Fremont,RIDE QUALITY,Rough ride complaint: prominent knocking and clunking from front driver side corner on rough surfaces.
-C-10255,2026-04-25,Titan EV,Plant A - Fremont,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10008,2026-01-24,Model X,Plant C - Leipzig,STEERING,Driver stated Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10338,2026-07-02,Model Y,Plant B - Austin,POWERTRAIN,Customer reports: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10337,2026-04-06,Model X,Plant C - Leipzig,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10488,2026-01-16,Apex SUV,Plant D - Yokohama,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10475,2026-04-08,Cruiser Pro,Plant D - Yokohama,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-10217,2026-03-15,Model X,Plant D - Yokohama,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10316,2026-03-06,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10175,2026-03-11,Cruiser Pro,Plant A - Fremont,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10219,2026-04-27,Model Y,Plant D - Yokohama,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10300,2026-03-31,Model Y,Plant A - Fremont,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10513,2026-07-01,Model X,Plant B - Austin,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10531,2026-05-09,Model X,Plant A - Fremont,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10348,2026-04-03,Titan EV,Plant A - Fremont,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10065,2026-05-18,Titan EV,Plant C - Leipzig,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10035,2026-07-14,Model Y,Plant D - Yokohama,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10534,2026-04-02,Cruiser Pro,Plant B - Austin,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-9005,2026-04-10,Model X,Plant A - Fremont,ELECTRICAL-NFF,"Customer suspected sensor issue due to rattle; no electrical fault found, technician heard mechanical tapping from front left suspension."
-C-10149,2026-05-22,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10526,2026-05-02,Model X,Plant A - Fremont,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10283,2026-04-24,Cruiser Pro,Plant D - Yokohama,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10412,2026-04-09,Titan EV,Plant C - Leipzig,BODY,Passenger window makes grinding sound when rolling down.
-C-10127,2026-07-19,Model X,Plant B - Austin,BRAKES,Tech notes: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10346,2026-04-20,Titan EV,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10037,2026-05-19,Apex SUV,Plant C - Leipzig,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10113,2026-02-08,Cruiser Pro,Plant B - Austin,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10386,2026-03-30,Titan EV,Plant B - Austin,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10051,2026-06-16,Model X,Plant B - Austin,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10250,2026-01-01,Model Y,Plant B - Austin,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10372,2026-04-04,Sedan Alpha,Plant C - Leipzig,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10296,2026-04-22,Model Y,Plant D - Yokohama,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10356,2026-03-22,Titan EV,Plant D - Yokohama,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10241,2026-04-18,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10291,2026-05-24,Model X,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10215,2026-05-30,Model Y,Plant D - Yokohama,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10504,2026-04-16,Titan EV,Plant B - Austin,BRAKES,Tech notes: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10182,2026-06-21,Model Y,Plant C - Leipzig,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10162,2026-05-23,Titan EV,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
-C-10260,2026-06-05,Model X,Plant B - Austin,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10519,2026-05-15,Sedan Alpha,Plant C - Leipzig,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10382,2026-04-03,Cruiser Pro,Plant B - Austin,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10522,2026-01-24,Cruiser Pro,Plant D - Yokohama,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10381,2026-02-21,Model Y,Plant D - Yokohama,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10227,2026-01-24,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10467,2026-05-06,Titan EV,Plant D - Yokohama,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10321,2026-02-16,Sedan Alpha,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10157,2026-01-27,Titan EV,Plant C - Leipzig,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10059,2026-01-18,Apex SUV,Plant B - Austin,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10471,2026-07-10,Titan EV,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10122,2026-06-14,Model Y,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10088,2026-01-28,Sedan Alpha,Plant C - Leipzig,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10026,2026-03-06,Apex SUV,Plant A - Fremont,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10383,2026-01-23,Sedan Alpha,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10034,2026-05-26,Model X,Plant D - Yokohama,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10371,2026-04-06,Model X,Plant B - Austin,BODY,Passenger window makes grinding sound when rolling down.
-C-10472,2026-04-19,Apex SUV,Plant A - Fremont,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10268,2026-01-25,Model Y,Plant A - Fremont,POWERTRAIN,Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10521,2026-03-04,Sedan Alpha,Plant A - Fremont,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10118,2026-05-18,Cruiser Pro,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10327,2026-06-06,Apex SUV,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10310,2026-06-04,Titan EV,Plant B - Austin,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10054,2026-03-09,Sedan Alpha,Plant D - Yokohama,BODY,Passenger window makes grinding sound when rolling down.
-C-10282,2026-07-13,Apex SUV,Plant A - Fremont,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10390,2026-06-12,Model Y,Plant C - Leipzig,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10146,2026-05-23,Apex SUV,Plant D - Yokohama,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10473,2026-01-16,Cruiser Pro,Plant A - Fremont,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10389,2026-05-13,Model X,Plant C - Leipzig,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10266,2026-06-20,Sedan Alpha,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10166,2026-06-19,Model Y,Plant B - Austin,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10278,2026-06-18,Model X,Plant B - Austin,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10164,2026-04-20,Titan EV,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10271,2026-06-03,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10126,2026-01-05,Sedan Alpha,Plant B - Austin,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10420,2026-05-11,Apex SUV,Plant C - Leipzig,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10236,2026-05-24,Titan EV,Plant B - Austin,POWERTRAIN,Customer reports: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10216,2026-04-28,Apex SUV,Plant A - Fremont,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10309,2026-05-29,Cruiser Pro,Plant B - Austin,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10100,2026-07-29,Apex SUV,Plant C - Leipzig,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10445,2026-07-09,Model Y,Plant D - Yokohama,BRAKES,Tech notes: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10200,2026-06-28,Titan EV,Plant D - Yokohama,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10490,2026-03-23,Cruiser Pro,Plant B - Austin,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10132,2026-05-29,Sedan Alpha,Plant D - Yokohama,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10153,2026-03-12,Model X,Plant B - Austin,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10421,2026-07-28,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10240,2026-02-04,Cruiser Pro,Plant C - Leipzig,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10523,2026-05-02,Apex SUV,Plant A - Fremont,BRAKES,Tech notes: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10018,2026-02-28,Sedan Alpha,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10261,2026-06-09,Cruiser Pro,Plant C - Leipzig,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-9033,2026-07-28,Model X,Plant A - Fremont,SUSPENSION,Front-left strut mount assembly knocking during rebound on undulating pavement.
-C-10538,2026-04-03,Model X,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10469,2026-05-25,Titan EV,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10407,2026-02-25,Model X,Plant A - Fremont,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10532,2026-03-01,Sedan Alpha,Plant D - Yokohama,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10516,2026-01-05,Titan EV,Plant C - Leipzig,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10461,2026-02-09,Apex SUV,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
-C-10075,2026-01-03,Model X,Plant B - Austin,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10326,2026-01-12,Sedan Alpha,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-9003,2026-03-05,Model X,Plant B - Austin,SUSPENSION,Intermittent clunk from left front suspension assembly over uneven road surfaces.
-C-10165,2026-07-09,Model Y,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10185,2026-03-24,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10269,2026-05-24,Apex SUV,Plant A - Fremont,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10196,2026-03-12,Sedan Alpha,Plant C - Leipzig,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10067,2026-02-10,Titan EV,Plant C - Leipzig,BODY,Passenger window makes grinding sound when rolling down.
-C-10280,2026-03-29,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10343,2026-01-13,Cruiser Pro,Plant D - Yokohama,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-9015,2026-06-18,Model X,Plant B - Austin,OTHER,Driver states sharp metallic pop/knock from left front wheel well when hitting road dips.
-C-10168,2026-04-26,Sedan Alpha,Plant A - Fremont,RIDE QUALITY,Tech notes: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10187,2026-04-03,Apex SUV,Plant D - Yokohama,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10302,2026-02-15,Cruiser Pro,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10293,2026-05-28,Titan EV,Plant D - Yokohama,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10061,2026-01-21,Apex SUV,Plant C - Leipzig,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10060,2026-01-31,Titan EV,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10288,2026-02-24,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10173,2026-07-22,Titan EV,Plant C - Leipzig,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10374,2026-05-13,Titan EV,Plant A - Fremont,STEERING,Driver stated Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10084,2026-07-30,Model Y,Plant A - Fremont,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10202,2026-06-30,Cruiser Pro,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10184,2026-01-10,Model X,Plant C - Leipzig,BODY,Driver stated Passenger window makes grinding sound when rolling down.
-C-10252,2026-01-04,Model Y,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10135,2026-07-20,Sedan Alpha,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10047,2026-01-16,Apex SUV,Plant C - Leipzig,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10248,2026-02-22,Titan EV,Plant B - Austin,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10055,2026-06-19,Model Y,Plant B - Austin,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10489,2026-05-07,Sedan Alpha,Plant D - Yokohama,BRAKES,Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10090,2026-01-12,Model X,Plant B - Austin,BODY,Driver stated Driver side door latch requires extra force to shut completely.
-C-10345,2026-05-28,Apex SUV,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10050,2026-01-20,Titan EV,Plant A - Fremont,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-10495,2026-04-26,Model X,Plant B - Austin,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10312,2026-06-15,Model X,Plant B - Austin,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10021,2026-03-09,Model Y,Plant C - Leipzig,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10297,2026-04-13,Cruiser Pro,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10464,2026-06-30,Model X,Plant A - Fremont,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10400,2026-04-13,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-9012,2026-06-06,Model X,Plant B - Austin,OTHER,Metallic tapping noise audible inside cabin originating from front left strut assembly.
-C-10024,2026-02-09,Apex SUV,Plant D - Yokohama,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10498,2026-03-19,Model Y,Plant B - Austin,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10380,2026-02-10,Sedan Alpha,Plant B - Austin,ELECTRICAL,Customer reports: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-9023,2026-07-10,Model X,Plant A - Fremont,ELECTRICAL-NFF,Customer suspected front radar loose; technician verified noise is front-left suspension ball joint clunk.
-C-10119,2026-04-22,Model X,Plant D - Yokohama,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-9035,2026-07-30,Model X,Plant A - Fremont,RIDE QUALITY,Excessive front-left suspension clunk and harsh ride over railroad tracks.
-C-10129,2026-06-21,Titan EV,Plant B - Austin,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10197,2026-03-14,Titan EV,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10322,2026-02-27,Model Y,Plant A - Fremont,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10335,2026-03-31,Cruiser Pro,Plant A - Fremont,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10190,2026-07-24,Apex SUV,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10015,2026-06-29,Titan EV,Plant B - Austin,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10209,2026-07-11,Cruiser Pro,Plant A - Fremont,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10466,2026-03-25,Model X,Plant B - Austin,BODY,Passenger window makes grinding sound when rolling down.
-C-10514,2026-04-27,Model X,Plant D - Yokohama,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10232,2026-07-25,Model X,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10071,2026-02-22,Titan EV,Plant D - Yokohama,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10367,2026-06-21,Sedan Alpha,Plant B - Austin,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10199,2026-07-15,Cruiser Pro,Plant C - Leipzig,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10141,2026-04-26,Cruiser Pro,Plant D - Yokohama,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10125,2026-07-12,Sedan Alpha,Plant A - Fremont,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10144,2026-06-02,Titan EV,Plant A - Fremont,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10038,2026-06-21,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10529,2026-03-18,Titan EV,Plant B - Austin,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10447,2026-01-10,Sedan Alpha,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10391,2026-05-17,Titan EV,Plant B - Austin,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10025,2026-01-17,Cruiser Pro,Plant D - Yokohama,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10009,2026-06-04,Model X,Plant D - Yokohama,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10458,2026-01-16,Cruiser Pro,Plant C - Leipzig,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10437,2026-04-24,Apex SUV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10178,2026-05-31,Apex SUV,Plant C - Leipzig,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10117,2026-01-02,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Field complaint: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10073,2026-01-12,Sedan Alpha,Plant B - Austin,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10460,2026-04-05,Model Y,Plant B - Austin,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-9026,2026-07-16,Model X,Plant A - Fremont,OTHER,Clunk noise on left front side during speed bump compression.
-C-10319,2026-07-28,Apex SUV,Plant A - Fremont,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10120,2026-06-21,Apex SUV,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10478,2026-01-01,Sedan Alpha,Plant D - Yokohama,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10440,2026-02-27,Model X,Plant A - Fremont,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10366,2026-04-22,Apex SUV,Plant A - Fremont,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10349,2026-05-01,Apex SUV,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10422,2026-04-17,Apex SUV,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10192,2026-02-27,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10193,2026-05-08,Titan EV,Plant C - Leipzig,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10230,2026-07-26,Apex SUV,Plant C - Leipzig,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10066,2026-03-31,Model Y,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-9011,2026-06-02,Model X,Plant A - Fremont,RIDE QUALITY,Driver hears persistent knocking sound from left front wheel area on uneven asphalt.
-C-10074,2026-02-11,Titan EV,Plant D - Yokohama,BODY,Passenger window makes grinding sound when rolling down.
-C-10546,2026-05-07,Model X,Plant B - Austin,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10305,2026-07-23,Titan EV,Plant A - Fremont,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10375,2026-07-18,Apex SUV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10011,2026-04-03,Apex SUV,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10136,2026-01-18,Model X,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10329,2026-04-05,Cruiser Pro,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
-C-10220,2026-01-28,Cruiser Pro,Plant C - Leipzig,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10077,2026-02-02,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10053,2026-01-16,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10334,2026-02-07,Model X,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
-C-10003,2026-01-23,Model X,Plant A - Fremont,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10394,2026-03-09,Titan EV,Plant D - Yokohama,ELECTRICAL-NFF,"Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10484,2026-04-23,Titan EV,Plant B - Austin,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10376,2026-06-06,Apex SUV,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
-C-10541,2026-05-23,Model X,Plant A - Fremont,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10425,2026-07-30,Model X,Plant A - Fremont,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10041,2026-01-19,Model Y,Plant A - Fremont,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10352,2026-01-12,Titan EV,Plant C - Leipzig,POWERTRAIN,Tech notes: Customer observed small puddle of pink coolant under vehicle after parking overnight.
-C-10399,2026-03-29,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10123,2026-01-13,Cruiser Pro,Plant C - Leipzig,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10224,2026-06-12,Titan EV,Plant C - Leipzig,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
-C-10213,2026-04-16,Model Y,Plant B - Austin,ELECTRICAL,Customer reports: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
-C-10276,2026-02-16,Apex SUV,Plant C - Leipzig,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10108,2026-06-06,Titan EV,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10477,2026-02-15,Titan EV,Plant B - Austin,STEERING,Tech notes: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10384,2026-05-15,Cruiser Pro,Plant A - Fremont,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
-C-10036,2026-02-12,Titan EV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10536,2026-07-02,Model X,Plant C - Leipzig,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10414,2026-04-06,Titan EV,Plant C - Leipzig,POWERTRAIN,Tech notes: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10180,2026-02-16,Apex SUV,Plant D - Yokohama,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
-C-10438,2026-02-21,Titan EV,Plant C - Leipzig,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-9028,2026-07-20,Model X,Plant A - Fremont,ELECTRICAL-NFF,"Customer heard knocking near driver wheel; tested electronic damper, no error code, mechanical clunking confirmed."
-C-10150,2026-06-29,Sedan Alpha,Plant C - Leipzig,BODY,Driver stated Passenger window makes grinding sound when rolling down.
-C-10524,2026-01-22,Cruiser Pro,Plant C - Leipzig,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10170,2026-06-25,Sedan Alpha,Plant B - Austin,HVAC,Field complaint: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10082,2026-02-10,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10339,2026-03-15,Apex SUV,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
-C-10368,2026-02-06,Model X,Plant B - Austin,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
-C-10253,2026-02-14,Model X,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10351,2026-03-03,Titan EV,Plant C - Leipzig,ELECTRICAL,Tech notes: Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10299,2026-06-12,Titan EV,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10214,2026-06-06,Titan EV,Plant B - Austin,STEERING,Field complaint: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
-C-10468,2026-04-27,Titan EV,Plant D - Yokohama,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10264,2026-04-16,Cruiser Pro,Plant D - Yokohama,POWERTRAIN,Field complaint: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
-C-10292,2026-04-22,Cruiser Pro,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10373,2026-01-30,Apex SUV,Plant B - Austin,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10147,2026-04-25,Model X,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
-C-10287,2026-06-03,Model X,Plant B - Austin,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
-C-10456,2026-07-12,Sedan Alpha,Plant C - Leipzig,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
-C-10171,2026-01-30,Apex SUV,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
-C-10294,2026-03-16,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
-C-10273,2026-01-28,Titan EV,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
 C-10105,2026-07-19,Model Y,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
-C-10406,2026-01-06,Cruiser Pro,Plant D - Yokohama,BRAKES,Tech notes: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10308,2026-06-15,Titan EV,Plant D - Yokohama,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
-C-10416,2026-01-10,Apex SUV,Plant C - Leipzig,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
-C-10303,2026-06-14,Apex SUV,Plant C - Leipzig,POWERTRAIN,Tech notes: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10324,2026-07-16,Titan EV,Plant D - Yokohama,ELECTRICAL,Tech notes: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10299,2026-06-12,Titan EV,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10321,2026-02-16,Sedan Alpha,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-9008,2026-05-12,Model X,Plant B - Austin,OTHER,Front end knocks severely over speed humps. Technician inspected front left control arm area.
+C-10297,2026-04-13,Cruiser Pro,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10270,2026-04-01,Apex SUV,Plant A - Fremont,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-10072,2026-01-14,Apex SUV,Plant D - Yokohama,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10307,2026-01-10,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10340,2026-04-25,Model X,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10019,2026-01-17,Titan EV,Plant C - Leipzig,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10132,2026-05-29,Sedan Alpha,Plant D - Yokohama,BRAKES,Field complaint: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10101,2026-07-26,Model Y,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-9024,2026-07-12,Model X,Plant A - Fremont,STEERING,Customer complained of front steering area rattle; inspection showed front-left suspension bushing knocking.
+C-10007,2026-03-13,Model Y,Plant C - Leipzig,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-9015,2026-06-18,Model X,Plant B - Austin,OTHER,Driver states sharp metallic pop/knock from left front wheel well when hitting road dips.
+C-9022,2026-07-08,Model X,Plant C - Leipzig,OTHER,Metallic clunk sound near driver front wheel when crossing driveway curb.
+C-10138,2026-04-22,Apex SUV,Plant C - Leipzig,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10053,2026-01-16,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10246,2026-01-24,Apex SUV,Plant A - Fremont,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10052,2026-04-15,Cruiser Pro,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10250,2026-01-01,Model Y,Plant B - Austin,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10013,2026-01-26,Sedan Alpha,Plant D - Yokohama,STEERING,Driver stated Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10245,2026-04-12,Model Y,Plant A - Fremont,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10262,2026-05-10,Model X,Plant A - Fremont,BODY,Driver side door latch requires extra force to shut completely.
+C-10364,2026-04-25,Model Y,Plant D - Yokohama,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-10066,2026-03-31,Model Y,Plant C - Leipzig,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10094,2026-05-22,Model Y,Plant D - Yokohama,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10006,2026-03-13,Model Y,Plant D - Yokohama,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10111,2026-03-12,Model X,Plant C - Leipzig,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
+C-10294,2026-03-16,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10343,2026-01-13,Cruiser Pro,Plant D - Yokohama,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10081,2026-07-08,Cruiser Pro,Plant B - Austin,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10131,2026-06-05,Model Y,Plant C - Leipzig,ELECTRICAL,Customer reports: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10048,2026-03-05,Model Y,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10050,2026-01-20,Titan EV,Plant A - Fremont,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
+C-10121,2026-02-02,Cruiser Pro,Plant A - Fremont,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10336,2026-05-09,Model Y,Plant D - Yokohama,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10316,2026-03-06,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10029,2026-07-04,Titan EV,Plant B - Austin,HVAC,Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-9029,2026-07-22,Model X,Plant A - Fremont,RIDE QUALITY,Pronounced knocking vibration from left front suspension over cobblestone road.
+C-10223,2026-07-18,Titan EV,Plant C - Leipzig,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10187,2026-04-03,Apex SUV,Plant D - Yokohama,RIDE QUALITY,Customer reports: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10273,2026-01-28,Titan EV,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10059,2026-01-18,Apex SUV,Plant B - Austin,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10274,2026-07-15,Titan EV,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10031,2026-04-06,Titan EV,Plant A - Fremont,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10142,2026-01-08,Sedan Alpha,Plant B - Austin,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10230,2026-07-26,Apex SUV,Plant C - Leipzig,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10204,2026-04-23,Titan EV,Plant D - Yokohama,ELECTRICAL,Customer reports: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10334,2026-02-07,Model X,Plant B - Austin,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10263,2026-07-04,Cruiser Pro,Plant D - Yokohama,ELECTRICAL-NFF,"Tech notes: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10128,2026-01-06,Model Y,Plant B - Austin,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10346,2026-04-20,Titan EV,Plant C - Leipzig,BRAKES,Tech notes: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10302,2026-02-15,Cruiser Pro,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10260,2026-06-05,Model X,Plant B - Austin,ELECTRICAL,Driver stated Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10175,2026-03-11,Cruiser Pro,Plant A - Fremont,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10176,2026-01-11,Apex SUV,Plant C - Leipzig,BODY,Driver side door latch requires extra force to shut completely.
+C-10235,2026-06-22,Cruiser Pro,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10211,2026-01-12,Model X,Plant C - Leipzig,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10325,2026-02-11,Apex SUV,Plant B - Austin,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10124,2026-04-27,Sedan Alpha,Plant D - Yokohama,POWERTRAIN,Driver stated Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10295,2026-02-13,Apex SUV,Plant C - Leipzig,BODY,Customer reports: Passenger window makes grinding sound when rolling down.
+C-10323,2026-07-21,Titan EV,Plant A - Fremont,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10032,2026-03-24,Model X,Plant A - Fremont,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10248,2026-02-22,Titan EV,Plant B - Austin,BRAKES,Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10205,2026-07-04,Cruiser Pro,Plant B - Austin,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10154,2026-02-28,Model Y,Plant C - Leipzig,POWERTRAIN,Customer reports: Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10329,2026-04-05,Cruiser Pro,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
+C-10249,2026-02-25,Sedan Alpha,Plant B - Austin,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10150,2026-06-29,Sedan Alpha,Plant C - Leipzig,BODY,Driver stated Passenger window makes grinding sound when rolling down.
+C-10319,2026-07-28,Apex SUV,Plant A - Fremont,ELECTRICAL,Field complaint: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10218,2026-05-31,Apex SUV,Plant D - Yokohama,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10087,2026-01-30,Model Y,Plant C - Leipzig,HVAC,Customer reports: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10037,2026-05-19,Apex SUV,Plant C - Leipzig,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10305,2026-07-23,Titan EV,Plant A - Fremont,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10304,2026-04-23,Cruiser Pro,Plant D - Yokohama,BRAKES,Driver stated Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10080,2026-02-11,Cruiser Pro,Plant A - Fremont,ELECTRICAL,Tech notes: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10226,2026-07-21,Model X,Plant C - Leipzig,BODY,Tech notes: Passenger window makes grinding sound when rolling down.
+C-10341,2026-02-25,Titan EV,Plant D - Yokohama,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10055,2026-06-19,Model Y,Plant B - Austin,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10046,2026-04-19,Cruiser Pro,Plant A - Fremont,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
+C-10119,2026-04-22,Model X,Plant D - Yokohama,RIDE QUALITY,Driver stated Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10114,2026-01-17,Cruiser Pro,Plant C - Leipzig,BODY,Driver side door latch requires extra force to shut completely.
+C-10243,2026-02-25,Cruiser Pro,Plant B - Austin,BODY,Driver stated Passenger window makes grinding sound when rolling down.
+C-10247,2026-07-21,Model Y,Plant B - Austin,POWERTRAIN,Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-9034,2026-07-29,Model X,Plant B - Austin,ELECTRICAL-NFF,"Customer stated front suspension sensor alert; diagnostics clear, physical knocking from front-left lower control arm."
+C-10143,2026-02-24,Sedan Alpha,Plant C - Leipzig,POWERTRAIN,Driver stated Customer observed small puddle of pink coolant under vehicle after parking overnight.
+C-10129,2026-06-21,Titan EV,Plant B - Austin,ELECTRICAL,Field complaint: Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10010,2026-02-01,Model X,Plant C - Leipzig,STEERING,Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10331,2026-02-05,Model X,Plant D - Yokohama,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10054,2026-03-09,Sedan Alpha,Plant D - Yokohama,BODY,Passenger window makes grinding sound when rolling down.
+C-10197,2026-03-14,Titan EV,Plant D - Yokohama,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10003,2026-01-23,Model X,Plant A - Fremont,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
+C-10035,2026-07-14,Model Y,Plant D - Yokohama,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10028,2026-03-17,Model Y,Plant D - Yokohama,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
+C-10068,2026-07-26,Apex SUV,Plant C - Leipzig,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10217,2026-03-15,Model X,Plant D - Yokohama,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10112,2026-03-11,Sedan Alpha,Plant A - Fremont,POWERTRAIN,Tech notes: Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10279,2026-01-24,Cruiser Pro,Plant D - Yokohama,ELECTRICAL-NFF,"Field complaint: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10075,2026-01-03,Model X,Plant B - Austin,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10194,2026-05-04,Model Y,Plant D - Yokohama,RIDE QUALITY,Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10099,2026-06-18,Sedan Alpha,Plant C - Leipzig,BRAKES,Customer reports: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10100,2026-07-29,Apex SUV,Plant C - Leipzig,HVAC,Tech notes: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10026,2026-03-06,Apex SUV,Plant A - Fremont,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10253,2026-02-14,Model X,Plant B - Austin,HVAC,Field complaint: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10164,2026-04-20,Titan EV,Plant A - Fremont,POWERTRAIN,Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10231,2026-04-30,Model Y,Plant B - Austin,BRAKES,Field complaint: Intermittent ABS warning indicator illuminated on cluster during highway braking test.
+C-10221,2026-03-17,Model X,Plant D - Yokohama,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10061,2026-01-21,Apex SUV,Plant C - Leipzig,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-9014,2026-06-15,Model X,Plant A - Fremont,ELECTRICAL-NFF,"Scanned for suspension control module error; no active DTCs, verified mechanical clunking from front-left strut."
+C-10024,2026-02-09,Apex SUV,Plant D - Yokohama,ELECTRICAL,12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10093,2026-03-21,Sedan Alpha,Plant D - Yokohama,BODY,Driver stated Driver side door latch requires extra force to shut completely.
+C-10108,2026-06-06,Titan EV,Plant D - Yokohama,BODY,Tech notes: Driver side door latch requires extra force to shut completely.
+C-10298,2026-02-26,Model Y,Plant A - Fremont,POWERTRAIN,Transmission hesitation and slight jerk when shifting from 2nd to 3rd gear under acceleration.
+C-10126,2026-01-05,Sedan Alpha,Plant B - Austin,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10169,2026-03-15,Apex SUV,Plant D - Yokohama,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10342,2026-07-18,Model Y,Plant C - Leipzig,POWERTRAIN,Customer reports: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10237,2026-06-12,Apex SUV,Plant C - Leipzig,BODY,Field complaint: Passenger window makes grinding sound when rolling down.
+C-10036,2026-02-12,Titan EV,Plant D - Yokohama,HVAC,Tech notes: Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.
+C-10259,2026-07-02,Model X,Plant A - Fremont,BODY,Driver stated Passenger window makes grinding sound when rolling down.
+C-10005,2026-02-20,Model Y,Plant D - Yokohama,BODY,Driver side door latch requires extra force to shut completely.
+C-10193,2026-05-08,Titan EV,Plant C - Leipzig,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10156,2026-05-22,Apex SUV,Plant B - Austin,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10155,2026-07-01,Sedan Alpha,Plant A - Fremont,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10196,2026-03-12,Sedan Alpha,Plant C - Leipzig,BODY,Customer reports: Driver side door latch requires extra force to shut completely.
 C-10355,2026-03-17,Model X,Plant B - Austin,ELECTRICAL-NFF,"Customer reports: Customer reported intermittent camera glitch; tested system on diagnostic bench, no fault found (NFF)."
+C-10044,2026-05-28,Model Y,Plant D - Yokohama,RIDE QUALITY,Field complaint: Slight highway vibration felt through seat at 70 mph; performed tire rebalancing.
+C-10275,2026-05-24,Titan EV,Plant C - Leipzig,BRAKES,Customer reports: Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-9017,2026-06-25,Model X,Plant C - Leipzig,STEERING,Knocking vibration felt through steering column when going over potholes; front left strut loose.
+C-10256,2026-05-09,Titan EV,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10162,2026-05-23,Titan EV,Plant B - Austin,BODY,Driver side door latch requires extra force to shut completely.
+C-10151,2026-03-01,Apex SUV,Plant B - Austin,ELECTRICAL,Driver stated Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10153,2026-03-12,Model X,Plant B - Austin,POWERTRAIN,Driver stated Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10296,2026-04-22,Model Y,Plant D - Yokohama,ELECTRICAL,Center infotainment touchscreen went black and rebooted spontaneously while driving.
+C-10086,2026-03-31,Apex SUV,Plant C - Leipzig,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-9035,2026-07-30,Model X,Plant A - Fremont,RIDE QUALITY,Excessive front-left suspension clunk and harsh ride over railroad tracks.
+C-10030,2026-01-28,Apex SUV,Plant B - Austin,POWERTRAIN,Tech notes: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-9018,2026-06-29,Model X,Plant A - Fremont,SUSPENSION,Front left suspension bushing worn; loud clunk over uneven railway crossings.
+C-10190,2026-07-24,Apex SUV,Plant B - Austin,HVAC,Driver stated A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-10354,2026-07-27,Model X,Plant D - Yokohama,ELECTRICAL,Customer reports: Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10277,2026-03-31,Model Y,Plant B - Austin,BRAKES,Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10039,2026-03-05,Model X,Plant C - Leipzig,HVAC,Customer reports: A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-9016,2026-06-22,Model X,Plant A - Fremont,RIDE QUALITY,Rough ride complaint: prominent knocking and clunking from front driver side corner on rough surfaces.
+C-10047,2026-01-16,Apex SUV,Plant C - Leipzig,STEERING,Customer reports: Steering wheel feels stiff when turning at standstill or low speed parking maneuvers.
+C-10313,2026-04-23,Sedan Alpha,Plant C - Leipzig,ELECTRICAL,Driver stated 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10349,2026-05-01,Apex SUV,Plant D - Yokohama,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10228,2026-02-21,Titan EV,Plant C - Leipzig,ELECTRICAL,Left headlight intermittent operation; replaced wiring harness connection pin.
+C-10152,2026-01-31,Model Y,Plant B - Austin,ELECTRICAL,Field complaint: 12V auxiliary battery discharge warning triggered; replaced battery and sensor.
+C-10173,2026-07-22,Titan EV,Plant C - Leipzig,POWERTRAIN,Field complaint: Engine check light on with code P0301; inspected cylinder 1 ignition coil and replaced.
+C-10292,2026-04-22,Cruiser Pro,Plant A - Fremont,BRAKES,Driver stated Customer states front brakes squeak loudly when coming to a gentle stop at low speeds.
+C-10309,2026-05-29,Cruiser Pro,Plant B - Austin,BRAKES,Driver stated Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10004,2026-02-25,Titan EV,Plant A - Fremont,HVAC,A/C blower motor making high-pitch whistling noise when fan set to maximum speed.
+C-9030,2026-07-24,Model X,Plant B - Austin,OTHER,Driver reports audible clunking in driver front wheel well when accelerating over road dips.
+C-10293,2026-05-28,Titan EV,Plant D - Yokohama,BODY,Field complaint: Driver side door latch requires extra force to shut completely.
+C-10106,2026-04-29,Titan EV,Plant B - Austin,BRAKES,Customer reports: Technician inspected brake pads; found uneven rotor wear and slight pulsation under braking.
+C-10188,2026-02-22,Titan EV,Plant B - Austin,HVAC,Driver stated Air conditioning not blowing cold air on hot afternoons; recharged refrigerant system.

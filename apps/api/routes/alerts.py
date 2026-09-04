@@ -46,6 +46,9 @@ def get_dashboard_summary(db: Session = Depends(get_db)):
             "primary_symptom": top.primary_symptom,
             "significance_score": top.significance_score,
             "cusum_score": top.cusum_score,
+            "baseline_volume": top.baseline_volume,
+            "current_volume": top.current_volume,
+            "code_distribution": top.code_distribution or {},
             "why_alerted": top.ai_rationale.get("why_alerted") if top.ai_rationale else "",
             "time_series": top.time_series or [],
             "representative_claims": top.representative_claims[:3] if top.representative_claims else []

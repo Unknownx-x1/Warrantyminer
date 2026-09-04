@@ -12,16 +12,14 @@ logger = logging.getLogger(__name__)
 def build_semantic_text(claim: Claim, sig: Optional[FailureSignature]) -> str:
     parts = []
     if sig:
-        if sig.component:
-            # Component keywords upweighted
+        if sig.component and sig.component != "unspecified component":
             parts.append(f"Component: {sig.component} {sig.component}")
-        if sig.symptom:
-            # Symptom keywords upweighted
+        if sig.symptom and sig.symptom != "unspecified operational symptom":
             parts.append(f"Symptom: {sig.symptom} {sig.symptom}")
-        if sig.condition:
+        if sig.condition and sig.condition != "normal operating conditions":
             parts.append(f"Condition: {sig.condition}")
         if sig.inferred_failure:
-            parts.append(f"Failure: {sig.inferred_failure}")
+            parts.append(f"Failure: {sig.inferred_failure} {sig.inferred_failure}")
     parts.append(f"Narrative: {claim.narrative}")
     return " | ".join(parts)
 
@@ -41,13 +39,13 @@ def compute_embeddings_for_corpus(claims: List[Claim], signatures_map: Dict[str,
 
     n_samples = len(semantic_texts)
     # Dimensionality for SVD
-    n_components = min(40, max(8, n_samples - 1)) if n_samples > 2 else 2
+    n_components = min(32, max(6, n_samples - 1)) if n_samples > 2 else 2
 
     # Fit TF-IDF with character and word n-grams
     tfidf = TfidfVectorizer(
-        ngram_range=(1, 3),
+        ngram_range=(1, 2),
         min_df=1,
-        max_df=0.90,
+        max_df=0.85,
         sublinear_tf=True
     )
     tfidf_matrix = tfidf.fit_transform(semantic_texts)
@@ -66,7 +64,7 @@ def process_embeddings(db: Session, force: bool = False) -> int:
     """
     Generates and persists semantic embeddings for all claims in the database.
     """
-    all_claims = db.query(Claim).all()
+    all_claims = db.query(Claim).order_by(Claim.id).all()
     if not all_claims:
         return 0
 

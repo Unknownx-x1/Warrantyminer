@@ -145,3 +145,74 @@ def test_400_claim_golden_recovery():
     assert best_cluster.growth_rate >= 200.0
 
     db.close()
+
+def test_unseen_defect_generalization():
+    """
+    Generalization Test: Novel unseen defect (20 HVAC heater core leak claims) across background data.
+    Verifies that the unsupervised clustering consolidates unseen defects into a coherent cluster.
+    """
+    engine = create_engine("sqlite:///:memory:")
+    Base.metadata.create_all(bind=engine)
+    TestingSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+    db = TestingSession()
+
+    claims_list, _ = generate_dataset(n_background=250)
+    # Filter out canonical claims so background is clean
+    claims_list = [c for c in claims_list if not c["claim_id"].startswith("C-90")]
+
+    unseen_phrases = [
+        "Sweet smell in cabin and windshield fogging up when heater turned on.",
+        "Coolant odor inside passenger compartment; heater core leaking onto carpet.",
+        "Windshield fogs severely when defrost activated; strong antifreeze smell.",
+        "Heater core leak observed behind dashboard; sweet coolant smell in cabin.",
+        "Passenger footwell damp with pink coolant; heater core failed pressure test.",
+        "Severe fogging on interior windows accompanied by sweet ethylene glycol odor.",
+        "Customer notes sweet burning smell from climate control vents during morning heat cycle.",
+        "Dashboard heater matrix leaking antifreeze; windows fogged during heating."
+    ]
+    unseen_claims = []
+    codes = ["HVAC", "OTHER", "BODY", "ELECTRICAL-NFF", "POWERTRAIN"]
+    for i in range(20):
+        unseen_claims.append({
+            "claim_id": f"UNSEEN-{i+1:03d}",
+            "date": f"2026-07-{10+(i%18):02d}",
+            "product_model": "Cruiser Pro",
+            "plant": "Plant B - Austin",
+            "failure_code": codes[i % len(codes)],
+            "narrative": f"Field technician report: {unseen_phrases[i % len(unseen_phrases)]}"
+        })
+
+    all_claims = claims_list + unseen_claims
+    expected_unseen_ids = {c["claim_id"] for c in unseen_claims}
+
+    csv_buf = io.StringIO()
+    writer = csv.DictWriter(csv_buf, fieldnames=["claim_id", "date", "product_model", "plant", "failure_code", "narrative"])
+    writer.writeheader()
+    writer.writerows(all_claims)
+    csv_bytes = csv_buf.getvalue().encode("utf-8")
+
+    inserted, skipped, errors = ingest_claims_data(csv_bytes, "unseen_test.csv", db)
+    assert inserted == len(all_claims)
+
+    result = execute_full_pipeline(db, dataset_name="unseen_run", force_recompute=True)
+    assert result["status"] == "completed"
+
+    clusters = db.query(Cluster).all()
+    best_cluster = None
+    best_overlap = 0
+    for c in clusters:
+        member_ids = {cm.claim.external_claim_id for cm in c.claim_memberships}
+        overlap = len(member_ids.intersection(expected_unseen_ids))
+        if overlap > best_overlap:
+            best_overlap = overlap
+            best_cluster = c
+
+    assert best_cluster is not None
+    # Must capture at least 60% of unseen claims with > 80% precision
+    recall = best_overlap / len(expected_unseen_ids)
+    precision = best_overlap / best_cluster.claim_count
+    assert precision >= 0.80
+    assert recall >= 0.60
+    assert best_cluster.cross_code_count >= 3
+
+    db.close()

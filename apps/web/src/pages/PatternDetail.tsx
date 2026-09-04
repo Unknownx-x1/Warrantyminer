@@ -511,7 +511,7 @@ export const PatternDetail: React.FC<PatternDetailProps> = ({
                   <div className="space-y-4">
                     <div className="flex items-center justify-between text-xs font-sans">
                       <span className="text-slate-600">
-                        Monthly observed claim volume compared against historical rolling baseline (1 &rarr; 1 &rarr; 2 &rarr; 2 &rarr; 4 &rarr; 8 &rarr; 17 claims).
+                        Monthly observed claim volume compared against historical rolling baseline ({cluster.time_series.map(t => t.claim_count).join(' → ')} claims).
                       </span>
                       <div className="flex items-center gap-3 font-mono text-[11px]">
                         <span className="flex items-center gap-1 text-blue-700 font-bold">
@@ -552,7 +552,7 @@ export const PatternDetail: React.FC<PatternDetailProps> = ({
                 {activeTab === 'distribution' && (
                   <div className="space-y-4">
                     <div className="p-3 rounded bg-blue-50 border border-blue-100 text-xs text-slate-700 leading-relaxed">
-                      <strong className="text-blue-900">Taxonomy Fragmentation Insight:</strong> This defect was split across 5 separate failure codes at dealerships, preventing single-code threshold alerts from firing.
+                      <strong className="text-blue-900">Taxonomy Fragmentation Insight:</strong> This defect was split across {cluster.cross_code_count} separate failure codes at dealerships, preventing single-code threshold alerts from firing.
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
