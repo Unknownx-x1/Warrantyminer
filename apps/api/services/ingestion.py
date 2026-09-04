@@ -164,5 +164,14 @@ def ingest_claims_data(file_content: bytes, filename: str, db: Session) -> Tuple
         db.bulk_save_objects(claims_to_add)
         db.commit()
 
+        # Automatically extract failure signatures and check for mismatches
+        try:
+            from apps.api.services.extraction import process_claim_extractions
+            from apps.api.services.mismatch import process_code_mismatches
+            process_claim_extractions(db, force=False)
+            process_code_mismatches(db, force=False)
+        except Exception as ex:
+            logger.warning(f"Post-ingestion extraction hook: {ex}")
+
     logger.info(f"Ingestion completed: {inserted} inserted, {skipped} skipped, {len(errors)} errors.")
     return inserted, skipped, errors

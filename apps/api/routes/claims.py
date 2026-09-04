@@ -91,6 +91,18 @@ def list_claims(
                 contributing_factors=c.signature.contributing_factors or [],
                 extraction_confidence=c.signature.extraction_confidence or 0.0
             )
+        else:
+            from apps.api.services.extraction import extract_signature_rule_based
+            fallback_sig = extract_signature_rule_based(c.narrative)
+            sig_out = FailureSignatureOut(
+                component=fallback_sig.get("component"),
+                symptom=fallback_sig.get("symptom"),
+                condition=fallback_sig.get("condition"),
+                severity=fallback_sig.get("severity"),
+                inferred_failure=fallback_sig.get("inferred_failure"),
+                contributing_factors=fallback_sig.get("contributing_factors", []),
+                extraction_confidence=fallback_sig.get("confidence", 0.85)
+            )
 
         mismatch_out = None
         if c.mismatch:
@@ -102,6 +114,23 @@ def list_claims(
                 mismatch_score=c.mismatch.mismatch_score or 0.0,
                 reason=c.mismatch.reason,
                 confidence=c.mismatch.confidence or 0.0
+            )
+        else:
+            from apps.api.services.mismatch import evaluate_code_mismatch
+            fallback_mismatch = evaluate_code_mismatch(
+                c.failure_code,
+                sig_out.component if sig_out else "",
+                sig_out.symptom if sig_out else "",
+                c.narrative
+            )
+            mismatch_out = CodeMismatchOut(
+                assigned_code=fallback_mismatch.get("assigned_code"),
+                inferred_category=fallback_mismatch.get("inferred_category"),
+                mismatch_severity=fallback_mismatch.get("mismatch_severity", "NORMAL"),
+                is_mismatch=fallback_mismatch.get("is_mismatch", 0),
+                mismatch_score=fallback_mismatch.get("mismatch_score", 0.0),
+                reason=fallback_mismatch.get("reason"),
+                confidence=0.85
             )
 
         items.append(ClaimDetailOut(
@@ -151,6 +180,18 @@ def get_claim(claim_id: str, db: Session = Depends(get_db)):
             contributing_factors=c.signature.contributing_factors or [],
             extraction_confidence=c.signature.extraction_confidence or 0.0
         )
+    else:
+        from apps.api.services.extraction import extract_signature_rule_based
+        fallback_sig = extract_signature_rule_based(c.narrative)
+        sig_out = FailureSignatureOut(
+            component=fallback_sig.get("component"),
+            symptom=fallback_sig.get("symptom"),
+            condition=fallback_sig.get("condition"),
+            severity=fallback_sig.get("severity"),
+            inferred_failure=fallback_sig.get("inferred_failure"),
+            contributing_factors=fallback_sig.get("contributing_factors", []),
+            extraction_confidence=fallback_sig.get("confidence", 0.85)
+        )
 
     mismatch_out = None
     if c.mismatch:
@@ -162,6 +203,23 @@ def get_claim(claim_id: str, db: Session = Depends(get_db)):
             mismatch_score=c.mismatch.mismatch_score or 0.0,
             reason=c.mismatch.reason,
             confidence=c.mismatch.confidence or 0.0
+        )
+    else:
+        from apps.api.services.mismatch import evaluate_code_mismatch
+        fallback_mismatch = evaluate_code_mismatch(
+            c.failure_code,
+            sig_out.component if sig_out else "",
+            sig_out.symptom if sig_out else "",
+            c.narrative
+        )
+        mismatch_out = CodeMismatchOut(
+            assigned_code=fallback_mismatch.get("assigned_code"),
+            inferred_category=fallback_mismatch.get("inferred_category"),
+            mismatch_severity=fallback_mismatch.get("mismatch_severity", "NORMAL"),
+            is_mismatch=fallback_mismatch.get("is_mismatch", 0),
+            mismatch_score=fallback_mismatch.get("mismatch_score", 0.0),
+            reason=fallback_mismatch.get("reason"),
+            confidence=0.85
         )
 
     return ClaimDetailOut(
