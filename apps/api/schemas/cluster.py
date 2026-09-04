@@ -34,6 +34,7 @@ class ClusterListItem(BaseModel):
     status: str
     created_at: datetime
     top_codes: Dict[str, int] = {}
+    factor_breakdown: Optional[Dict[str, Any]] = None
 
     class Config:
         from_attributes = True
@@ -49,6 +50,7 @@ class ClusterDetail(ClusterListItem):
     representative_claims: List[Dict[str, Any]] = []
     ai_rationale: Optional[AIRationale] = None
     feedback: Optional[Dict[str, Any]] = None
+    factor_breakdown: Optional[Dict[str, Any]] = None
 
 class ClusterClaimItem(BaseModel):
     claim_id: str

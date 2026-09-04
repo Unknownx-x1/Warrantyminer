@@ -1,6 +1,6 @@
 {
   "dataset_name": "canonical_warranty_claims_v1",
-  "generated_at": "2026-09-05T01:21:46.372389",
+  "generated_at": "2026-09-05T01:33:47.855908",
   "total_claims": 400,
   "ground_truth_clusters": [
     {

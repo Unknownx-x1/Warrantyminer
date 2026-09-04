@@ -51,7 +51,8 @@ def list_clusters(
             alert_level=c.alert_level,
             status=c.status,
             created_at=c.created_at,
-            top_codes=c.code_distribution or {}
+            top_codes=c.code_distribution or {},
+            factor_breakdown=c.factor_breakdown or {}
         ))
     return results
 
@@ -109,7 +110,8 @@ def get_cluster_detail(cluster_id: str, db: Session = Depends(get_db)):
         time_series=c.time_series or [],
         representative_claims=c.representative_claims or [],
         ai_rationale=ai_rat,
-        feedback=fb_dict
+        feedback=fb_dict,
+        factor_breakdown=c.factor_breakdown or {}
     )
 
 @router.get("/{cluster_id}/claims", response_model=ClusterClaimsResponse)

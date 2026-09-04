@@ -41,6 +41,7 @@ class Cluster(Base):
     time_series = Column(JSON, default=list)
     representative_claims = Column(JSON, default=list) # List of snippets/IDs
     ai_rationale = Column(JSON, default=dict) # why_grouped and why_alerted
+    factor_breakdown = Column(JSON, default=dict) # 5-factor scoring model decomposition
     
     # Review status
     status = Column(String(50), default="unreviewed") # unreviewed, confirmed, edited, dismissed

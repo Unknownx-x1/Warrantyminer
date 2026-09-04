@@ -51,7 +51,8 @@ def get_dashboard_summary(db: Session = Depends(get_db)):
             "code_distribution": top.code_distribution or {},
             "why_alerted": top.ai_rationale.get("why_alerted") if top.ai_rationale else "",
             "time_series": top.time_series or [],
-            "representative_claims": top.representative_claims[:3] if top.representative_claims else []
+            "representative_claims": top.representative_claims[:3] if top.representative_claims else [],
+            "factor_breakdown": top.factor_breakdown or {}
         }
 
     return {
@@ -96,6 +97,7 @@ def get_active_alerts(db: Session = Depends(get_db)):
             alert_level=c.alert_level,
             status=c.status,
             created_at=c.created_at,
-            top_codes=c.code_distribution or {}
+            top_codes=c.code_distribution or {},
+            factor_breakdown=c.factor_breakdown or {}
         ))
     return results

@@ -55,6 +55,19 @@ export interface AIRationale {
   affected_components: string[];
 }
 
+export interface FactorBreakdownItem {
+  name: string;
+  weight_pct: number;
+  max_points: number;
+  raw_value: string;
+  normalized_score: number;
+  points_earned: number;
+  benchmark: string;
+  methodology: string;
+}
+
+export type FactorBreakdown = Record<string, FactorBreakdownItem>;
+
 export interface ClusterListItem {
   id: string;
   run_id?: string;
@@ -75,6 +88,7 @@ export interface ClusterListItem {
   status: 'unreviewed' | 'confirmed' | 'edited' | 'dismissed';
   created_at: string;
   top_codes: Record<string, number>;
+  factor_breakdown?: FactorBreakdown;
 }
 
 export interface ClusterDetail extends ClusterListItem {
@@ -99,6 +113,7 @@ export interface ClusterDetail extends ClusterListItem {
     custom_label?: string;
     created_at?: string;
   };
+  factor_breakdown?: FactorBreakdown;
 }
 
 export interface ClusterClaimItem {
@@ -151,6 +166,7 @@ export interface DashboardSummary {
       plant?: string;
       narrative: string;
     }>;
+    factor_breakdown?: FactorBreakdown;
   };
 }
 
@@ -163,6 +179,7 @@ export interface BaselineComparison {
   growth_rate?: number;
   total_cluster_claims?: number;
   cross_code_count?: number;
+  factor_breakdown?: FactorBreakdown;
   lead_time_days?: number | null;
   lead_time_status?: string;
   semantic_detection_date?: string | null;
@@ -188,6 +205,7 @@ export interface BaselineComparison {
     growth_percentage: number;
     significance_z: number;
     alert_score: number;
+    factor_breakdown?: FactorBreakdown;
   };
 }
 

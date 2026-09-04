@@ -224,6 +224,7 @@ def execute_full_pipeline(
             time_series=trend_stats["time_series"],
             representative_claims=rep_snippets,
             ai_rationale=rationale,
+            factor_breakdown=alert_info.get("factor_breakdown", {}),
             status="unreviewed"
         )
         db.add(cluster_obj)

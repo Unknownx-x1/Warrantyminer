@@ -129,6 +129,7 @@ def compute_traditional_baseline_comparison(db: Session, target_cluster_id: Opti
         "growth_rate": target_cluster.growth_rate,
         "total_cluster_claims": cluster_claim_count,
         "cross_code_count": len(code_bucket_claims),
+        "factor_breakdown": target_cluster.factor_breakdown or {},
         "semantic_detection_date": semantic_date,
         "traditional_detection_date": traditional_date,
         "lead_time_days": lead_time_days,
@@ -147,6 +148,7 @@ def compute_traditional_baseline_comparison(db: Session, target_cluster_id: Opti
             "explanation": f"Semantic analysis unified {cluster_claim_count} claims across {len(code_bucket_claims)} codes into one high-coherence cluster showing +{target_cluster.growth_rate:.0f}% growth.",
             "growth_percentage": target_cluster.growth_rate,
             "significance_z": target_cluster.significance_score,
-            "alert_score": target_cluster.alert_score
+            "alert_score": target_cluster.alert_score,
+            "factor_breakdown": target_cluster.factor_breakdown or {}
         }
     }

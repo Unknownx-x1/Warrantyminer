@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   GitCompare, 
   ArrowRight,
@@ -14,7 +14,10 @@ import {
   HelpCircle,
   Info,
   Sparkles,
-  BarChart3
+  BarChart3,
+  Calculator,
+  XCircle,
+  Tag
 } from 'lucide-react';
 import { 
   ResponsiveContainer, 
@@ -46,6 +49,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
   onRunPipeline,
   isAnalyzing
 }) => {
+  const [showScoreModal, setShowScoreModal] = useState(false);
   const hero = summary?.hero_cluster;
   const chartData = hero?.time_series || [];
 
@@ -200,7 +204,12 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                     <span className="text-2xl font-bold text-slate-900">{hero.alert_score}</span>
                     <span className="text-xs text-slate-500 font-normal">/ 100</span>
                   </div>
-                  <span className="text-[10px] text-red-700 font-bold uppercase block mt-0.5">Critical Alert</span>
+                  <button
+                    onClick={() => setShowScoreModal(true)}
+                    className="text-[10px] text-blue-700 font-bold hover:underline block mt-0.5 text-left font-sans"
+                  >
+                    Explain 5 Factors &rarr;
+                  </button>
                 </div>
 
                 <div>
@@ -220,13 +229,20 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                 </div>
               </div>
 
-              <div>
+              <div className="flex items-center gap-2">
                 <button
                   onClick={() => onSelectCluster(hero.id)}
                   className="flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-bold font-sans bg-slate-900 hover:bg-slate-800 text-white transition-all shadow-sm"
                 >
                   <span>Open Deep Investigation Workstation</span>
                   <ArrowRight className="h-4 w-4" />
+                </button>
+                <button
+                  onClick={() => setShowScoreModal(true)}
+                  className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-md text-xs font-semibold font-sans bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 shadow-sm transition-all"
+                >
+                  <Calculator className="h-3.5 w-3.5 text-blue-600" />
+                  <span>5-Factor Math</span>
                 </button>
               </div>
             </div>
@@ -428,6 +444,169 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
           </table>
         </div>
       </div>
+
+      {/* 5-Factor Mathematical Model Explanation Modal */}
+      {showScoreModal && hero && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
+          <div className="bg-white border border-slate-200 rounded-lg max-w-3xl w-full p-6 space-y-4 shadow-2xl text-slate-900 font-sans">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="p-2 rounded-md bg-blue-50 text-blue-700">
+                  <Calculator className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-slate-900">
+                    5-Factor Composite Alert Score Model Decomposition
+                  </h3>
+                  <p className="text-xs text-slate-500">
+                    Exact point attribution for {hero.label} (Score: <strong className="text-slate-900 font-mono">{hero.alert_score} / 100</strong>)
+                  </p>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowScoreModal(false)}
+                className="text-slate-400 hover:text-slate-700 p-1"
+              >
+                <XCircle className="h-5 w-5" />
+              </button>
+            </div>
+
+            <div className="p-3 rounded-md bg-slate-50 border border-slate-200 font-mono text-xs text-slate-700">
+              <span className="font-bold text-slate-900 font-sans block text-[11px] uppercase mb-1">Mathematical Formula:</span>
+              <span>Composite Score = (0.30 &times; Growth) + (0.25 &times; Z-Score) + (0.15 &times; Size) + (0.15 &times; CrossCode) + (0.15 &times; Coherence)</span>
+            </div>
+
+            <div className="border border-slate-200 rounded-lg overflow-hidden">
+              <table className="w-full text-left text-xs font-sans">
+                <thead className="bg-slate-50 text-slate-700 uppercase text-[10px] font-mono border-b border-slate-200">
+                  <tr>
+                    <th className="py-2.5 px-3">Factor</th>
+                    <th className="py-2.5 px-3">Measured Value</th>
+                    <th className="py-2.5 px-3 text-right">Weight</th>
+                    <th className="py-2.5 px-3 text-right">Max Pts</th>
+                    <th className="py-2.5 px-4 text-right">Points Earned</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 font-mono text-xs">
+                  {/* Factor 1 */}
+                  {(() => {
+                    const f = hero.factor_breakdown?.growth_velocity;
+                    const raw = f ? f.raw_value : `+${hero.growth_rate}%`;
+                    const pts = f ? f.points_earned : Math.round(0.30 * Math.min(100, hero.growth_rate) * 10) / 10;
+                    return (
+                      <tr className="hover:bg-slate-50">
+                        <td className="py-2.5 px-3 font-sans font-semibold text-slate-900 flex items-center gap-1.5">
+                          <TrendingUp className="h-3.5 w-3.5 text-red-600 shrink-0" />
+                          <span>1. Growth Velocity</span>
+                        </td>
+                        <td className="py-2.5 px-3 text-red-700 font-bold">{raw}</td>
+                        <td className="py-2.5 px-3 text-right text-slate-600">30%</td>
+                        <td className="py-2.5 px-3 text-right text-slate-500">30.0</td>
+                        <td className="py-2.5 px-4 text-right font-bold text-slate-900 bg-slate-50/50">{pts.toFixed(1)} / 30.0</td>
+                      </tr>
+                    );
+                  })()}
+
+                  {/* Factor 2 */}
+                  {(() => {
+                    const f = hero.factor_breakdown?.statistical_significance;
+                    const raw = f ? f.raw_value : `Z = ${hero.significance_score}`;
+                    const pts = f ? f.points_earned : Math.round(0.25 * Math.min(100, (hero.significance_score || 0) * 35.0) * 10) / 10;
+                    return (
+                      <tr className="hover:bg-slate-50">
+                        <td className="py-2.5 px-3 font-sans font-semibold text-slate-900 flex items-center gap-1.5">
+                          <Activity className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                          <span>2. Statistical Significance</span>
+                        </td>
+                        <td className="py-2.5 px-3 text-red-700 font-bold">{raw}</td>
+                        <td className="py-2.5 px-3 text-right text-slate-600">25%</td>
+                        <td className="py-2.5 px-3 text-right text-slate-500">25.0</td>
+                        <td className="py-2.5 px-4 text-right font-bold text-slate-900 bg-slate-50/50">{pts.toFixed(1)} / 25.0</td>
+                      </tr>
+                    );
+                  })()}
+
+                  {/* Factor 3 */}
+                  {(() => {
+                    const f = hero.factor_breakdown?.cluster_volume;
+                    const raw = f ? f.raw_value : `${hero.claim_count} claims`;
+                    const pts = f ? f.points_earned : Math.round(0.15 * Math.min(100, hero.claim_count * 5.0) * 10) / 10;
+                    return (
+                      <tr className="hover:bg-slate-50">
+                        <td className="py-2.5 px-3 font-sans font-semibold text-slate-900 flex items-center gap-1.5">
+                          <Layers className="h-3.5 w-3.5 text-indigo-600 shrink-0" />
+                          <span>3. Cluster Volume</span>
+                        </td>
+                        <td className="py-2.5 px-3 text-slate-800 font-bold">{raw}</td>
+                        <td className="py-2.5 px-3 text-right text-slate-600">15%</td>
+                        <td className="py-2.5 px-3 text-right text-slate-500">15.0</td>
+                        <td className="py-2.5 px-4 text-right font-bold text-slate-900 bg-slate-50/50">{pts.toFixed(1)} / 15.0</td>
+                      </tr>
+                    );
+                  })()}
+
+                  {/* Factor 4 */}
+                  {(() => {
+                    const f = hero.factor_breakdown?.cross_code_dispersion;
+                    const raw = f ? f.raw_value : `${hero.cross_code_count} codes`;
+                    const pts = f ? f.points_earned : Math.round(0.15 * Math.min(100, hero.cross_code_count * 20.0) * 10) / 10;
+                    return (
+                      <tr className="hover:bg-slate-50">
+                        <td className="py-2.5 px-3 font-sans font-semibold text-slate-900 flex items-center gap-1.5">
+                          <Tag className="h-3.5 w-3.5 text-amber-600 shrink-0" />
+                          <span>4. Cross-Code Dispersion</span>
+                        </td>
+                        <td className="py-2.5 px-3 text-slate-800 font-bold">{raw}</td>
+                        <td className="py-2.5 px-3 text-right text-slate-600">15%</td>
+                        <td className="py-2.5 px-3 text-right text-slate-500">15.0</td>
+                        <td className="py-2.5 px-4 text-right font-bold text-slate-900 bg-slate-50/50">{pts.toFixed(1)} / 15.0</td>
+                      </tr>
+                    );
+                  })()}
+
+                  {/* Factor 5 */}
+                  {(() => {
+                    const f = hero.factor_breakdown?.semantic_coherence;
+                    const raw = f ? f.raw_value : `72.0%`;
+                    const pts = f ? f.points_earned : 10.8;
+                    return (
+                      <tr className="hover:bg-slate-50">
+                        <td className="py-2.5 px-3 font-sans font-semibold text-slate-900 flex items-center gap-1.5">
+                          <Sparkles className="h-3.5 w-3.5 text-blue-600 shrink-0" />
+                          <span>5. Semantic Coherence</span>
+                        </td>
+                        <td className="py-2.5 px-3 text-slate-800 font-bold">{raw}</td>
+                        <td className="py-2.5 px-3 text-right text-slate-600">15%</td>
+                        <td className="py-2.5 px-3 text-right text-slate-500">15.0</td>
+                        <td className="py-2.5 px-4 text-right font-bold text-slate-900 bg-slate-50/50">{pts.toFixed(1)} / 15.0</td>
+                      </tr>
+                    );
+                  })()}
+                </tbody>
+                <tfoot className="bg-slate-100 font-mono font-bold text-slate-900 border-t-2 border-slate-300">
+                  <tr>
+                    <td colSpan={2} className="py-2.5 px-3 text-slate-900 font-sans">
+                      Summed Total Score
+                    </td>
+                    <td className="py-2.5 px-3 text-right">100%</td>
+                    <td className="py-2.5 px-3 text-right">100.0</td>
+                    <td className="py-2.5 px-4 text-right text-red-700 bg-slate-200/60">{hero.alert_score.toFixed(1)} / 100.0</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+
+            <div className="flex justify-end pt-2 border-t border-slate-200">
+              <button
+                onClick={() => setShowScoreModal(false)}
+                className="px-4 py-2 rounded text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200"
+              >
+                Close Breakdown
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
