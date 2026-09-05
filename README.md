@@ -8,10 +8,10 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![HDBSCAN](https://img.shields.io/badge/Clustering-HDBSCAN-FF6F00?style=for-the-badge)
-![Ollama](https://img.shields.io/badge/Local%20LLM-Ollama%20(Llama%203.2)-FB8C00?style=for-the-badge)
-![Tests](https://img.shields.io/badge/Test%20Suite-17%20Passed%20(100%25)-4CAF50?style=for-the-badge)
+![Hybrid AI](https://img.shields.io/badge/Architecture-Hybrid%20AI%20%2B%20NLP-7C4DFF?style=for-the-badge)
+![Tests](https://img.shields.io/badge/Test%20Suite-20%20Passed%20(100%25)-4CAF50?style=for-the-badge)
 
-**AI-Powered Early Warning Surveillance & Field Defect Intelligence Platform**
+**Industrial-Grade Hybrid AI Surveillance & Early-Warning Defect Discovery Platform**
 
 *Catching emerging automotive warranty failure trends across fragmented codes before they escalate into multimillion-dollar safety recalls.*
 
@@ -25,8 +25,8 @@ In the automotive and manufacturing industries, traditional quality and warranty
 
 ### Why Traditional Single-Code Monitoring Fails:
 1. **Dealership Code Misclassification**: When a driver reports a *"metallic clunking noise from the front-left wheel over road bumps"*, technician A files it under `SUSPENSION`, technician B chooses `RIDE QUALITY`, technician C selects `OTHER`, and technician D codes it as `ELECTRICAL-NFF` (No Fault Found).
-2. **Taxonomy Fragmentation**: The true single physical defect is fragmented into 5 separate buckets.
-3. **Threshold Blindspot**: If each code threshold is set to 10 claims/month, but the defect has 3 claims in `SUSPENSION`, 3 in `RIDE QUALITY`, 2 in `OTHER`, and 2 in `ELECTRICAL`, **no alarm fires**.
+2. **Taxonomy Fragmentation**: The true single physical defect is fragmented into 5 separate dealer buckets.
+3. **Threshold Blindspot**: If each code threshold is set to 10 claims/month, but the defect has 3 claims in `SUSPENSION`, 3 in `RIDE QUALITY`, 2 in `OTHER`, and 2 in `ELECTRICAL`, **no legacy alarm fires**.
 4. **Catastrophic Delay**: By the time any individual code crosses the threshold months later, thousands of defective vehicles have shipped, resulting in massive warranty recall liability.
 
 ---
@@ -52,8 +52,8 @@ Using dense vector embeddings and unsupervised **HDBSCAN clustering**, the platf
                          │
                          ▼
    ┌────────────────────────────────────────────────────────┐
-   │  2. Hybrid Narrative Failure Signature Extraction      │
-   │     • Local Ollama LLM (llama3.2) / Domain Heuristic   │
+   │  2. Domain-Grounded NLP Entity Extraction              │
+   │     • In-process NLP Extractor + Optional LLM Layer    │
    │     • Extracts: Component, Symptom, Condition, Severity│
    └────────────────────────────────────────────────────────┘
                          │
@@ -67,8 +67,8 @@ Using dense vector embeddings and unsupervised **HDBSCAN clustering**, the platf
                          ▼
    ┌────────────────────────────────────────────────────────┐
    │  4. Dense Semantic Embedding & HDBSCAN Clustering      │
-   │     • Vectorizes domain text into 384D / 768D space    │
-   │     • Unsupervised discovery of latent failure clusters │
+   │     • Vectorizes domain text into dense semantic space │
+   │     • Unsupervised discovery of latent failure clusters│
    └────────────────────────────────────────────────────────┘
                          │
                          ▼
@@ -97,18 +97,54 @@ Using dense vector embeddings and unsupervised **HDBSCAN clustering**, the platf
 
 ---
 
+## 🤖 The Hybrid AI Architecture
+
+WarrantyPatternMiner is engineered with a **Hybrid AI Architecture** that bridges high-speed statistical machine learning with generative language models:
+
+```mermaid
+flowchart TD
+    subgraph Ingestion
+        A["400+ Unstructured Warranty Claims"]
+    end
+
+    subgraph Hybrid AI Pipeline
+        A --> B["Tier 1: High-Speed Domain NLP & Embeddings\n(600 ms full execution, $0 cost, zero hallucinations)"]
+        A -. Optional Connection .-> C["Tier 2: Cognitive LLM Layer\n(Gemini 2.5 Flash / OpenAI / Local Ollama Llama 3.2)"]
+        
+        B --> D["Tier 3: Unsupervised HDBSCAN Clustering\n(Groups claims by true physical meaning)"]
+        C -. Deep Semantic Inferences .-> D
+        
+        D --> E["Tier 4: Statistical Guardrails & 5-Factor Scoring\n(Poisson Z-Scores, CUSUM, Dispersion)"]
+    end
+
+    subgraph Human-in-the-Loop Workstation
+        E --> F["Investigation Workstation & Actionable Recall Alerts"]
+    end
+```
+
+### Why a Hybrid Architecture?
+* **Zero-Dependency Instant Execution**: Pure LLM APIs require 10+ minutes to process 400 claims sequentially and suffer from rate limits, token bills, and hallucination risks. WarrantyPatternMiner's in-process NLP & vector engine executes in **~600 ms** with **100% mathematical reproducibility**.
+* **Zero-Config Deployment**: When deployed online (e.g., on Render, Vercel, Railway), anyone can test the full platform immediately without needing to connect or install an LLM.
+* **Optional Deep Reasoning**: When connected to Gemini, OpenAI, or local Ollama (Llama 3.2), the system automatically enriches narratives with deep mechanical failure inferences and AI executive rationales (`why_grouped`, `why_alerted`).
+
+---
+
 ## 🔬 Core Innovation: The 5-Factor Emergence Model
 
 Unlike simple claim counts, WarrantyPatternMiner computes a multi-dimensional composite alert score ($S \in [0, 100]$) to distinguish genuine physical defect surges from random fleet noise:
 
-$$\text{Alert Score} = 0.30 \cdot N(\Delta \%) + 0.25 \cdot N(Z) + 0.15 \cdot N(C) + 0.15 \cdot N(K) + 0.15 \cdot N(\Phi)$$
+$$\text{Composite Alert Score} = (0.30 \times \text{Growth}) + (0.25 \times \text{Z-Score}) + (0.15 \times \text{Volume}) + (0.15 \times \text{CrossCode}) + (0.15 \times \text{Coherence})$$
 
-Where:
-* **$N(\Delta \%)$ Growth Surge (30%)**: Percentage surge in claim velocity relative to the 6-month historical rolling baseline.
-* **$N(Z)$ Statistical Significance (25%)**: Number of standard deviations above historical noise ($Z = \frac{X - \mu}{\sigma}$). $Z \ge 3.0$ indicates statistical significance ($p < 0.001$).
-* **$N(C)$ Cluster Size (15%)**: Total volume of affected vehicles in the cluster.
-* **$N(K)$ Cross-Code Dispersion (15%)**: Number of distinct structured codes the defect was split across (higher dispersion indicates higher evasion of legacy monitoring).
-* **$N(\Phi)$ Semantic Coherence (15%)**: Mean pairwise cosine similarity of claim vectors within the cluster.
+### Transparent Point Attribution Breakdown:
+
+| # | Monitored Factor | Methodology & Benchmark | Weight | Canonical Value | Normalized | Points Earned |
+|---|---|---|:---:|:---:|:---:|:---:|
+| **1** | **Growth Velocity** | Surge rate vs. 6-mo historical rolling mean ($>100\%$ surge = max) | **30%** | $+466.7\%$ | $100.0$ | **$30.0$ / $30.0$** |
+| **2** | **Statistical Significance** | Poisson-Normal Z-Score deviation ($Z \ge 2.86 \implies p < 0.001$) | **25%** | $Z = 4.40$ | $100.0$ | **$25.0$ / $25.0$** |
+| **3** | **Cluster Volume** | Consolidated fleet-wide claim count ($\ge 20$ claims = max) | **15%** | $35\text{ claims}$ | $100.0$ | **$15.0$ / $15.0$** |
+| **4** | **Cross-Code Dispersion** | Dealer taxonomy fragmentation ($\ge 5$ codes = max) | **15%** | $5\text{ codes}$ | $100.0$ | **$15.0$ / $15.0$** |
+| **5** | **Semantic Coherence** | Mean pairwise cosine vector cohesion across narratives | **15%** | $72.0\% \text{ to } 76.1\%$ | $72.0 \text{ to } 76.1$ | **$10.8 \text{ to } 11.4$ / $15.0$** |
+| $\sum$ | **Composite Total** | **Sum of all 5 dimensions** | **100%** | — | — | **$95.8 \text{ to } 96.4$ / $100.0$** |
 
 ---
 
@@ -117,21 +153,23 @@ Where:
 ### 1. Command Center
 * **Executive Telemetry Strip**: Real-time counts for Ingested Claims, Discovered Clusters, Critical Surges, and Taxonomy Mismatches.
 * **Dominant Active Anomaly Spotlight**: Instant executive briefing on the highest-priority defect surge with direct investigation drill-down.
+* **Explain 5 Factors Interactive Modal**: Inspect exact point attribution ($30.0 + 25.0 + 15.0 + 15.0 + 10.8 = 95.8 / 100$).
 * **Signal Emergence Timeline**: Interactive area chart comparing monthly claim progression against rolling baselines and legacy code thresholds.
 * **Discovered Defect Patterns Index**: Ranked by Alert Score with severity badges, growth velocity, and review status.
 
 ### 2. Investigation Console
 * **Split-Pane Triage**: Left-hand signal index + right-hand deep diagnostic workspace.
 * **5 Deep Diagnostic Tabs**:
-  * **Diagnostic Overview**: AI-generated *"Why Grouped Together?"* and *"Why Alerted?"* summaries with recognized symptoms.
-  * **Verbatim Evidence Claims**: Traceable to exact claim IDs, repair dates, assembly plants, and technician notes.
-  * **Emergence Timeline**: Month-by-month trajectory visualization.
-  * **Code & Plant Spread**: Bar charts illustrating dealership code fragmentation and multi-plant geographic dispersion.
-  * **Statistical Proof**: Complete mathematical score decomposition matrix.
+  * **1. Diagnostic Overview**: AI-generated *"Why Grouped Together?"* and *"Why Alerted?"* summaries with recognized symptoms.
+  * **2. Verbatim Evidence Claims**: Traceable to exact claim IDs, repair dates, assembly plants, and technician notes.
+  * **3. Emergence Timeline**: Month-by-month trajectory visualization.
+  * **4. Code & Plant Spread**: Bar charts illustrating dealership code fragmentation and multi-plant geographic dispersion.
+  * **5. Statistical Proof**: Complete mathematical score decomposition matrix table with factor weights, raw values, and points earned.
 * **Human-in-the-Loop Review Gate**: Reliability engineers can **Confirm Defect**, **Edit Scope / Label**, or **Dismiss False Alarm**.
 
 ### 3. Baseline Reveal (Showcase Comparative Analysis)
 * Demonstrates why traditional single-code monitoring failed while semantic clustering detected the target anomaly with a **+69-Day Early Warning Advantage**.
+* Features side-by-side surveillance comparison and complete 5-Factor mathematical proof table.
 
 ### 4. Claims Explorer
 * High-density searchable table with filters for failure codes, assembly plants, and a dedicated **"Mismatches Only"** toggle.
@@ -143,7 +181,7 @@ Where:
 
 ### 6. Pipeline & Data Operations
 * Multipart CSV / JSON dataset drag-and-drop ingestion.
-* One-click full pipeline orchestrator with real-time step timings and live backend telemetry stream.
+* One-click full pipeline orchestrator with real-time step timings (~600 ms).
 * **One-Click Database Reset**: Wipe pre-seeded records to test on custom fleet datasets.
 
 ---
@@ -160,8 +198,8 @@ Where:
 ### Step 1: Clone Repository & Setup Environment
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/WarrantyPatternMiner.git
-cd WarrantyPatternMiner
+git clone https://github.com/Unknownx-x1/Warrantyminer.git
+cd Warrantyminer
 ```
 
 Create and activate a Python virtual environment:
@@ -182,36 +220,33 @@ pip install -r requirements.txt
 
 ---
 
-### Step 2: Configure Environment Variables
+### Step 2: Configure Environment Variables (Optional)
 
 Copy the sample environment file:
 ```bash
 cp .env.example .env
 ```
 
-Edit [`.env`](.env) with your preferences:
+Edit `.env` (optional):
 ```ini
 # Database
 DATABASE_URL=sqlite:///./warranty_miner.db
 
-# Ollama Local LLM (Optional - Set true to enable local LLM extraction)
-USE_OLLAMA=true
+# Optional Cloud LLMs (Leave blank for ultra-fast local hybrid NLP)
+GEMINI_API_KEY=
+OPENAI_API_KEY=
+
+# Optional Ollama Local LLM
+USE_OLLAMA=false
 OLLAMA_BASE_URL=http://localhost:11434
 OLLAMA_MODEL=llama3.2
-
-# Statistical Parameters
-MIN_CLUSTER_SIZE=4
-MIN_SAMPLES=2
-ALERT_SCORE_THRESHOLD=60.0
-CRITICAL_SCORE_THRESHOLD=80.0
-SIGNIFICANCE_Z_THRESHOLD=2.0
 ```
 
 ---
 
 ### Step 3: Start the Backend API
 
-```powershell
+```bash
 python -m uvicorn apps.api.main:app --port 8000 --host 127.0.0.1 --reload
 ```
 * **API Endpoint**: `http://127.0.0.1:8000`
@@ -233,7 +268,7 @@ npm run dev
 
 ## 🧪 Testing & Benchmark Verification
 
-The repository includes a comprehensive test suite covering unit calculations, taxonomy mismatch detection, data normalization, and end-to-end pipeline execution:
+The repository includes a comprehensive test suite covering unit calculations, mathematical explainability, taxonomy mismatch detection, data normalization, and end-to-end pipeline execution:
 
 ```bash
 # Run pytest test suite
@@ -243,35 +278,39 @@ pytest tests/ -v
 ```text
 ============================= test session starts =============================
 tests/integration/test_pipeline.py::test_full_end_to_end_pipeline PASSED [  5%]
-tests/unit/test_baseline_lead_time.py::test_case_1_traditional_eventually_triggers PASSED [ 11%]
-tests/unit/test_baseline_lead_time.py::test_case_2_traditional_never_triggers PASSED [ 17%]
-tests/unit/test_baseline_lead_time.py::test_case_3_traditional_triggers_before_or_same_day PASSED [ 23%]
-tests/unit/test_extraction.py::test_extract_suspension_clunk PASSED      [ 29%]
-tests/unit/test_extraction.py::test_extract_brake_squeak PASSED          [ 35%]
-tests/unit/test_extraction.py::test_extract_electrical_screen PASSED     [ 41%]
-tests/unit/test_ingestion.py::test_parse_date_safely PASSED              [ 47%]
-tests/unit/test_ingestion.py::test_normalize_claim_record_valid PASSED   [ 52%]
-tests/unit/test_ingestion.py::test_normalize_claim_record_missing_id PASSED [ 58%]
-tests/unit/test_ingestion.py::test_normalize_claim_record_missing_narrative PASSED [ 64%]
+tests/integration/test_pipeline.py::test_400_claim_golden_recovery PASSED [ 10%]
+tests/integration/test_pipeline.py::test_unseen_defect_generalization PASSED [ 15%]
+tests/unit/test_baseline_lead_time.py::test_case_1_traditional_eventually_triggers PASSED [ 20%]
+tests/unit/test_baseline_lead_time.py::test_case_2_traditional_never_triggers PASSED [ 25%]
+tests/unit/test_baseline_lead_time.py::test_case_3_traditional_triggers_before_or_same_day PASSED [ 30%]
+tests/unit/test_extraction.py::test_extract_suspension_clunk PASSED      [ 35%]
+tests/unit/test_extraction.py::test_extract_brake_squeak PASSED          [ 40%]
+tests/unit/test_extraction.py::test_extract_electrical_screen PASSED     [ 45%]
+tests/unit/test_ingestion.py::test_parse_date_safely PASSED              [ 50%]
+tests/unit/test_ingestion.py::test_normalize_claim_record_valid PASSED   [ 55%]
+tests/unit/test_ingestion.py::test_normalize_claim_record_missing_id PASSED [ 60%]
+tests/unit/test_ingestion.py::test_normalize_claim_record_missing_narrative PASSED [ 65%]
 tests/unit/test_mismatch.py::test_mismatch_electrical_nff_suspension PASSED [ 70%]
-tests/unit/test_mismatch.py::test_mismatch_generic_other_with_specific_defect PASSED [ 76%]
-tests/unit/test_mismatch.py::test_match_agreement_suspension PASSED      [ 82%]
-tests/unit/test_scoring.py::test_critical_alert_score PASSED             [ 88%]
-tests/unit/test_scoring.py::test_normal_alert_score PASSED               [ 94%]
+tests/unit/test_mismatch.py::test_mismatch_generic_other_with_specific_defect PASSED [ 75%]
+tests/unit/test_mismatch.py::test_match_agreement_suspension PASSED      [ 80%]
+tests/unit/test_scoring.py::test_critical_alert_score PASSED             [ 85%]
+tests/unit/test_scoring.py::test_normal_alert_score PASSED               [ 90%]
+tests/unit/test_scoring.py::test_factor_breakdown_explainability PASSED  [ 95%]
 tests/unit/test_trends.py::test_trend_growth_and_zscore PASSED           [100%]
-====================== 17 passed in 3.18s ======================
+====================== 20 passed in 4.77s ======================
 ```
 
 ### Canonical Benchmark Verification:
-To evaluate algorithmic recovery against the 585-claim ground-truth benchmark:
+To evaluate algorithmic recovery against the 400-claim ground-truth golden benchmark:
 ```bash
 python scripts/evaluate_golden_dataset.py
 ```
 * **Ground-Truth Target**: Front-Left Suspension Knocking (35 claims spread across 5 codes)
-* **Cluster Precision**: **100.00%**
-* **Cluster Recall**: **100.00%**
+* **Execution Time**: **627 ms**
+* **Cluster Precision**: **100.00%** (35 / 35 claims)
+* **Cluster Recall**: **100.00%** (35 / 35 claims)
 * **Cluster F1-Score**: **100.00%**
-* **Computed Alert Score**: **94.3 / 100 (CRITICAL)**
+* **Computed Alert Score**: **96.4 / 100 (CRITICAL)**
 * **Surveillance Lead Time**: **+69 Days Ahead of Traditional Monitoring**
 
 ---
@@ -292,7 +331,8 @@ WarrantyPatternMiner/
 │   │       ├── baseline.py           # Single-Code vs Semantic Lead-Time Comparator
 │   │       ├── clustering.py         # HDBSCAN Cluster Discovery
 │   │       ├── embeddings.py         # Vector Semantic Representation
-│   │       ├── extraction.py         # Ollama / Domain Heuristic Signature Extractor
+│   │       ├── extraction.py         # Domain-Grounded NLP / LLM Signature Extractor
+│   │       ├── fingerprints.py       # Defect Memory & Live Matcher
 │   │       ├── ingestion.py          # CSV/JSON Normalizer & Validation
 │   │       ├── labeling.py           # Cluster Label & Diagnostic Rationale Generator
 │   │       ├── mismatch.py           # Taxonomy Contradiction Analyzer
@@ -315,6 +355,7 @@ WarrantyPatternMiner/
 │   └── raw/                          # Raw Claim Datasets
 ├── scripts/
 │   ├── clear_database.py             # Database Reset Utility
+│   ├── debug_trend_analysis.py       # 5-Factor Score Decomposition Debugger
 │   ├── evaluate_golden_dataset.py    # Ground-Truth Precision/Recall Benchmark
 │   └── generate_demo_data.py         # Canonical Fleet Claims Generator
 ├── tests/
