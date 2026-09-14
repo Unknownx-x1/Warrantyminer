@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { CommandCenter } from './pages/CommandCenter';
+import { WarRoom } from './pages/WarRoom';
 import { PatternDetail } from './pages/PatternDetail';
 import { BaselineCompare } from './pages/BaselineCompare';
 import { ClaimsExplorer } from './pages/ClaimsExplorer';
@@ -51,7 +52,7 @@ export function App() {
 
   const handleSelectCluster = (clusterId: string) => {
     setSelectedClusterId(clusterId);
-    setActiveTab('investigation');
+    setActiveTab('war-room');
   };
 
   return (
@@ -81,6 +82,16 @@ export function App() {
                 onNavigateToComparison={() => setActiveTab('comparison')}
                 onRunPipeline={handleRunPipeline}
                 isAnalyzing={isAnalyzing}
+              />
+            )}
+
+            {activeTab === 'war-room' && (
+              <WarRoom
+                initialClusterId={selectedClusterId || (clusters[0]?.id || null)}
+                onSelectClaim={(cid) => {
+                  setActiveTab('claims');
+                }}
+                onNavigateToMemory={() => setActiveTab('fingerprints')}
               />
             )}
 

@@ -246,3 +246,92 @@ export interface AnalysisRunResponse {
   steps?: Record<string, any>;
 }
 
+export interface AgentFinding {
+  id: string;
+  investigation_id: string;
+  agent_role: 'investigator' | 'analytics' | 'red_team' | 'regulatory' | 'capa';
+  agent_name: string;
+  statement: string;
+  classification: 'OBSERVED' | 'INFERRED' | 'UNKNOWN';
+  confidence: number;
+  evidence_claim_ids: string[];
+  contradiction_claim_ids: string[];
+  metadata_json: Record<string, any>;
+  created_at: string;
+}
+
+export interface ToolExecutionLog {
+  id: string;
+  investigation_id: string;
+  agent_role: string;
+  tool_name: string;
+  input_params: Record<string, any>;
+  output_summary?: string;
+  output_data: Record<string, any>;
+  status: 'SUCCESS' | 'UNAVAILABLE' | 'ERROR';
+  duration_ms: number;
+  evidence_refs: string[];
+  created_at: string;
+}
+
+export interface DSection {
+  title: string;
+  content: string;
+  status: string;
+  evidence: string[];
+}
+
+export interface Report8D {
+  cluster_id: string;
+  cluster_label: string;
+  generated_at: string;
+  d1_team: DSection;
+  d2_problem_description: DSection;
+  d3_containment_action: DSection;
+  d4_root_cause: DSection;
+  d5_corrective_action: DSection;
+  d6_validation_plan: DSection;
+  d7_prevention_action: DSection;
+  d8_closure_and_cost: DSection;
+}
+
+export interface TSBDraft {
+  tsb_id: string;
+  cluster_id: string;
+  title: string;
+  issue_date: string;
+  condition: string;
+  affected_vehicles: string;
+  symptoms_observed: string[];
+  diagnostic_procedure: string;
+  interim_repair_recommendation: string;
+  parts_information: string;
+  warranty_coding_guidance: string;
+  evidence_claims: string[];
+}
+
+export interface InvestigationDetail {
+  id: string;
+  cluster_id: string;
+  status: string;
+  decision: 'unreviewed' | 'confirmed' | 'rejected' | 'needs_evidence';
+  decision_rationale?: string | null;
+  reviewer: string;
+  summary_conclusion?: string;
+  confidence: number;
+  overall_classification: string;
+  supporting_claims_count: number;
+  contradicting_claims_count: number;
+  unknowns: string[];
+  recommendations: string[];
+  metrics_snapshot: Record<string, any>;
+  execution_time_ms: number;
+  created_at: string;
+  updated_at: string;
+  findings: AgentFinding[];
+  tool_logs: ToolExecutionLog[];
+  report_8d?: Report8D;
+  tsb_draft?: TSBDraft;
+}
+
+

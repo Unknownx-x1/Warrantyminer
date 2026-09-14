@@ -8,7 +8,8 @@ import {
   BaselineComparison,
   DefectFingerprint,
   MatchResult,
-  AnalysisRunResponse
+  AnalysisRunResponse,
+  InvestigationDetail
 } from '../types';
 
 const API_BASE = '/api';
@@ -121,5 +122,32 @@ export const api = {
   resetDatabase: () =>
     fetchJson<{ status: string; message: string; deleted: Record<string, number> }>(`${API_BASE}/claims/reset`, {
       method: 'POST'
-    })
+    }),
+
+  // Autonomous Investigations & Engineering War Room
+  getInvestigations: (status?: string, decision?: string) => {
+    const params = new URLSearchParams();
+    if (status) params.append('status', status);
+    if (decision) params.append('decision', decision);
+    return fetchJson<InvestigationDetail[]>(`${API_BASE}/investigations?${params.toString()}`);
+  },
+  getInvestigationDetail: (id: string) => fetchJson<InvestigationDetail>(`${API_BASE}/investigations/${id}`),
+  getInvestigationByCluster: (clusterId: string) => fetchJson<InvestigationDetail>(`${API_BASE}/investigations/cluster/${clusterId}`),
+  runInvestigation: (clusterId?: string, forceRecompute: boolean = false) =>
+    fetchJson<{ status: string; investigations_created: number; investigation_id?: string }>(`${API_BASE}/investigations/run`, {
+      method: 'POST',
+      body: JSON.stringify({ cluster_id: clusterId, force_recompute: forceRecompute })
+    }),
+  submitInvestigationDecision: (
+    id: string,
+    payload: { decision: 'confirmed' | 'rejected' | 'needs_evidence'; rationale?: string; reviewer?: string; custom_label?: string }
+  ) =>
+    fetchJson<{ status: string; investigation_id: string; decision: string; defect_memory_created: boolean }>(
+      `${API_BASE}/investigations/${id}/decision`,
+      {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      }
+    )
 };
+

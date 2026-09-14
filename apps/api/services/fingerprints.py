@@ -59,6 +59,65 @@ def create_fingerprint_from_cluster(db: Session, cluster: Cluster, engineer_name
     logger.info(f"Created Defect Fingerprint: {fingerprint.name}")
     return fingerprint
 
+def create_fingerprint_from_investigation(
+    db: Session,
+    investigation_id: str,
+    engineer_name: str = "Reliability Engineer",
+    custom_label: Optional[str] = None
+) -> Optional[DefectFingerprint]:
+    """
+    Constructs an organizational Defect Fingerprint from a confirmed Investigation.
+    """
+    from apps.api.models.investigation import Investigation
+    inv = db.query(Investigation).filter(Investigation.id == investigation_id).first()
+    if not inv or not inv.cluster:
+        return None
+
+    cluster = inv.cluster
+    label = custom_label or cluster.label
+
+    # Extract observed evidence from investigator findings
+    obs_findings = [f for f in inv.findings if f.agent_role == "investigator"]
+    comp_finding = next((f for f in obs_findings if "component" in f.statement.lower()), None)
+    symp_finding = next((f for f in obs_findings if "symptom" in f.statement.lower()), None)
+    cond_finding = next((f for f in obs_findings if "condition" in f.statement.lower()), None)
+
+    component = cluster.primary_component or (comp_finding.metadata_json.get("component") if comp_finding else None)
+    symptoms = [symp_finding.metadata_json.get("symptom")] if symp_finding and symp_finding.metadata_json.get("symptom") else ([cluster.primary_symptom] if cluster.primary_symptom else [])
+    conditions = [cond_finding.metadata_json.get("condition")] if cond_finding and cond_finding.metadata_json.get("condition") else []
+
+    claims = [cm.claim for cm in cluster.claim_memberships]
+    example_claims = [c.external_claim_id for c in claims[:5]]
+
+    existing = db.query(DefectFingerprint).filter(DefectFingerprint.name == label).first()
+    if existing:
+        current_cnt = int(existing.confirmed_count) if str(existing.confirmed_count).isdigit() else 1
+        existing.confirmed_count = str(current_cnt + 1)
+        existing.description = inv.summary_conclusion or cluster.description
+        existing.symptoms = list(set((existing.symptoms or []) + symptoms))
+        existing.conditions = list(set((existing.conditions or []) + conditions))
+        existing.example_claims = list(set((existing.example_claims or []) + example_claims))
+        db.commit()
+        db.refresh(existing)
+        return existing
+
+    fingerprint = DefectFingerprint(
+        name=label,
+        description=inv.summary_conclusion or cluster.description,
+        component=component,
+        symptoms=symptoms,
+        conditions=conditions,
+        example_claims=example_claims,
+        semantic_signature=f"Component: {component} | Symptoms: {', '.join(symptoms)} | Conditions: {', '.join(conditions)}",
+        confirmed_count="1"
+    )
+    db.add(fingerprint)
+    db.commit()
+    db.refresh(fingerprint)
+    logger.info(f"Created Defect Fingerprint from Investigation: {fingerprint.name}")
+    return fingerprint
+
+
 def match_claim_to_fingerprints(db: Session, narrative: str, component: Optional[str] = None, symptom: Optional[str] = None) -> List[Dict[str, Any]]:
     """
     Compares a narrative / symptom against the known organizational Defect Fingerprints.

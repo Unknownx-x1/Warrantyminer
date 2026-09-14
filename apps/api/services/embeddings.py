@@ -42,10 +42,11 @@ def compute_embeddings_for_corpus(claims: List[Claim], signatures_map: Dict[str,
     n_components = min(32, max(6, n_samples - 1)) if n_samples > 2 else 2
 
     # Fit TF-IDF with character and word n-grams
+    max_df_val = 0.85 if n_samples >= 25 else 1.0
     tfidf = TfidfVectorizer(
         ngram_range=(1, 2),
         min_df=1,
-        max_df=0.85,
+        max_df=max_df_val,
         sublinear_tf=True
     )
     tfidf_matrix = tfidf.fit_transform(semantic_texts)

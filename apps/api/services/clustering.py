@@ -24,7 +24,7 @@ def run_density_clustering(
     if n_samples == 0:
         return np.empty(0, dtype=int), np.empty(0, dtype=float)
 
-    effective_min_size = min_cluster_size or max(6, min(10, n_samples // 35))
+    effective_min_size = min_cluster_size or min(n_samples, max(5, min(10, n_samples // 35)))
     if n_samples < effective_min_size:
         return np.full(n_samples, -1), np.zeros(n_samples)
 
@@ -41,6 +41,21 @@ def run_density_clustering(
         )
         labels = clusterer.fit_predict(vectors)
         probs = getattr(clusterer, "probabilities_", np.ones(n_samples))
+
+        # Fallback if HDBSCAN marked everything as noise on cohesive small clusters
+        if (labels == -1).all() and n_samples >= effective_min_size:
+            sim_mat = cosine_similarity(vectors)
+            visited = set()
+            c_id = 0
+            for i in range(n_samples):
+                if i in visited:
+                    continue
+                matches = [j for j in range(n_samples) if sim_mat[i, j] >= 0.65]
+                if len(matches) >= effective_min_size:
+                    for m in matches:
+                        labels[m] = c_id
+                        visited.add(m)
+                    c_id += 1
         return labels, probs
     except Exception as e:
         logger.warning(f"HDBSCAN clustering failed: {e}, falling back to distance threshold clustering")
@@ -51,7 +66,7 @@ def run_density_clustering(
         for i in range(n_samples):
             if i in visited:
                 continue
-            matches = [j for j in range(n_samples) if sim_mat[i, j] >= 0.70]
+            matches = [j for j in range(n_samples) if sim_mat[i, j] >= 0.65]
             if len(matches) >= effective_min_size:
                 for m in matches:
                     labels[m] = c_id
