@@ -9,7 +9,8 @@ import {
   DefectFingerprint,
   MatchResult,
   AnalysisRunResponse,
-  InvestigationDetail
+  InvestigationDetail,
+  SemanticManifoldData
 } from '../types';
 
 const API_BASE = '/api';
@@ -37,6 +38,10 @@ export const api = {
   // Summary & Alerts
   getSummary: () => fetchJson<DashboardSummary>(`${API_BASE}/alerts/summary`),
   getAlerts: () => fetchJson<ClusterListItem[]>(`${API_BASE}/alerts`),
+
+  // Semantic Fleet Manifold (2D UMAP / PCA)
+  getSemanticManifold: (method: 'umap' | 'pca' = 'umap') => 
+    fetchJson<SemanticManifoldData>(`${API_BASE}/clusters/semantic-manifold?method=${method}`),
 
   // Clusters
   getClusters: (alertLevel?: string, sortBy?: string) => {

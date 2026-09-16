@@ -1,5 +1,7 @@
+import json
 from typing import Optional, List, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
 
@@ -18,6 +20,34 @@ from apps.api.services.investigation_orchestrator import orchestrator
 from apps.api.services.fingerprints import create_fingerprint_from_investigation
 
 router = APIRouter(prefix="/investigations", tags=["Investigations"])
+
+@router.get("/{cluster_id}/stream")
+def stream_investigation_sse(
+    cluster_id: str,
+    db: Session = Depends(get_db)
+):
+    """
+    Server-Sent Events (SSE) stream delivering real-time agent thoughts,
+    tool executions, adversarial debate challenges, and 8D report generation.
+    """
+    cluster = db.query(Cluster).filter(Cluster.id == cluster_id).first()
+    if not cluster:
+        raise HTTPException(status_code=404, detail="Cluster not found")
+
+    def event_generator():
+        gen = orchestrator.stream_investigation(db, cluster_id)
+        for event in gen:
+            yield f"data: {json.dumps(event)}\n\n"
+
+    return StreamingResponse(
+        event_generator(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "Connection": "keep-alive",
+            "X-Accel-Buffering": "no",
+        }
+    )
 
 @router.post("/run", response_model=Dict[str, Any])
 def run_investigations(

@@ -36,11 +36,15 @@ def run_density_clustering(
             min_samples=effective_min_samples,
             metric="euclidean",
             cluster_selection_method="eom",
-            cluster_selection_epsilon=0.35,
+            cluster_selection_epsilon=0.0,
             copy=True
         )
         labels = clusterer.fit_predict(vectors)
-        probs = getattr(clusterer, "probabilities_", np.ones(n_samples))
+        probs = getattr(clusterer, "probabilities_", None)
+        if probs is None or not isinstance(probs, np.ndarray):
+            probs = np.ones(n_samples, dtype=float)
+        else:
+            probs = probs.astype(float)
 
         # Fallback if HDBSCAN marked everything as noise on cohesive small clusters
         if (labels == -1).all() and n_samples >= effective_min_size:
@@ -72,7 +76,7 @@ def run_density_clustering(
                     labels[m] = c_id
                     visited.add(m)
                 c_id += 1
-        return labels, np.ones(n_samples)
+        return labels, np.ones(n_samples, dtype=float)
 
 def calculate_cluster_coherence(vectors: np.ndarray) -> float:
     if len(vectors) <= 1:

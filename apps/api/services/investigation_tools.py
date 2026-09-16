@@ -302,7 +302,7 @@ def tool_calculate_z_score(db: Session, cluster_id: str) -> ToolResult:
     return ToolResult(
         tool_name="calculate_z_score",
         status="SUCCESS",
-        summary=f"Z-Score = {z:.2f} (latest: {latest}, baseline μ: {mu:.1f}, σ: {sigma:.2f}). Statistically significant: {is_sig}.",
+        summary=f"Z-Score = {z:.2f} (latest: {latest}, baseline mean: {mu:.1f}, std: {sigma:.2f}). Statistically significant: {is_sig}.",
         data={
             "z_score": round(z, 2),
             "baseline_mean": round(mu, 2),

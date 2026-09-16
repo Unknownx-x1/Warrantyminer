@@ -310,6 +310,75 @@ export interface TSBDraft {
   evidence_claims: string[];
 }
 
+export interface ManifoldPoint {
+  claim_id: string;
+  external_id: string;
+  x: number;
+  y: number;
+  cluster_id: string | null;
+  cluster_index: number;
+  cluster_label: string;
+  is_noise: boolean;
+  is_mismatch: number;
+  mismatch_severity: string;
+  failure_code: string;
+  plant: string;
+  model: string;
+  date: string | null;
+  component: string;
+  symptom: string;
+  narrative: string;
+}
+
+export interface ManifoldCluster {
+  cluster_id: string;
+  cluster_index: number;
+  label: string;
+  claim_count: number;
+  alert_score: number;
+  alert_level: 'CRITICAL' | 'HIGH' | 'WATCH' | 'NORMAL';
+  centroid: { x: number; y: number };
+  hull: [number, number][];
+  primary_component?: string;
+  primary_symptom?: string;
+}
+
+export interface SemanticManifoldData {
+  points: ManifoldPoint[];
+  clusters: ManifoldCluster[];
+  total_points: number;
+  method: string;
+  grid_bounds: { min_x: number; max_x: number; min_y: number; max_y: number };
+}
+
+export interface LiveStreamStage {
+  stage: string;
+  agent: string;
+  role: 'investigator' | 'analytics' | 'red_team' | 'regulatory' | 'capa';
+  description: string;
+  status: 'pending' | 'running' | 'completed';
+  thoughts: string[];
+  tools: Array<{
+    tool: string;
+    status: string;
+    input: Record<string, any>;
+    output_summary?: string;
+    duration_ms?: number;
+  }>;
+  findings: Array<{
+    statement: string;
+    classification: 'OBSERVED' | 'INFERRED' | 'UNKNOWN';
+    confidence: number;
+    evidence_count: number;
+  }>;
+  challenges: Array<{
+    check: string;
+    verdict: string;
+    rationale: string;
+    confidence_impact: number;
+  }>;
+}
+
 export interface InvestigationDetail {
   id: string;
   cluster_id: string;
@@ -333,5 +402,6 @@ export interface InvestigationDetail {
   report_8d?: Report8D;
   tsb_draft?: TSBDraft;
 }
+
 
 

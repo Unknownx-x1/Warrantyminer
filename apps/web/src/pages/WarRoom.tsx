@@ -19,10 +19,13 @@ import {
   X, 
   ExternalLink,
   ChevronRight,
-  Database
+  Database,
+  Radio,
+  Wrench
 } from 'lucide-react';
 import { api } from '../api/client';
 import { ClusterListItem, InvestigationDetail, AgentFinding, ToolExecutionLog, Report8D, TSBDraft } from '../types';
+import { LiveAgentStream } from '../components/LiveAgentStream';
 
 interface WarRoomProps {
   initialClusterId?: string | null;
@@ -40,6 +43,7 @@ export const WarRoom: React.FC<WarRoomProps> = ({
   const [investigation, setInvestigation] = useState<InvestigationDetail | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [runningSwarm, setRunningSwarm] = useState<boolean>(false);
+  const [showLiveStream, setShowLiveStream] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<'synthesis' | 'tools' | '8d' | 'tsb'>('synthesis');
   const [findingFilter, setFindingFilter] = useState<'ALL' | 'OBSERVED' | 'INFERRED' | 'UNKNOWN'>('ALL');
   const [decisionModal, setDecisionModal] = useState<boolean>(false);
@@ -173,7 +177,7 @@ export const WarRoom: React.FC<WarRoomProps> = ({
           </div>
 
           {/* Cluster Switcher & Swarm Trigger */}
-          <div className="flex items-center gap-2 self-start lg:self-center">
+          <div className="flex items-center gap-2 self-start lg:self-center flex-wrap">
             <select
               value={selectedClusterId}
               onChange={(e) => setSelectedClusterId(e.target.value)}
@@ -185,6 +189,14 @@ export const WarRoom: React.FC<WarRoomProps> = ({
                 </option>
               ))}
             </select>
+
+            <button
+              onClick={() => setShowLiveStream(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-[3px] text-xs font-semibold font-mono uppercase tracking-wider bg-indigo-600 hover:bg-indigo-700 text-white shadow-xs transition-all active:scale-[0.98]"
+            >
+              <Radio className="h-3.5 w-3.5 animate-pulse text-indigo-200" />
+              <span>Live Mesh Stream</span>
+            </button>
 
             <button
               onClick={handleRerunSwarm}
@@ -237,8 +249,8 @@ export const WarRoom: React.FC<WarRoomProps> = ({
         </div>
       </div>
 
-      {/* 4 Agent Status Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
+      {/* 5 Agent Status Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
         {/* 1. Investigator */}
         <div className="bg-white border border-slate-200 rounded-[4px] p-4 shadow-2xs">
           <div className="flex items-center justify-between">
@@ -246,14 +258,14 @@ export const WarRoom: React.FC<WarRoomProps> = ({
               <div className="h-6 w-6 rounded-[3px] bg-blue-100 flex items-center justify-center text-blue-700">
                 <Search className="h-3.5 w-3.5" />
               </div>
-              <span className="text-xs font-bold text-slate-900 font-sans">Investigator Agent</span>
+              <span className="text-xs font-bold text-slate-900 font-sans">Investigator</span>
             </div>
             <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded-[2px] border border-emerald-200">
               <CheckCircle2 className="h-3 w-3" /> COMPLETE
             </span>
           </div>
           <p className="text-[11px] text-slate-600 mt-2.5 leading-relaxed font-sans">
-            Isolated physical component <span className="font-semibold text-slate-900">'{selectedCluster?.primary_component || 'subsystem'}'</span> and symptom <span className="font-semibold text-slate-900">'{selectedCluster?.primary_symptom || 'knocking'}'</span> with cited claim linkages.
+            Isolated physical component <span className="font-semibold text-slate-900">'{selectedCluster?.primary_component || 'subsystem'}'</span> and symptom <span className="font-semibold text-slate-900">'{selectedCluster?.primary_symptom || 'knocking'}'</span>.
           </p>
         </div>
 
@@ -264,14 +276,14 @@ export const WarRoom: React.FC<WarRoomProps> = ({
               <div className="h-6 w-6 rounded-[3px] bg-purple-100 flex items-center justify-center text-purple-700">
                 <Activity className="h-3.5 w-3.5" />
               </div>
-              <span className="text-xs font-bold text-slate-900 font-sans">Analytics Agent</span>
+              <span className="text-xs font-bold text-slate-900 font-sans">Analytics</span>
             </div>
             <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded-[2px] border border-emerald-200">
               <CheckCircle2 className="h-3 w-3" /> COMPLETE
             </span>
           </div>
           <p className="text-[11px] text-slate-600 mt-2.5 leading-relaxed font-sans">
-            Confirmed Poisson statistical surge (Z = {selectedCluster?.significance_score.toFixed(2)}) and Shannon entropy across {selectedCluster?.cross_code_count} failure codes.
+            Confirmed Poisson surge (Z = {selectedCluster?.significance_score.toFixed(2)}) and Shannon entropy across {selectedCluster?.cross_code_count} codes.
           </p>
         </div>
 
@@ -282,14 +294,14 @@ export const WarRoom: React.FC<WarRoomProps> = ({
               <div className="h-6 w-6 rounded-[3px] bg-rose-100 flex items-center justify-center text-rose-700">
                 <ShieldAlert className="h-3.5 w-3.5" />
               </div>
-              <span className="text-xs font-bold text-slate-900 font-sans">Red Team Critic</span>
+              <span className="text-xs font-bold text-slate-900 font-sans">Red Team</span>
             </div>
             <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded-[2px] border border-emerald-200">
               <CheckCircle2 className="h-3 w-3" /> COMPLETE
             </span>
           </div>
           <p className="text-[11px] text-slate-600 mt-2.5 leading-relaxed font-sans">
-            Evaluated single-plant bias, sample power, and outlier claims. Verified signal is distributed across {selectedCluster?.plant_count} plants.
+            Evaluated plant bias, sample power, and outlier claims across {selectedCluster?.plant_count} plants.
           </p>
         </div>
 
@@ -300,14 +312,32 @@ export const WarRoom: React.FC<WarRoomProps> = ({
               <div className="h-6 w-6 rounded-[3px] bg-amber-100 flex items-center justify-center text-amber-700">
                 <BookOpen className="h-3.5 w-3.5" />
               </div>
-              <span className="text-xs font-bold text-slate-900 font-sans">Regulatory / External</span>
+              <span className="text-xs font-bold text-slate-900 font-sans">Regulatory</span>
             </div>
             <span className="flex items-center gap-1 text-[10px] font-mono text-slate-600 font-semibold bg-slate-100 px-1.5 py-0.5 rounded-[2px] border border-slate-200">
-              <Clock className="h-3 w-3" /> UNAVAILABLE
+              <Clock className="h-3 w-3" /> UNAVAIL
             </span>
           </div>
           <p className="text-[11px] text-slate-600 mt-2.5 leading-relaxed font-sans">
-            NHTSA API disconnected / offline. Supplier MES lot tracking dataset not attached to warranty stream (reported honestly).
+            NHTSA API offline. Supplier MES lot tracking not attached to stream (reported honestly).
+          </p>
+        </div>
+
+        {/* 5. CAPA Adjudicator */}
+        <div className="bg-white border border-slate-200 rounded-[4px] p-4 shadow-2xs">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="h-6 w-6 rounded-[3px] bg-emerald-100 flex items-center justify-center text-emerald-700">
+                <Wrench className="h-3.5 w-3.5" />
+              </div>
+              <span className="text-xs font-bold text-slate-900 font-sans">CAPA Adjudicator</span>
+            </div>
+            <span className="flex items-center gap-1 text-[10px] font-mono text-emerald-700 font-semibold bg-emerald-50 px-1.5 py-0.5 rounded-[2px] border border-emerald-200">
+              <CheckCircle2 className="h-3 w-3" /> COMPLETE
+            </span>
+          </div>
+          <p className="text-[11px] text-slate-600 mt-2.5 leading-relaxed font-sans">
+            Synthesized 8D Problem Solving Dossier and draft Technical Service Bulletin (TSB).
           </p>
         </div>
       </div>
@@ -776,6 +806,17 @@ export const WarRoom: React.FC<WarRoomProps> = ({
           </div>
         </div>
       )}
+
+      {/* Real-time Multi-Agent Investigation Live Stream Drawer */}
+      <LiveAgentStream
+        isOpen={showLiveStream}
+        onClose={() => setShowLiveStream(false)}
+        clusterId={selectedClusterId}
+        clusterLabel={selectedCluster?.label || 'Defect Cluster'}
+        onComplete={(invId) => {
+          loadInvestigation(selectedClusterId, false);
+        }}
+      />
     </div>
   );
 };
