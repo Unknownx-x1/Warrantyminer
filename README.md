@@ -1,4 +1,4 @@
-# WarrantyPatternMiner
+# Reliant.ai (WarrantyPatternMiner)
 
 <div align="center">
 
@@ -7,13 +7,14 @@
 ![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
-![HDBSCAN](https://img.shields.io/badge/Clustering-HDBSCAN-FF6F00?style=for-the-badge)
-![Hybrid AI](https://img.shields.io/badge/Architecture-Hybrid%20AI%20%2B%20NLP-7C4DFF?style=for-the-badge)
-![Tests](https://img.shields.io/badge/Test%20Suite-20%20Passed%20(100%25)-4CAF50?style=for-the-badge)
+![FastEmbed](https://img.shields.io/badge/FastEmbed-384D%20ONNX%20(<1ms)-00B4D8?style=for-the-badge)
+![HDBSCAN](https://img.shields.io/badge/Clustering-Cosine%20HDBSCAN-FF6F00?style=for-the-badge)
+![Agents](https://img.shields.io/badge/Architecture-5--Agent%20Dialectic%20Mesh-7C4DFF?style=for-the-badge)
+![Tests](https://img.shields.io/badge/Test%20Suite-50%20Passed%20(100%25)-4CAF50?style=for-the-badge)
 
-**Industrial-Grade Hybrid AI Surveillance & Early-Warning Defect Discovery Platform**
+**Autonomous Multi-Agent Reliability Intelligence & Early-Warning Surveillance Platform**
 
-*Catching emerging automotive warranty failure trends across fragmented codes before they escalate into multimillion-dollar safety recalls.*
+*Catching emerging vehicle defect surges obscured across fragmented dealership codes weeks before traditional monitors — backed by continuous neural representations, dialectic agent deliberation, and institutional defect memory.*
 
 </div>
 
@@ -21,188 +22,187 @@
 
 ## 📌 The Problem: The Legacy Surveillance Blindspot
 
-In the automotive and manufacturing industries, traditional quality and warranty monitoring systems aggregate claims by **rigid structured failure codes** (e.g., `SUSPENSION`, `RIDE QUALITY`, `STEERING`, `ELECTRICAL-NFF`, `OTHER`).
+In the automotive, aerospace, and heavy manufacturing sectors, legacy warranty surveillance relies heavily on **rigid, structured failure codes** (e.g., `SUSPENSION`, `RIDE QUALITY`, `STEERING`, `ELECTRICAL-NFF`, `OTHER`).
 
-### Why Traditional Single-Code Monitoring Fails:
-1. **Dealership Code Misclassification**: When a driver reports a *"metallic clunking noise from the front-left wheel over road bumps"*, technician A files it under `SUSPENSION`, technician B chooses `RIDE QUALITY`, technician C selects `OTHER`, and technician D codes it as `ELECTRICAL-NFF` (No Fault Found).
-2. **Taxonomy Fragmentation**: The true single physical defect is fragmented into 5 separate dealer buckets.
-3. **Threshold Blindspot**: If each code threshold is set to 10 claims/month, but the defect has 3 claims in `SUSPENSION`, 3 in `RIDE QUALITY`, 2 in `OTHER`, and 2 in `ELECTRICAL`, **no legacy alarm fires**.
-4. **Catastrophic Delay**: By the time any individual code crosses the threshold months later, thousands of defective vehicles have shipped, resulting in massive warranty recall liability.
+### Why Traditional Code-Bucket Monitoring Fails:
+1. **Dealership Code Misclassification**: When a driver reports a *"metallic clunking noise from the front-left wheel area when traversing speed bumps"*, Technician A files it under `SUSPENSION`, Technician B selects `RIDE QUALITY`, Technician C selects `OTHER`, and Technician D codes it as `ELECTRICAL-NFF` (No Fault Found).
+2. **Taxonomy Fragmentation**: The single physical failure mode is scattered across 5+ disconnected warranty buckets.
+3. **Threshold Blindspot**: If an alerting threshold is 10 claims/month, but the defect accumulates 3 in `SUSPENSION`, 3 in `RIDE QUALITY`, 2 in `OTHER`, and 2 in `ELECTRICAL`, **no legacy alarm fires**.
+4. **Catastrophic Containment Delay**: By the time any individual code crosses the threshold months later, thousands of defective vehicles have shipped, incurring millions in warranty and recall costs.
 
 ---
 
-## 💡 The Solution: WarrantyPatternMiner
+## 💡 The Solution: Reliant.ai
 
-**WarrantyPatternMiner** bypasses misleading checkbox classifications by analyzing the **unstructured technician and customer narratives**. 
+**Reliant.ai** bypasses misleading checkbox classifications by continuously analyzing the **unstructured technician and customer narratives**. 
 
-Using dense vector embeddings and unsupervised **HDBSCAN clustering**, the platform groups complaints by their true physical symptoms and mechanical failure modes across all failure codes simultaneously. A 5-factor statistical emergence engine monitors surge velocity and detects anomalies with an average **+69-day early warning lead time**.
+By projecting narratives into a 384-dimensional latent vector space using local **FastEmbed ONNX embeddings** and clustering via **Cosine HDBSCAN**, the platform unites fragmented complaints into true physical defect signatures. An autonomous **5-Agent Dialectic Swarm** investigates the root causes, cross-examines evidence, generates standardized **8D Problem-Solving Dossiers** and **Technical Service Bulletins (TSBs)**, and indexes verified signatures into **Neural Defect Memory**.
 
 ```
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│                         END-TO-END ANALYTICAL PIPELINE                           │
-└──────────────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│                        AUTONOMOUS RELIABILITY INTELLIGENCE PIPELINE                    │
+└────────────────────────────────────────────────────────────────────────────────────────┘
 
-   Raw Warranty Claims (CSV / DMS Database Export)
+   Raw Dealership Warranty Claims (CSV / DMS API Stream)
                          │
                          ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  1. Ingestion & Field Normalization                    │
-   │     • Standardizes dates, VINs, plants, failure codes  │
-   └────────────────────────────────────────────────────────┘
+   ┌──────────────────────────────────────────────────────────┐
+   │  L0: High-Speed Ingestion & FastEmbed 384D Vectorization │
+   │     • In-process FastEmbed ONNX (BAAI/bge-small-en-v1.5) │
+   │     • <1ms per claim latency on CPU, 0 token costs       │
+   └──────────────────────────────────────────────────────────┘
                          │
                          ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  2. Domain-Grounded NLP Entity Extraction              │
-   │     • In-process NLP Extractor + Optional LLM Layer    │
-   │     • Extracts: Component, Symptom, Condition, Severity│
-   └────────────────────────────────────────────────────────┘
+   ┌──────────────────────────────────────────────────────────┐
+   │  L1: Semantic & Statistical Surveillance Layer           │
+   │     • Unsupervised Cosine HDBSCAN Cluster Discovery      │
+   │     • 2D UMAP Fleet Semantic Manifold Projection         │
+   │     • Neural Semantic Code Contradiction Scoring         │
+   │     • Transparent 5-Factor Emergence Alert Scorer (0-100)│
+   └──────────────────────────────────────────────────────────┘
                          │
                          ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  3. Taxonomy Mismatch Detection                        │
-   │     • Flags contradictions between code & notes        │
-   │     • Highlights systemic dealership misclassifications│
-   └────────────────────────────────────────────────────────┘
+   ┌──────────────────────────────────────────────────────────┐
+   │  L2: Autonomous Multi-Agent Forensic Mesh                │
+   │     • Investigator Agent (Narratives & Quote Extraction) │
+   │     • Analytics Agent (Poisson Z-Score & Shannon Entropy)│
+   │     • Red Team Critic (Plant Bias & Sample Power Audit)  │
+   │     • Regulatory Agent (NHTSA / MES Data Availability)   │
+   │     • CAPA Adjudicator (8D Dossier & TSB Synthesis)      │
+   │     • Live SSE Stream (/api/investigations/{id}/stream)  │
+   └──────────────────────────────────────────────────────────┘
                          │
                          ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  4. Dense Semantic Embedding & HDBSCAN Clustering      │
-   │     • Vectorizes domain text into dense semantic space │
-   │     • Unsupervised discovery of latent failure clusters│
-   └────────────────────────────────────────────────────────┘
-                         │
-                         ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  5. Statistical Emergence & Anomaly Detection          │
-   │     • 6-Month Rolling Baseline Mean & StdDev           │
-   │     • Statistical Z-Score Significance (Z > 3.0)       │
-   │     • Non-parametric CUSUM Drift Tracking              │
-   └────────────────────────────────────────────────────────┘
-                         │
-                         ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  6. 5-Factor Composite Alert Score Formulation         │
-   │     • Score = 30% Growth + 25% Z-Score + 15% Size +    │
-   │               15% Cross-Code + 15% Semantic Coherence  │
-   └────────────────────────────────────────────────────────┘
-                         │
-                         ▼
-   ┌────────────────────────────────────────────────────────┐
-   │  7. Investigation Console & Institutional Memory       │
-   │     • Verbatim evidence drill-down & root-cause triage │
-   │     • Human Engineer Review Gate (Confirm / Dismiss)   │
-   │     • Defect Memory Fingerprint Library                │
-   └────────────────────────────────────────────────────────┘
+   ┌──────────────────────────────────────────────────────────┐
+   │  L3: Institutional Memory & Interactive Copilot          │
+   │     • Neural Defect Memory (FastEmbed 384D Vector CBR)   │
+   │     • Interactive Forensic Copilot (/api/.../chat)       │
+   │     • Human-in-the-Loop Quality Verification Gate        │
+   └──────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🤖 The Hybrid AI Architecture
-
-WarrantyPatternMiner is engineered with a **Hybrid AI Architecture** that bridges high-speed statistical machine learning with generative language models:
+## 🤖 4-Tier Autonomous Intelligence Architecture
 
 ```mermaid
 flowchart TD
-    subgraph Ingestion
-        A["400+ Unstructured Warranty Claims"]
+    subgraph L0 ["L0: FastEmbed 384D Ingestion"]
+        Claims["Raw Dealership Narratives"] --> FE["FastEmbed ONNX (BAAI/bge-small-en-v1.5)\n[384D Dense Latent Space | <1ms/claim]"]
     end
 
-    subgraph Hybrid AI Pipeline
-        A --> B["Tier 1: High-Speed Domain NLP & Embeddings\n(600 ms full execution, $0 cost, zero hallucinations)"]
-        A -. Optional Connection .-> C["Tier 2: Cognitive LLM Layer\n(Gemini 2.5 Flash / OpenAI / Local Ollama Llama 3.2)"]
-        
-        B --> D["Tier 3: Unsupervised HDBSCAN Clustering\n(Groups claims by true physical meaning)"]
-        C -. Deep Semantic Inferences .-> D
-        
-        D --> E["Tier 4: Statistical Guardrails & 5-Factor Scoring\n(Poisson Z-Scores, CUSUM, Dispersion)"]
+    subgraph L1 ["L1: Statistical & Manifold Surveillance"]
+        FE --> HDB["Cosine HDBSCAN Clustering"]
+        FE --> UMAP["2D UMAP Semantic Fleet Manifold"]
+        HDB --> NLI["Neural Semantic Code Contradiction Engine"]
+        HDB --> Score["5-Factor Composite Alert Scorer (0–100)"]
     end
 
-    subgraph Human-in-the-Loop Workstation
-        E --> F["Investigation Workstation & Actionable Recall Alerts"]
+    subgraph L2 ["L2: Autonomous Dialectic Agent Swarm"]
+        Score --> Mesh["5-Agent Deliberation Mesh"]
+        Mesh --> A1["1. Investigator Agent\n(Empirical Evidence & Quotes)"]
+        Mesh --> A2["2. Analytics Agent\n(Poisson Z & Shannon Entropy)"]
+        Mesh --> A3["3. Red Team Critic\n(Plant Bias & Power Caveats)"]
+        Mesh --> A4["4. Regulatory Agent\n(Honest Status Reporting)"]
+        Mesh --> A5["5. CAPA Adjudicator\n(8D Dossier & TSB Generation)"]
+    end
+
+    subgraph L3 ["L3: Institutional Memory & Copilot"]
+        A5 --> CBR["Neural Defect Memory (384D CBR Cosine Match)"]
+        A5 --> Copilot["Forensic Copilot Chat (/api/investigations/{id}/chat)"]
+        A5 --> Stream["Live SSE Stream (/api/investigations/{id}/stream)"]
     end
 ```
 
-### Why a Hybrid Architecture?
-* **Zero-Dependency Instant Execution**: Pure LLM APIs require 10+ minutes to process 400 claims sequentially and suffer from rate limits, token bills, and hallucination risks. WarrantyPatternMiner's in-process NLP & vector engine executes in **~600 ms** with **100% mathematical reproducibility**.
-* **Zero-Config Deployment**: When deployed online (e.g., on Render, Vercel, Railway), anyone can test the full platform immediately without needing to connect or install an LLM.
-* **Optional Deep Reasoning**: When connected to Gemini, OpenAI, or local Ollama (Llama 3.2), the system automatically enriches narratives with deep mechanical failure inferences and AI executive rationales (`why_grouped`, `why_alerted`).
-
 ---
 
-## 🔬 Core Innovation: The 5-Factor Emergence Model
+## 🔬 The 5-Factor Emergence Alert Scoring Model
 
-Unlike simple claim counts, WarrantyPatternMiner computes a multi-dimensional composite alert score ($S \in [0, 100]$) to distinguish genuine physical defect surges from random fleet noise:
+Reliant.ai uses a transparent, multi-dimensional composite scoring function ($S \in [0, 100]$) to differentiate true emerging safety surges from random noise:
 
 $$\text{Composite Alert Score} = (0.30 \times \text{Growth}) + (0.25 \times \text{Z-Score}) + (0.15 \times \text{Volume}) + (0.15 \times \text{CrossCode}) + (0.15 \times \text{Coherence})$$
 
-### Transparent Point Attribution Breakdown:
+### Point Attribution Decomposition:
 
-| # | Monitored Factor | Methodology & Benchmark | Weight | Canonical Value | Normalized | Points Earned |
-|---|---|---|:---:|:---:|:---:|:---:|
-| **1** | **Growth Velocity** | Surge rate vs. 6-mo historical rolling mean ($>100\%$ surge = max) | **30%** | $+466.7\%$ | $100.0$ | **$30.0$ / $30.0$** |
-| **2** | **Statistical Significance** | Poisson-Normal Z-Score deviation ($Z \ge 2.86 \implies p < 0.001$) | **25%** | $Z = 4.40$ | $100.0$ | **$25.0$ / $25.0$** |
-| **3** | **Cluster Volume** | Consolidated fleet-wide claim count ($\ge 20$ claims = max) | **15%** | $35\text{ claims}$ | $100.0$ | **$15.0$ / $15.0$** |
-| **4** | **Cross-Code Dispersion** | Dealer taxonomy fragmentation ($\ge 5$ codes = max) | **15%** | $5\text{ codes}$ | $100.0$ | **$15.0$ / $15.0$** |
-| **5** | **Semantic Coherence** | Mean pairwise cosine vector cohesion across narratives | **15%** | $72.0\% \text{ to } 76.1\%$ | $72.0 \text{ to } 76.1$ | **$10.8 \text{ to } 11.4$ / $15.0$** |
-| $\sum$ | **Composite Total** | **Sum of all 5 dimensions** | **100%** | — | — | **$95.8 \text{ to } 96.4$ / $100.0$** |
-
----
-
-## 🖥️ Application Tour & Workstations
-
-### 1. Command Center
-* **Executive Telemetry Strip**: Real-time counts for Ingested Claims, Discovered Clusters, Critical Surges, and Taxonomy Mismatches.
-* **Dominant Active Anomaly Spotlight**: Instant executive briefing on the highest-priority defect surge with direct investigation drill-down.
-* **Explain 5 Factors Interactive Modal**: Inspect exact point attribution ($30.0 + 25.0 + 15.0 + 15.0 + 10.8 = 95.8 / 100$).
-* **Signal Emergence Timeline**: Interactive area chart comparing monthly claim progression against rolling baselines and legacy code thresholds.
-* **Discovered Defect Patterns Index**: Ranked by Alert Score with severity badges, growth velocity, and review status.
-
-### 2. Investigation Console
-* **Split-Pane Triage**: Left-hand signal index + right-hand deep diagnostic workspace.
-* **5 Deep Diagnostic Tabs**:
-  * **1. Diagnostic Overview**: AI-generated *"Why Grouped Together?"* and *"Why Alerted?"* summaries with recognized symptoms.
-  * **2. Verbatim Evidence Claims**: Traceable to exact claim IDs, repair dates, assembly plants, and technician notes.
-  * **3. Emergence Timeline**: Month-by-month trajectory visualization.
-  * **4. Code & Plant Spread**: Bar charts illustrating dealership code fragmentation and multi-plant geographic dispersion.
-  * **5. Statistical Proof**: Complete mathematical score decomposition matrix table with factor weights, raw values, and points earned.
-* **Human-in-the-Loop Review Gate**: Reliability engineers can **Confirm Defect**, **Edit Scope / Label**, or **Dismiss False Alarm**.
-
-### 3. Baseline Reveal (Showcase Comparative Analysis)
-* Demonstrates why traditional single-code monitoring failed while semantic clustering detected the target anomaly with a **+69-Day Early Warning Advantage**.
-* Features side-by-side surveillance comparison and complete 5-Factor mathematical proof table.
-
-### 4. Claims Explorer
-* High-density searchable table with filters for failure codes, assembly plants, and a dedicated **"Mismatches Only"** toggle.
-* Slide-out modal displaying raw technician notes, AI-extracted failure signatures, and taxonomy contradiction explanations.
-
-### 5. Defect Memory & Institutional Knowledge Base
-* Retains verified defect fingerprints from confirmed investigations.
-* **Live Complaint Matcher**: Paste any incoming customer complaint or technician note to compute real-time cosine similarity and receive instant diagnostic recommendations.
-
-### 6. Pipeline & Data Operations
-* Multipart CSV / JSON dataset drag-and-drop ingestion.
-* One-click full pipeline orchestrator with real-time step timings (~600 ms).
-* **One-Click Database Reset**: Wipe pre-seeded records to test on custom fleet datasets.
+| # | Factor | Methodology & Benchmark | Weight | Canonical Value | Points Earned |
+|---|---|---|:---:|:---:|:---:|
+| **1** | **Growth Velocity** | 4-week rolling surge vs. 6-month historical baseline ($>100\%$ = max) | **30%** | $+466.7\%$ | **$30.0$ / $30.0$** |
+| **2** | **Statistical Significance** | Poisson-Normal Z-Score significance test ($Z \ge 2.86 \implies p < 0.001$) | **25%** | $Z = 4.40$ | **$25.0$ / $25.0$** |
+| **3** | **Cluster Volume** | Consolidated fleet-wide claim count ($\ge 20$ claims = max) | **15%** | $35\text{ claims}$ | **$15.0$ / $15.0$** |
+| **4** | **Cross-Code Dispersion** | Dealership taxonomy fragmentation ($\ge 5$ codes = max) | **15%** | $5\text{ codes}$ | **$15.0$ / $15.0$** |
+| **5** | **Semantic Coherence** | Mean pairwise cosine similarity across latent vectors | **15%** | $76.1\%$ | **$11.4$ / $15.0$** |
+| $\sum$ | **Composite Total** | **Sum of all 5 dimensions** | **100%** | — | **$96.4$ / $100.0$** |
 
 ---
 
-## 🚀 Getting Started
+## 🖥️ Frontend Web Console Tour
+
+The application provides **7 industrial-grade workstations**:
+
+### 1. Command Center (`/command-center`)
+* **Hero Defect Spotlight**: Surfaces the top-priority defect surge with real-time alert score, growth velocity (+325%), Poisson Z, and plant footprint.
+* **KPI Telemetry Ribbon**: Real-time fleet metrics (Total Claims, Critical/High/Watch Clusters, Miscoded Claims, and Execution Latency).
+* **Interactive 2D Fleet Semantic Manifold**: 2D UMAP projection canvas with cluster convex hulls, noise points, miscoded claim badges, and interactive bounding-box lasso selection.
+* **Active Emerging Clusters Matrix**: Table of all isolated defect clusters ranked by 5-factor severity score with direct jump buttons to the War Room.
+
+### 2. Investigation War Room (`/war-room`)
+* **Cluster Header & KPI Strip**: Displays Alert Score, Growth %, Poisson Z, Volume, Cross-Code Spread, and Swarm Confidence.
+* **5-Agent Live Status Indicators**: Real-time status for Investigator, Analytics, Red Team Critic, Regulatory, and CAPA Adjudicator.
+* **Six Deep-Dive Investigation Tabs**:
+  * **Tab 1: Evidence Findings**: Structured findings (`OBSERVED`, `INFERRED`, `UNKNOWN`) with confidence scores and clickable claim citations.
+  * **Tab 2: Forensic Copilot Chat**: Interactive multi-agent chat interface allowing engineers to query the mesh, view individual agent contributions, and inspect cited claim IDs.
+  * **Tab 3: Neural CBR Precedents**: FastEmbed 384D cosine similarity search against institutional Defect Memory, showing historical matching failure modes and past containment actions.
+  * **Tab 4: Tool Execution Stream**: Complete audit trail of deterministic statistical tools invoked by agents (durations, inputs, and outputs).
+  * **Tab 5: 8D Root-Cause Report**: Standardized automotive 8D Problem Solving Dossier (Disciplines D1 through D8).
+  * **Tab 6: Technical Bulletin (TSB) Draft**: OEM Field Service Engineering bulletin draft with diagnostic protocol, interim repair, and warranty coding guidance.
+* **Live Mesh Stream Drawer**: Real-time SSE streaming window (`GET /api/investigations/{id}/stream`) showing agents debating step-by-step.
+* **Human-in-the-Loop Verification Gate**: Modal allowing engineers to **Confirm Defect**, **Request More Proof**, or **Reject**. Confirming saves the 384D vector fingerprint to Defect Memory.
+
+### 3. Statistical Pattern Deep Dive (`/investigation`)
+* **5-Factor Mathematical Breakdown**: Points-earned decomposition for all 5 alert scoring dimensions.
+* **Surge Time-Series Chart**: Interactive line chart showing weekly claim incidence and surge inflection points.
+* **Taxonomy Fragmentation Chart**: Visualizes how claims with identical physical failure were miscategorized under different dealer codes.
+* **Plant Distribution & Assembly Concentration**: Breakdown of claims across assembly sites (e.g., Fremont, Austin, Berlin) to evaluate manufacturing lot bias.
+* **Representative Claims Inspector**: Curated list of raw technician narratives with extracted component keywords.
+
+### 4. Baseline Lead-Time Comparison (`/comparison`)
+* **Side-by-Side Monitoring Comparison**: Direct comparison between **Reliant.ai Semantic Surveillance** vs. **Traditional Code-Bucket Surveillance**.
+* **Lead-Time Advantage Card**: Displays the exact number of days (e.g., **+69 days earlier**) Reliant.ai alerted before traditional threshold triggers.
+* **Financial Containment ROI Calculator**: Computes estimated warranty payout savings and recall avoidance dollars.
+
+### 5. Claims Explorer (`/claims`)
+* **Faceted Search**: Search claims by VIN, Failure Code, Assembly Plant, Date Range, Keywords, or Mismatch Status.
+* **Neural Semantic Mismatch Badges**: Flags claims where technician text contradicts official dealer failure codes.
+* **Claim Detail Drawer**: Full claim record view including claim date, mileage, model, plant, verbatim narrative, and extracted symptoms.
+
+### 6. Institutional Defect Memory (`/fingerprints`)
+* **Zero-Day Triage Testing Console**: Interactive query box with preset prompts allowing engineers to enter customer complaints or technician notes and test-match against institutional memory.
+* **Cosine Similarity Meters**: Visual percentage bars showing similarity to past confirmed defects.
+* **Institutional Defect Catalog**: Grid of all permanently saved defect signatures with confirmed occurrence counts, recognized symptoms, and validated remedies.
+
+### 7. Data Ingestion & Pipeline Orchestration (`/pipeline`)
+* **CSV Ingestion**: Upload custom warranty claim CSVs with automatic deduplication and validation.
+* **Canonical Benchmark Reload**: One-click reset and reload of the canonical 567-claim adversarial dataset.
+* **Pipeline Execution Console**: Real-time progress tracker monitoring Embedding Generation, HDBSCAN Clustering, Contradiction Scoring, and Multi-Agent Synthesis.
+
+---
+
+## 🚀 Quickstart & Setup
 
 ### Prerequisites
 * **Python**: 3.11, 3.12, or 3.13
-* **Node.js**: 18.x or 20.x (with `npm`)
-* **Ollama** *(Optional for local LLM)*: [https://ollama.com](https://ollama.com)
+* **Node.js**: 18.x or 20+ (with `npm`)
 
 ---
 
-### Step 1: Clone Repository & Setup Environment
+### Step 1: Clone Repository & Virtual Environment
 
 ```bash
 git clone https://github.com/Unknownx-x1/Warrantyminer.git
 cd Warrantyminer
 ```
 
-Create and activate a Python virtual environment:
+Create and activate virtual environment:
 ```bash
 python -m venv venv
 
@@ -220,19 +220,16 @@ pip install -r requirements.txt
 
 ---
 
-### Step 2: Configure Environment Variables (Optional)
+### Step 2: Configure Environment (Optional)
 
-Copy the sample environment file:
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` (optional):
 ```ini
-# Database
 DATABASE_URL=sqlite:///./warranty_miner.db
 
-# Optional Cloud LLMs (Leave blank for ultra-fast local hybrid NLP)
+# Optional Cloud LLMs (Leave blank for 100% local FastEmbed ONNX engine)
 GEMINI_API_KEY=
 OPENAI_API_KEY=
 
@@ -244,107 +241,98 @@ OLLAMA_MODEL=llama3.2
 
 ---
 
-### Step 3: Start the Backend API
+### Step 3: Start the Backend API Service
 
 ```bash
 python -m uvicorn apps.api.main:app --port 8000 --host 127.0.0.1 --reload
 ```
-* **API Endpoint**: `http://127.0.0.1:8000`
-* **Interactive OpenAPI Swagger Docs**: `http://127.0.0.1:8000/docs`
+* **API Service**: `http://127.0.0.1:8000`
+* **Swagger API Documentation**: `http://127.0.0.1:8000/docs`
 
 ---
 
-### Step 4: Start the Frontend Application
+### Step 4: Start the Frontend Web Console
 
-In a new terminal:
+In a separate terminal:
 ```bash
 cd apps/web
 npm install
 npm run dev
 ```
-* **Frontend Workstation**: `http://localhost:3000`
+* **Web Console**: `http://localhost:3000`
 
 ---
 
-## 🧪 Testing & Benchmark Verification
+## 🧪 Testing & Verification
 
-The repository includes a comprehensive test suite covering unit calculations, mathematical explainability, taxonomy mismatch detection, data normalization, and end-to-end pipeline execution:
+The test suite covers unit calculations, FastEmbed ONNX embeddings, HDBSCAN clustering, neural semantic contradiction, multi-agent mesh deliberation, forensic copilot chat, and end-to-end pipeline execution:
 
 ```bash
-# Run pytest test suite
-pytest tests/ -v
+pytest
 ```
 
 ```text
 ============================= test session starts =============================
-tests/integration/test_pipeline.py::test_full_end_to_end_pipeline PASSED [  5%]
-tests/integration/test_pipeline.py::test_400_claim_golden_recovery PASSED [ 10%]
-tests/integration/test_pipeline.py::test_unseen_defect_generalization PASSED [ 15%]
-tests/unit/test_baseline_lead_time.py::test_case_1_traditional_eventually_triggers PASSED [ 20%]
-tests/unit/test_baseline_lead_time.py::test_case_2_traditional_never_triggers PASSED [ 25%]
-tests/unit/test_baseline_lead_time.py::test_case_3_traditional_triggers_before_or_same_day PASSED [ 30%]
-tests/unit/test_extraction.py::test_extract_suspension_clunk PASSED      [ 35%]
-tests/unit/test_extraction.py::test_extract_brake_squeak PASSED          [ 40%]
-tests/unit/test_extraction.py::test_extract_electrical_screen PASSED     [ 45%]
-tests/unit/test_ingestion.py::test_parse_date_safely PASSED              [ 50%]
-tests/unit/test_ingestion.py::test_normalize_claim_record_valid PASSED   [ 55%]
-tests/unit/test_ingestion.py::test_normalize_claim_record_missing_id PASSED [ 60%]
-tests/unit/test_ingestion.py::test_normalize_claim_record_missing_narrative PASSED [ 65%]
-tests/unit/test_mismatch.py::test_mismatch_electrical_nff_suspension PASSED [ 70%]
-tests/unit/test_mismatch.py::test_mismatch_generic_other_with_specific_defect PASSED [ 75%]
-tests/unit/test_mismatch.py::test_match_agreement_suspension PASSED      [ 80%]
-tests/unit/test_scoring.py::test_critical_alert_score PASSED             [ 85%]
-tests/unit/test_scoring.py::test_normal_alert_score PASSED               [ 90%]
-tests/unit/test_scoring.py::test_factor_breakdown_explainability PASSED  [ 95%]
-tests/unit/test_trends.py::test_trend_growth_and_zscore PASSED           [100%]
-====================== 20 passed in 4.77s ======================
-```
+platform win32 -- Python 3.13.5, pytest-9.1.1, pluggy-1.6.0
+rootdir: C:\Users\SHIVANSH\Warrantyminer
+configfile: pytest.ini
+testpaths: tests
+plugins: anyio-4.15.0, asyncio-1.4.0
+collected 50 items
 
-### Canonical Benchmark Verification:
-To evaluate algorithmic recovery against the 400-claim ground-truth golden benchmark:
-```bash
-python scripts/evaluate_golden_dataset.py
+tests\integration\test_forensic_copilot.py .                             [  2%]
+tests\integration\test_investigation_pipeline.py ...                     [  8%]
+tests\integration\test_pipeline.py ...                                   [ 14%]
+tests\unit\test_agents.py ......                                         [ 26%]
+tests\unit\test_baseline_lead_time.py ...                                [ 32%]
+tests\unit\test_extraction.py ...                                        [ 38%]
+tests\unit\test_ingestion.py ....                                        [ 46%]
+tests\unit\test_investigation_tools.py ...........                       [ 68%]
+tests\unit\test_mismatch.py ...                                          [ 74%]
+tests\unit\test_neural_embeddings.py ....                                [ 82%]
+tests\unit\test_neural_fingerprints.py ..                                [ 86%]
+tests\unit\test_neural_mismatch.py ...                                   [ 92%]
+tests\unit\test_scoring.py ...                                           [ 98%]
+tests\unit\test_trends.py .                                              [100%]
+
+===================== 50 passed, 11410 warnings in 42.79s =====================
 ```
-* **Ground-Truth Target**: Front-Left Suspension Knocking (35 claims spread across 5 codes)
-* **Execution Time**: **627 ms**
-* **Cluster Precision**: **100.00%** (35 / 35 claims)
-* **Cluster Recall**: **100.00%** (35 / 35 claims)
-* **Cluster F1-Score**: **100.00%**
-* **Computed Alert Score**: **96.4 / 100 (CRITICAL)**
-* **Surveillance Lead Time**: **+69 Days Ahead of Traditional Monitoring**
 
 ---
 
 ## 📁 Repository Structure
 
 ```text
-WarrantyPatternMiner/
+Warrantyminer/
 ├── apps/
-│   ├── api/                          # FastAPI Backend Engine
+│   ├── api/                          # FastAPI Backend Core
 │   │   ├── config.py                 # Pydantic Settings & Thresholds
 │   │   ├── main.py                   # FastAPI Application Entrypoint
 │   │   ├── db/                       # SQLAlchemy Session & Declarative Base
-│   │   ├── models/                   # Database Entities (Claims, Clusters, Feedback)
-│   │   ├── routes/                   # REST API Endpoints (Alerts, Clusters, Claims)
+│   │   ├── models/                   # DB Entities (Claims, Clusters, Findings, Fingerprints)
+│   │   ├── routes/                   # REST Endpoints (Alerts, Clusters, Investigations, Fingerprints)
 │   │   ├── schemas/                  # Pydantic Request/Response DTOs
-│   │   └── services/                 # Core Algorithmic Engines
+│   │   └── services/                 # Core Algorithmic & Agent Services
 │   │       ├── baseline.py           # Single-Code vs Semantic Lead-Time Comparator
-│   │       ├── clustering.py         # HDBSCAN Cluster Discovery
-│   │       ├── embeddings.py         # Vector Semantic Representation
+│   │       ├── clustering.py         # Cosine HDBSCAN Cluster Discovery
+│   │       ├── embeddings.py         # FastEmbed 384D ONNX Latent Vectors
 │   │       ├── extraction.py         # Domain-Grounded NLP / LLM Signature Extractor
-│   │       ├── fingerprints.py       # Defect Memory & Live Matcher
-│   │       ├── ingestion.py          # CSV/JSON Normalizer & Validation
+│   │       ├── fingerprints.py       # Defect Memory & Vector CBR Matcher
+│   │       ├── forensic_copilot.py   # Multi-Agent Dialectic Copilot Service
+│   │       ├── ingestion.py          # CSV/JSON Normalizer & Deduplication
+│   │       ├── investigation_agents.py # 5-Agent Dialectic Debate Swarm
 │   │       ├── labeling.py           # Cluster Label & Diagnostic Rationale Generator
-│   │       ├── mismatch.py           # Taxonomy Contradiction Analyzer
+│   │       ├── manifold.py           # 2D UMAP Semantic Manifold Projection
+│   │       ├── mismatch.py           # Neural Semantic Code Contradiction Engine
 │   │       ├── pipeline_orchestrator.py # Full Surveillance Pipeline Runner
 │   │       ├── scoring.py            # 5-Factor Emergence Alert Scoring
-│   │       └── trends.py             # Rolling Baseline, Z-Score & CUSUM Tracker
+│   │       └── trends.py             # Rolling Baseline, Poisson Z-Score & CUSUM Tracker
 │   └── web/                          # React + Vite + TypeScript Frontend
 │       ├── src/
 │       │   ├── api/                  # API Client & Endpoint Bindings
-│       │   ├── components/           # UI Components (Navbar, Badge, Modals)
-│       │   ├── pages/                # Workstation Pages (Command Center, Detail, etc.)
-│       │   ├── types/                # TypeScript Interface Definitions
+│       │   ├── components/           # UI Components (ManifoldCanvas, LiveStream, Navbar, etc.)
+│       │   ├── pages/                # Workstation Pages (CommandCenter, WarRoom, Detail, etc.)
+│       │   ├── types/                # TypeScript Interfaces & DTOs
 │       │   ├── App.tsx               # Root Application Router
 │       │   └── index.css             # Tailwind Design Tokens
 │       ├── package.json
@@ -355,12 +343,12 @@ WarrantyPatternMiner/
 │   └── raw/                          # Raw Claim Datasets
 ├── scripts/
 │   ├── clear_database.py             # Database Reset Utility
-│   ├── debug_trend_analysis.py       # 5-Factor Score Decomposition Debugger
 │   ├── evaluate_golden_dataset.py    # Ground-Truth Precision/Recall Benchmark
-│   └── generate_demo_data.py         # Canonical Fleet Claims Generator
+│   ├── generate_demo_data.py         # Canonical Fleet Claims Generator
+│   └── seed_database.py              # Canonical Database Seeder
 ├── tests/
-│   ├── integration/                  # End-to-End Pipeline Tests
-│   └── unit/                         # Unit Tests (Extraction, Scoring, Trends)
+│   ├── integration/                  # End-to-End Pipeline & Copilot Tests
+│   └── unit/                         # Unit Tests (Embeddings, Agents, Scoring, Trends)
 ├── .env.example
 ├── .gitignore
 ├── pytest.ini
