@@ -230,6 +230,40 @@ export interface MatchResult {
   matched_symptoms: string[];
   confidence: number;
   recommendation: string;
+  confirmed_count?: string;
+}
+
+export interface ClusterPrecedent {
+  precedent_id: string;
+  name: string;
+  component?: string;
+  similarity_score: number;
+  confidence_pct: number;
+  confirmed_count: string;
+  description?: string;
+  symptoms: string[];
+  conditions: string[];
+  remedy_recommendation: string;
+}
+
+export interface CopilotAgentContribution {
+  agent: string;
+  role: 'investigator' | 'analytics' | 'red_team' | 'regulatory' | 'capa';
+  statement: string;
+  evidence_citations?: string[];
+  metrics?: Record<string, any>;
+  challenge_flags?: string[];
+  recommended_action?: string;
+}
+
+export interface CopilotChatResponse {
+  question: string;
+  cluster_id: string;
+  cluster_label: string;
+  answer: string;
+  agent_contributions: CopilotAgentContribution[];
+  cited_claim_ids: string[];
+  confidence: number;
 }
 
 export interface AnalysisRunResponse {
@@ -245,4 +279,163 @@ export interface AnalysisRunResponse {
   events?: string[];
   steps?: Record<string, any>;
 }
+
+export interface AgentFinding {
+  id: string;
+  investigation_id: string;
+  agent_role: 'investigator' | 'analytics' | 'red_team' | 'regulatory' | 'capa';
+  agent_name: string;
+  statement: string;
+  classification: 'OBSERVED' | 'INFERRED' | 'UNKNOWN';
+  confidence: number;
+  evidence_claim_ids: string[];
+  contradiction_claim_ids: string[];
+  metadata_json: Record<string, any>;
+  created_at: string;
+}
+
+export interface ToolExecutionLog {
+  id: string;
+  investigation_id: string;
+  agent_role: string;
+  tool_name: string;
+  input_params: Record<string, any>;
+  output_summary?: string;
+  output_data: Record<string, any>;
+  status: 'SUCCESS' | 'UNAVAILABLE' | 'ERROR';
+  duration_ms: number;
+  evidence_refs: string[];
+  created_at: string;
+}
+
+export interface DSection {
+  title: string;
+  content: string;
+  status: string;
+  evidence: string[];
+}
+
+export interface Report8D {
+  cluster_id: string;
+  cluster_label: string;
+  generated_at: string;
+  d1_team: DSection;
+  d2_problem_description: DSection;
+  d3_containment_action: DSection;
+  d4_root_cause: DSection;
+  d5_corrective_action: DSection;
+  d6_validation_plan: DSection;
+  d7_prevention_action: DSection;
+  d8_closure_and_cost: DSection;
+}
+
+export interface TSBDraft {
+  tsb_id: string;
+  cluster_id: string;
+  title: string;
+  issue_date: string;
+  condition: string;
+  affected_vehicles: string;
+  symptoms_observed: string[];
+  diagnostic_procedure: string;
+  interim_repair_recommendation: string;
+  parts_information: string;
+  warranty_coding_guidance: string;
+  evidence_claims: string[];
+}
+
+export interface ManifoldPoint {
+  claim_id: string;
+  external_id: string;
+  x: number;
+  y: number;
+  cluster_id: string | null;
+  cluster_index: number;
+  cluster_label: string;
+  is_noise: boolean;
+  is_mismatch: number;
+  mismatch_severity: string;
+  failure_code: string;
+  plant: string;
+  model: string;
+  date: string | null;
+  component: string;
+  symptom: string;
+  narrative: string;
+}
+
+export interface ManifoldCluster {
+  cluster_id: string;
+  cluster_index: number;
+  label: string;
+  claim_count: number;
+  alert_score: number;
+  alert_level: 'CRITICAL' | 'HIGH' | 'WATCH' | 'NORMAL';
+  centroid: { x: number; y: number };
+  hull: [number, number][];
+  primary_component?: string;
+  primary_symptom?: string;
+}
+
+export interface SemanticManifoldData {
+  points: ManifoldPoint[];
+  clusters: ManifoldCluster[];
+  total_points: number;
+  method: string;
+  grid_bounds: { min_x: number; max_x: number; min_y: number; max_y: number };
+}
+
+export interface LiveStreamStage {
+  stage: string;
+  agent: string;
+  role: 'investigator' | 'analytics' | 'red_team' | 'regulatory' | 'capa';
+  description: string;
+  status: 'pending' | 'running' | 'completed';
+  thoughts: string[];
+  tools: Array<{
+    tool: string;
+    status: string;
+    input: Record<string, any>;
+    output_summary?: string;
+    duration_ms?: number;
+  }>;
+  findings: Array<{
+    statement: string;
+    classification: 'OBSERVED' | 'INFERRED' | 'UNKNOWN';
+    confidence: number;
+    evidence_count: number;
+  }>;
+  challenges: Array<{
+    check: string;
+    verdict: string;
+    rationale: string;
+    confidence_impact: number;
+  }>;
+}
+
+export interface InvestigationDetail {
+  id: string;
+  cluster_id: string;
+  status: string;
+  decision: 'unreviewed' | 'confirmed' | 'rejected' | 'needs_evidence';
+  decision_rationale?: string | null;
+  reviewer: string;
+  summary_conclusion?: string;
+  confidence: number;
+  overall_classification: string;
+  supporting_claims_count: number;
+  contradicting_claims_count: number;
+  unknowns: string[];
+  recommendations: string[];
+  metrics_snapshot: Record<string, any>;
+  execution_time_ms: number;
+  created_at: string;
+  updated_at: string;
+  findings: AgentFinding[];
+  tool_logs: ToolExecutionLog[];
+  report_8d?: Report8D;
+  tsb_draft?: TSBDraft;
+}
+
+
 

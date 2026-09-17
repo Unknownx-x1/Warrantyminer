@@ -25,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const navItems = [
     { id: 'command-center', label: 'Command Center', icon: Activity },
+    { id: 'war-room', label: 'AI War Room', icon: ShieldCheck },
     { id: 'investigation', label: 'Investigation Console', icon: Layers },
     { id: 'comparison', label: 'Baseline Reveal', icon: GitCompare },
     { id: 'claims', label: 'Claims Explorer', icon: Search },

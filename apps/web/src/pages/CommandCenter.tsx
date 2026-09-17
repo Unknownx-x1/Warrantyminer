@@ -31,6 +31,7 @@ import {
 } from 'recharts';
 import { DashboardSummary, ClusterListItem } from '../types';
 import { Badge } from '../components/common/Badge';
+import { SemanticFleetManifold } from '../components/SemanticFleetManifold';
 
 interface CommandCenterProps {
   summary: DashboardSummary | null;
@@ -351,6 +352,12 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
           </div>
         </div>
       )}
+
+      {/* Fleet Semantic Manifold (2D Neural Embedding Space) */}
+      <SemanticFleetManifold 
+        onSelectCluster={onSelectCluster} 
+        selectedClusterId={hero?.id}
+      />
 
       {/* Discovered Defect Patterns Table */}
       <div className="p-5 rounded-lg bg-white border border-slate-200 shadow-sm space-y-4">

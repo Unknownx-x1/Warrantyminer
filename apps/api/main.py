@@ -38,6 +38,7 @@ from apps.api.routes.alerts import router as alerts_router
 from apps.api.routes.baseline import router as baseline_router
 from apps.api.routes.feedback import router as feedback_router
 from apps.api.routes.fingerprints import router as fingerprints_router
+from apps.api.routes.investigations import router as investigations_router
 
 app.include_router(claims_router, prefix=settings.API_V1_STR)
 app.include_router(analysis_router, prefix=settings.API_V1_STR)
@@ -46,6 +47,8 @@ app.include_router(alerts_router, prefix=settings.API_V1_STR)
 app.include_router(baseline_router, prefix=settings.API_V1_STR)
 app.include_router(feedback_router, prefix=settings.API_V1_STR)
 app.include_router(fingerprints_router, prefix=settings.API_V1_STR)
+app.include_router(investigations_router, prefix=settings.API_V1_STR)
+
 
 @app.get("/health")
 def health_check():

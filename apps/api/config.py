@@ -15,14 +15,15 @@ class Settings(BaseSettings):
     # Database
     DATABASE_URL: str = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'warranty_miner.db'}")
     
-    # AI / LLM Configuration
+    # AI / Embeddings Configuration
+    EMBEDDING_PROVIDER: str = os.getenv("EMBEDDING_PROVIDER", "fastembed")
+    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "BAAI/bge-small-en-v1.5")
     GEMINI_API_KEY: str = os.getenv("GEMINI_API_KEY", "")
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY", "")
     OLLAMA_BASE_URL: str = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
     OLLAMA_MODEL: str = os.getenv("OLLAMA_MODEL", "llama3.2")
     USE_OLLAMA: bool = os.getenv("USE_OLLAMA", "false").lower() in ("true", "1", "yes")
     LLM_MODEL: str = os.getenv("LLM_MODEL", "gemini-2.5-flash")
-    EMBEDDING_MODEL: str = os.getenv("EMBEDDING_MODEL", "text-embedding-004")
     
     # Statistical and Clustering Thresholds
     MIN_CLUSTER_SIZE: int = 8
@@ -32,7 +33,9 @@ class Settings(BaseSettings):
     SIGNIFICANCE_Z_THRESHOLD: float = 2.0
     MIN_VOLUME_GUARD: int = 3
     
-    # Code Mismatch Configuration
+    # AI / Extraction & Mismatch Configuration
+    EXTRACTION_MODE: str = os.getenv("EXTRACTION_MODE", "hybrid")
+    NLI_MISMATCH_THRESHOLD: float = float(os.getenv("NLI_MISMATCH_THRESHOLD", "0.55"))
     MISMATCH_HIGH_THRESHOLD: float = 0.70
     
     class Config:
