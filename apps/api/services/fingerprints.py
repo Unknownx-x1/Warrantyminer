@@ -1,16 +1,45 @@
 import logging
+import numpy as np
 from typing import List, Dict, Any, Optional
 from collections import Counter
 from sqlalchemy.orm import Session
 from apps.api.models.cluster import Cluster
 from apps.api.models.feedback import DefectFingerprint
-from apps.api.models.claim import Claim, FailureSignature
+from apps.api.models.claim import Claim, FailureSignature, Embedding
+from apps.api.services.embeddings import embed_text
 
 logger = logging.getLogger(__name__)
 
+def _generate_fingerprint_vector(
+    component: Optional[str],
+    symptoms: List[str],
+    conditions: List[str],
+    description: Optional[str] = None,
+    narratives: Optional[List[str]] = None
+) -> List[float]:
+    """
+    Computes a 384-dimensional FastEmbed ONNX vector for a defect fingerprint
+    combining structured taxonomy tokens and narrative descriptions.
+    """
+    parts = []
+    if component:
+        parts.append(f"Component: {component}.")
+    if symptoms:
+        parts.append(f"Symptoms: {', '.join(symptoms)}.")
+    if conditions:
+        parts.append(f"Operating Conditions: {', '.join(conditions)}.")
+    if description:
+        parts.append(f"Description: {description}")
+    if narratives:
+        parts.append(f"Observed Cases: {' '.join(narratives[:3])}")
+    
+    text_signature = " ".join(parts) if parts else "unspecified automotive failure pattern"
+    vector = embed_text(text_signature)
+    return vector.tolist()
+
 def create_fingerprint_from_cluster(db: Session, cluster: Cluster, engineer_name: str = "Reliability Engineer") -> DefectFingerprint:
     """
-    Constructs an organizational Defect Fingerprint from a confirmed cluster.
+    Constructs an organizational Defect Fingerprint from a confirmed cluster with FastEmbed 384D vector.
     """
     claims = [cm.claim for cm in cluster.claim_memberships]
     signatures = [c.signature for c in claims if c.signature]
@@ -30,6 +59,16 @@ def create_fingerprint_from_cluster(db: Session, cluster: Cluster, engineer_name
     top_conditions = [item[0] for item in Counter(conditions).most_common(3)]
 
     example_claims = [c.external_claim_id for c in claims[:5]]
+    sample_narratives = [c.narrative for c in claims[:3]]
+
+    # Compute dense vector representation
+    vector_list = _generate_fingerprint_vector(
+        component=cluster.primary_component,
+        symptoms=top_symptoms,
+        conditions=top_conditions,
+        description=cluster.description,
+        narratives=sample_narratives
+    )
 
     existing = db.query(DefectFingerprint).filter(DefectFingerprint.name == cluster.label).first()
     if existing:
@@ -39,6 +78,7 @@ def create_fingerprint_from_cluster(db: Session, cluster: Cluster, engineer_name
         existing.symptoms = list(set((existing.symptoms or []) + top_symptoms))
         existing.conditions = list(set((existing.conditions or []) + top_conditions))
         existing.example_claims = list(set((existing.example_claims or []) + example_claims))
+        existing.vector = vector_list
         db.commit()
         db.refresh(existing)
         return existing
@@ -51,12 +91,13 @@ def create_fingerprint_from_cluster(db: Session, cluster: Cluster, engineer_name
         conditions=top_conditions,
         example_claims=example_claims,
         semantic_signature=f"Component: {cluster.primary_component} | Symptoms: {', '.join(top_symptoms)} | Conditions: {', '.join(top_conditions)}",
+        vector=vector_list,
         confirmed_count="1"
     )
     db.add(fingerprint)
     db.commit()
     db.refresh(fingerprint)
-    logger.info(f"Created Defect Fingerprint: {fingerprint.name}")
+    logger.info(f"Created Neural Defect Fingerprint: {fingerprint.name} with 384D vector")
     return fingerprint
 
 def create_fingerprint_from_investigation(
@@ -66,7 +107,7 @@ def create_fingerprint_from_investigation(
     custom_label: Optional[str] = None
 ) -> Optional[DefectFingerprint]:
     """
-    Constructs an organizational Defect Fingerprint from a confirmed Investigation.
+    Constructs an organizational Defect Fingerprint from a confirmed Investigation with FastEmbed 384D vector.
     """
     from apps.api.models.investigation import Investigation
     inv = db.query(Investigation).filter(Investigation.id == investigation_id).first()
@@ -88,6 +129,16 @@ def create_fingerprint_from_investigation(
 
     claims = [cm.claim for cm in cluster.claim_memberships]
     example_claims = [c.external_claim_id for c in claims[:5]]
+    sample_narratives = [c.narrative for c in claims[:3]]
+
+    # Compute dense vector representation
+    vector_list = _generate_fingerprint_vector(
+        component=component,
+        symptoms=symptoms,
+        conditions=conditions,
+        description=inv.summary_conclusion or cluster.description,
+        narratives=sample_narratives
+    )
 
     existing = db.query(DefectFingerprint).filter(DefectFingerprint.name == label).first()
     if existing:
@@ -97,6 +148,7 @@ def create_fingerprint_from_investigation(
         existing.symptoms = list(set((existing.symptoms or []) + symptoms))
         existing.conditions = list(set((existing.conditions or []) + conditions))
         existing.example_claims = list(set((existing.example_claims or []) + example_claims))
+        existing.vector = vector_list
         db.commit()
         db.refresh(existing)
         return existing
@@ -109,61 +161,88 @@ def create_fingerprint_from_investigation(
         conditions=conditions,
         example_claims=example_claims,
         semantic_signature=f"Component: {component} | Symptoms: {', '.join(symptoms)} | Conditions: {', '.join(conditions)}",
+        vector=vector_list,
         confirmed_count="1"
     )
     db.add(fingerprint)
     db.commit()
     db.refresh(fingerprint)
-    logger.info(f"Created Defect Fingerprint from Investigation: {fingerprint.name}")
+    logger.info(f"Created Neural Defect Fingerprint from Investigation: {fingerprint.name}")
     return fingerprint
 
-
-def match_claim_to_fingerprints(db: Session, narrative: str, component: Optional[str] = None, symptom: Optional[str] = None) -> List[Dict[str, Any]]:
+def match_claim_to_fingerprints(
+    db: Session,
+    narrative: str,
+    component: Optional[str] = None,
+    symptom: Optional[str] = None
+) -> List[Dict[str, Any]]:
     """
-    Compares a narrative / symptom against the known organizational Defect Fingerprints.
+    Compares an incoming claim against known organizational Defect Fingerprints
+    using FastEmbed 384-dimensional dense vector cosine similarity.
     """
     fingerprints = db.query(DefectFingerprint).all()
     if not fingerprints:
         return []
 
-    text = narrative.lower()
-    comp_input = (component or "").lower()
-    symp_input = (symptom or "").lower()
+    # 1. Compute query vector
+    query_parts = []
+    if component:
+        query_parts.append(f"Component: {component}.")
+    if symptom:
+        query_parts.append(f"Symptom: {symptom}.")
+    query_parts.append(narrative)
+    query_text = " ".join(query_parts)
+    
+    query_vec = embed_text(query_text)
+    # Unit normalize query vector
+    norm_q = np.linalg.norm(query_vec)
+    if norm_q > 0:
+        query_vec = query_vec / norm_q
 
     results = []
-    for fp in fingerprints:
-        score = 0.0
-        matched_symptoms = []
-        
-        # Component matching
-        fp_comp = (fp.component or "").lower()
-        comp_keywords = ["front left", "front-left", "suspension", "strut", "wheel", "brake", "engine", "steering", "hvac", "battery"]
-        matched_comp_kw = [k for k in comp_keywords if k in fp_comp and (k in text or k.replace("-", " ") in text)]
-        
-        if matched_comp_kw or fp_comp in text:
-            score += 0.40
-        elif comp_input and (comp_input in fp_comp or fp_comp in comp_input):
-            score += 0.35
+    text_lower = narrative.lower()
 
-        # Symptom matching
+    for fp in fingerprints:
+        # Get or compute fingerprint vector
+        if fp.vector and len(fp.vector) == 384:
+            fp_vec = np.array(fp.vector, dtype=np.float32)
+        else:
+            fp_vec = np.array(_generate_fingerprint_vector(
+                component=fp.component,
+                symptoms=fp.symptoms or [],
+                conditions=fp.conditions or [],
+                description=fp.description
+            ), dtype=np.float32)
+            fp.vector = fp_vec.tolist()
+            db.commit()
+
+        # Cosine similarity dot product
+        norm_fp = np.linalg.norm(fp_vec)
+        if norm_fp > 0:
+            fp_vec = fp_vec / norm_fp
+
+        cosine_sim = float(np.dot(query_vec, fp_vec))
+        cosine_sim = max(0.0, min(1.0, cosine_sim))
+
+        # Check keyword overlaps for explainable citations
+        matched_symptoms = []
         for s in (fp.symptoms or []):
             s_lower = s.lower()
             keywords = [w for w in s_lower.replace("/", " ").replace("-", " ").split() if len(w) > 3]
-            if any(k in text for k in keywords) or (symp_input and symp_input in s_lower):
+            if any(k in text_lower for k in keywords) or (symptom and symptom.lower() in s_lower):
                 matched_symptoms.append(s)
-                score += 0.35
-                break
 
-        # Condition matching
-        for c in (fp.conditions or []):
-            c_words = [w for w in c.lower().replace("/", " ").replace("-", " ").split() if len(w) > 3]
-            if any(w in text for w in c_words):
-                score += 0.20
-                break
+        # Composite score
+        similarity = round(cosine_sim, 3)
 
-        similarity = min(0.98, round(score, 2))
-        if similarity >= 0.30:
-            rec = "High similarity to verified defect" if similarity >= 0.60 else "Potential defect correlation"
+        if similarity >= 0.35 or matched_symptoms:
+            if similarity >= 0.70:
+                rec = "High institutional match: Known failure mode recurrence. Apply verified 8D countermeasure."
+            elif similarity >= 0.50:
+                rec = "Moderate semantic match: Similar symptom topology to verified defect."
+            else:
+                rec = "Potential defect correlation based on shared subsystem acoustics/behavior."
+
             results.append({
                 "fingerprint_id": fp.id,
                 "fingerprint_name": fp.name,
@@ -171,8 +250,75 @@ def match_claim_to_fingerprints(db: Session, narrative: str, component: Optional
                 "similarity_score": similarity,
                 "matched_symptoms": matched_symptoms,
                 "confidence": similarity,
-                "recommendation": rec
+                "recommendation": rec,
+                "confirmed_count": fp.confirmed_count
             })
 
     results.sort(key=lambda x: x["similarity_score"], reverse=True)
     return results
+
+def match_cluster_to_precedents(
+    db: Session,
+    cluster_id: str,
+    top_k: int = 3
+) -> List[Dict[str, Any]]:
+    """
+    Performs Neural Case-Based Reasoning (CBR): matches a cluster against
+    stored historical Defect Fingerprints and prior 8D investigations.
+    """
+    cluster = db.query(Cluster).filter(Cluster.id == cluster_id).first()
+    if not cluster:
+        return []
+
+    fingerprints = db.query(DefectFingerprint).filter(DefectFingerprint.name != cluster.label).all()
+    if not fingerprints:
+        return []
+
+    # Get embeddings of claims in this cluster to compute centroid
+    claim_ids = [cm.claim_id for cm in cluster.claim_memberships]
+    embs = db.query(Embedding).filter(Embedding.claim_id.in_(claim_ids)).all()
+
+    if embs:
+        cluster_vec = np.mean([e.vector for e in embs], axis=0)
+        norm_c = np.linalg.norm(cluster_vec)
+        if norm_c > 0:
+            cluster_vec = cluster_vec / norm_c
+    else:
+        cluster_vec = embed_text(f"{cluster.label} {cluster.description or ''} {cluster.primary_component or ''}")
+
+    precedents = []
+    for fp in fingerprints:
+        if fp.vector and len(fp.vector) == 384:
+            fp_vec = np.array(fp.vector, dtype=np.float32)
+        else:
+            fp_vec = np.array(_generate_fingerprint_vector(
+                component=fp.component,
+                symptoms=fp.symptoms or [],
+                conditions=fp.conditions or [],
+                description=fp.description
+            ), dtype=np.float32)
+
+        norm_fp = np.linalg.norm(fp_vec)
+        if norm_fp > 0:
+            fp_vec = fp_vec / norm_fp
+
+        cosine_sim = float(np.dot(cluster_vec, fp_vec))
+        cosine_sim = max(0.0, min(1.0, round(cosine_sim, 3)))
+
+        if cosine_sim >= 0.40:
+            precedents.append({
+                "precedent_id": fp.id,
+                "name": fp.name,
+                "component": fp.component,
+                "similarity_score": cosine_sim,
+                "confidence_pct": round(cosine_sim * 100, 1),
+                "confirmed_count": fp.confirmed_count,
+                "description": fp.description,
+                "symptoms": fp.symptoms,
+                "conditions": fp.conditions,
+                "remedy_recommendation": f"Review containment protocol established for '{fp.name}'. Cross-check supplier lot history."
+            })
+
+    precedents.sort(key=lambda x: x["similarity_score"], reverse=True)
+    return precedents[:top_k]
+

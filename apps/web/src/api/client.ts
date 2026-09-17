@@ -10,7 +10,9 @@ import {
   MatchResult,
   AnalysisRunResponse,
   InvestigationDetail,
-  SemanticManifoldData
+  SemanticManifoldData,
+  ClusterPrecedent,
+  CopilotChatResponse
 } from '../types';
 
 const API_BASE = '/api';
@@ -115,13 +117,15 @@ export const api = {
       body: JSON.stringify(payload)
     }),
 
-  // Defect Fingerprints
+  // Defect Fingerprints & Neural CBR Precedents
   getFingerprints: () => fetchJson<DefectFingerprint[]>(`${API_BASE}/fingerprints`),
   matchFingerprint: (payload: { narrative: string; component?: string; symptom?: string }) =>
     fetchJson<MatchResult[]>(`${API_BASE}/fingerprints/match`, {
       method: 'POST',
       body: JSON.stringify(payload)
     }),
+  getClusterPrecedents: (clusterId: string) =>
+    fetchJson<ClusterPrecedent[]>(`${API_BASE}/fingerprints/precedents/${clusterId}`),
 
   // Database Reset
   resetDatabase: () =>
@@ -153,6 +157,11 @@ export const api = {
         method: 'POST',
         body: JSON.stringify(payload)
       }
-    )
+    ),
+  askForensicCopilot: (clusterId: string, question: string, chatHistory?: Array<{ role: string; content: string }>) =>
+    fetchJson<CopilotChatResponse>(`${API_BASE}/investigations/${clusterId}/chat`, {
+      method: 'POST',
+      body: JSON.stringify({ question, chat_history: chatHistory })
+    })
 };
 

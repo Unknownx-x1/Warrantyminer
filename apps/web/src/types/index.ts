@@ -230,6 +230,40 @@ export interface MatchResult {
   matched_symptoms: string[];
   confidence: number;
   recommendation: string;
+  confirmed_count?: string;
+}
+
+export interface ClusterPrecedent {
+  precedent_id: string;
+  name: string;
+  component?: string;
+  similarity_score: number;
+  confidence_pct: number;
+  confirmed_count: string;
+  description?: string;
+  symptoms: string[];
+  conditions: string[];
+  remedy_recommendation: string;
+}
+
+export interface CopilotAgentContribution {
+  agent: string;
+  role: 'investigator' | 'analytics' | 'red_team' | 'regulatory' | 'capa';
+  statement: string;
+  evidence_citations?: string[];
+  metrics?: Record<string, any>;
+  challenge_flags?: string[];
+  recommended_action?: string;
+}
+
+export interface CopilotChatResponse {
+  question: string;
+  cluster_id: string;
+  cluster_label: string;
+  answer: string;
+  agent_contributions: CopilotAgentContribution[];
+  cited_claim_ids: string[];
+  confidence: number;
 }
 
 export interface AnalysisRunResponse {

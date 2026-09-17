@@ -21,10 +21,25 @@ import {
   ChevronRight,
   Database,
   Radio,
-  Wrench
+  Wrench,
+  MessageSquare,
+  Send,
+  Sparkles,
+  BrainCircuit,
+  MessageCircle
 } from 'lucide-react';
 import { api } from '../api/client';
-import { ClusterListItem, InvestigationDetail, AgentFinding, ToolExecutionLog, Report8D, TSBDraft } from '../types';
+import { 
+  ClusterListItem, 
+  InvestigationDetail, 
+  AgentFinding, 
+  ToolExecutionLog, 
+  Report8D, 
+  TSBDraft,
+  ClusterPrecedent,
+  CopilotAgentContribution,
+  CopilotChatResponse
+} from '../types';
 import { LiveAgentStream } from '../components/LiveAgentStream';
 
 interface WarRoomProps {
@@ -44,13 +59,32 @@ export const WarRoom: React.FC<WarRoomProps> = ({
   const [loading, setLoading] = useState<boolean>(true);
   const [runningSwarm, setRunningSwarm] = useState<boolean>(false);
   const [showLiveStream, setShowLiveStream] = useState<boolean>(false);
-  const [activeTab, setActiveTab] = useState<'synthesis' | 'tools' | '8d' | 'tsb'>('synthesis');
+  const [activeTab, setActiveTab] = useState<'synthesis' | 'tools' | '8d' | 'tsb' | 'copilot' | 'precedents'>('synthesis');
   const [findingFilter, setFindingFilter] = useState<'ALL' | 'OBSERVED' | 'INFERRED' | 'UNKNOWN'>('ALL');
   const [decisionModal, setDecisionModal] = useState<boolean>(false);
   const [decisionType, setDecisionType] = useState<'confirmed' | 'rejected' | 'needs_evidence'>('confirmed');
   const [decisionRationale, setDecisionRationale] = useState<string>('');
   const [customLabel, setCustomLabel] = useState<string>('');
   const [submittingDecision, setSubmittingDecision] = useState<boolean>(false);
+
+  // Neural CBR Precedents State
+  const [precedents, setPrecedents] = useState<ClusterPrecedent[]>([]);
+  const [loadingPrecedents, setLoadingPrecedents] = useState<boolean>(false);
+
+  // Forensic Copilot Chat State
+  const [chatMessages, setChatMessages] = useState<Array<{
+    role: 'user' | 'assistant';
+    text: string;
+    contributions?: CopilotAgentContribution[];
+    citations?: string[];
+  }>>([
+    {
+      role: 'assistant',
+      text: 'Reliability Engineering Multi-Agent Mesh ready. Ask questions regarding failure mechanisms, statistical significance, plant bias, or draft containment directives.'
+    }
+  ]);
+  const [chatInput, setChatInput] = useState<string>('');
+  const [askingCopilot, setAskingCopilot] = useState<boolean>(false);
 
   useEffect(() => {
     loadClusters();
@@ -85,10 +119,57 @@ export const WarRoom: React.FC<WarRoomProps> = ({
       setLoading(true);
       const invData = await api.getInvestigationByCluster(clusterId);
       setInvestigation(invData);
+      loadPrecedents(clusterId);
     } catch (err) {
       console.error('Failed to load investigation', err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadPrecedents = async (clusterId: string) => {
+    try {
+      setLoadingPrecedents(true);
+      const data = await api.getClusterPrecedents(clusterId);
+      setPrecedents(data);
+    } catch (err) {
+      console.error('Failed to load precedents', err);
+    } finally {
+      setLoadingPrecedents(false);
+    }
+  };
+
+  const handleAskCopilot = async (suggestedPrompt?: string) => {
+    const q = suggestedPrompt || chatInput;
+    if (!q.trim() || !selectedClusterId || askingCopilot) return;
+
+    const userMsg = { role: 'user' as const, text: q };
+    setChatMessages((prev) => [...prev, userMsg]);
+    if (!suggestedPrompt) setChatInput('');
+    setAskingCopilot(true);
+
+    try {
+      const history = chatMessages.map((m) => ({ role: m.role, content: m.text }));
+      const res = await api.askForensicCopilot(selectedClusterId, q, history);
+      setChatMessages((prev) => [
+        ...prev,
+        {
+          role: 'assistant',
+          text: res.answer,
+          contributions: res.agent_contributions,
+          citations: res.cited_claim_ids
+        }
+      ]);
+    } catch (err: any) {
+      setChatMessages((prev) => [
+        ...prev,
+        {
+          role: 'assistant',
+          text: `Error connecting to Forensic Copilot: ${err.message || 'Mesh unavailable'}`
+        }
+      ]);
+    } finally {
+      setAskingCopilot(false);
     }
   };
 
@@ -356,6 +437,30 @@ export const WarRoom: React.FC<WarRoomProps> = ({
             >
               <Layers className="h-3.5 w-3.5" />
               <span>Evidence Findings ({investigation?.findings.length || 0})</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('copilot')}
+              className={`flex items-center gap-2 px-3 py-2 text-xs font-semibold font-sans border-b-2 transition-all ${
+                activeTab === 'copilot'
+                  ? 'border-indigo-600 text-indigo-700'
+                  : 'border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              <MessageSquare className="h-3.5 w-3.5 text-indigo-600" />
+              <span className="font-bold">Forensic Copilot</span>
+            </button>
+
+            <button
+              onClick={() => setActiveTab('precedents')}
+              className={`flex items-center gap-2 px-3 py-2 text-xs font-semibold font-sans border-b-2 transition-all ${
+                activeTab === 'precedents'
+                  ? 'border-blue-600 text-blue-700'
+                  : 'border-transparent text-slate-500 hover:text-slate-800'
+              }`}
+            >
+              <BrainCircuit className="h-3.5 w-3.5 text-blue-600" />
+              <span>CBR Precedents ({precedents.length})</span>
             </button>
 
             <button
@@ -701,6 +806,268 @@ export const WarRoom: React.FC<WarRoomProps> = ({
               </div>
             ) : (
               <p className="text-xs text-slate-500">No TSB draft available.</p>
+            )}
+          </div>
+        )}
+
+        {/* Tab 5: Forensic Copilot Chat */}
+        {activeTab === 'copilot' && (
+          <div className="p-5 space-y-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200">
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 font-sans flex items-center gap-2">
+                  <MessageSquare className="h-4 w-4 text-indigo-600" />
+                  <span>Forensic Multi-Agent Copilot Chat</span>
+                </h3>
+                <p className="text-xs text-slate-500 font-mono mt-0.5">
+                  Interactively cross-examine the Dialectic Agent Mesh regarding empirical claims, statistical significance, and CAPA directives.
+                </p>
+              </div>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200 font-semibold self-start sm:self-auto">
+                Mesh: 4 Agents Synthesized
+              </span>
+            </div>
+
+            {/* Quick Suggestion Chips */}
+            <div className="flex flex-wrap items-center gap-1.5 pt-1">
+              <span className="text-[11px] font-semibold text-slate-500 font-sans">Suggested Inquiries:</span>
+              {[
+                "Cross-examine root cause against field claims",
+                "Is sample size statistically robust (Z-score & power)?",
+                "Are failure symptoms concentrated in specific manufacturing plants?",
+                "Draft 8D immediate containment actions"
+              ].map((suggestion, i) => (
+                <button
+                  key={i}
+                  disabled={askingCopilot}
+                  onClick={() => handleAskCopilot(suggestion)}
+                  className="text-[10px] font-mono bg-slate-100 hover:bg-indigo-50 text-slate-700 hover:text-indigo-700 border border-slate-200 hover:border-indigo-300 rounded px-2.5 py-1 transition-all text-left truncate max-w-xs cursor-pointer disabled:opacity-50"
+                >
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+
+            {/* Chat Transcript Container */}
+            <div className="space-y-4 max-h-[500px] overflow-y-auto p-4 rounded-[4px] bg-slate-50/70 border border-slate-200 font-sans">
+              {chatMessages.map((msg, idx) => (
+                <div key={idx} className={`space-y-2 ${msg.role === 'user' ? 'text-right' : 'text-left'}`}>
+                  {/* Message Bubble */}
+                  <div className={`inline-block max-w-3xl rounded-[4px] p-3.5 text-xs leading-relaxed text-left ${
+                    msg.role === 'user'
+                      ? 'bg-slate-900 text-white shadow-xs'
+                      : 'bg-white border border-slate-200 text-slate-800 shadow-2xs'
+                  }`}>
+                    {msg.role === 'assistant' && (
+                      <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase font-bold text-indigo-600 mb-1.5 border-b border-slate-100 pb-1">
+                        <Sparkles className="h-3 w-3" />
+                        <span>Dialectic Agent Mesh Synthesis</span>
+                      </div>
+                    )}
+                    <div className="whitespace-pre-line">{msg.text}</div>
+
+                    {/* Agent Contributions Breakdown */}
+                    {msg.contributions && msg.contributions.length > 0 && (
+                      <div className="mt-3 pt-3 border-t border-slate-100 space-y-2">
+                        <div className="text-[10px] font-mono uppercase font-bold text-slate-500">
+                          Individual Agent Contributions:
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                          {msg.contributions.map((c, cIdx) => (
+                            <div 
+                              key={cIdx} 
+                              className={`p-2 rounded-[3px] border text-[11px] space-y-1 ${
+                                c.agent === 'Investigator'
+                                  ? 'bg-blue-50/60 border-blue-200 text-blue-950'
+                                  : c.agent === 'Analytics'
+                                  ? 'bg-purple-50/60 border-purple-200 text-purple-950'
+                                  : c.agent === 'Red Team Critic'
+                                  ? 'bg-rose-50/60 border-rose-200 text-rose-950'
+                                  : 'bg-emerald-50/60 border-emerald-200 text-emerald-950'
+                              }`}
+                            >
+                              <div className="font-bold font-mono text-[10px] uppercase flex items-center justify-between">
+                                <span>{c.agent}</span>
+                              </div>
+                              <p className="leading-snug">{c.statement}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Cited Evidence Claims */}
+                    {msg.citations && msg.citations.length > 0 && (
+                      <div className="mt-2.5 pt-2 border-t border-slate-100 flex items-center gap-1.5 flex-wrap">
+                        <span className="text-[10px] font-mono text-slate-500 font-semibold">Cited Claims:</span>
+                        {msg.citations.map((cid) => (
+                          <button
+                            key={cid}
+                            onClick={() => onSelectClaim && onSelectClaim(cid)}
+                            className="text-[10px] font-mono bg-blue-50 hover:bg-blue-100 text-blue-800 px-1.5 py-0.5 rounded-[2px] border border-blue-200 cursor-pointer"
+                          >
+                            {cid}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ))}
+
+              {askingCopilot && (
+                <div className="flex items-center gap-2 p-3 bg-white border border-slate-200 rounded-[4px] text-xs font-mono text-indigo-700 shadow-2xs max-w-sm">
+                  <RefreshCw className="h-3.5 w-3.5 animate-spin text-indigo-600" />
+                  <span>Mesh Agents debating inquiry...</span>
+                </div>
+              )}
+            </div>
+
+            {/* Input Bar */}
+            <div className="flex gap-2">
+              <input
+                type="text"
+                value={chatInput}
+                onChange={(e) => setChatInput(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleAskCopilot();
+                  }
+                }}
+                disabled={askingCopilot}
+                placeholder="Ask the reliability multi-agent mesh a question about this cluster..."
+                className="flex-1 px-3 py-2 text-xs border border-slate-300 rounded-[3px] focus:outline-none focus:ring-1 focus:ring-indigo-600 font-sans"
+              />
+              <button
+                onClick={() => handleAskCopilot()}
+                disabled={askingCopilot || !chatInput.trim()}
+                className="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 text-white rounded-[3px] text-xs font-bold font-sans flex items-center gap-1.5 transition-all cursor-pointer disabled:cursor-not-allowed"
+              >
+                <Send className="h-3.5 w-3.5" />
+                <span>Ask Mesh</span>
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Tab 6: Neural Case-Based Reasoning Precedents */}
+        {activeTab === 'precedents' && (
+          <div className="p-5 space-y-4 font-sans">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-slate-200">
+              <div>
+                <h3 className="text-sm font-bold text-slate-900 font-sans flex items-center gap-2">
+                  <BrainCircuit className="h-4 w-4 text-blue-600" />
+                  <span>Case-Based Reasoning (CBR) &amp; Historical Precedents</span>
+                </h3>
+                <p className="text-xs text-slate-500 font-mono mt-0.5">
+                  FastEmbed 384D Latent Vector Cosine Matching against verified Defect Memory to accelerate root-cause triage.
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={() => selectedClusterId && loadPrecedents(selectedClusterId)}
+                  disabled={loadingPrecedents}
+                  className="flex items-center gap-1 text-xs font-mono text-slate-600 bg-slate-100 hover:bg-slate-200 px-2.5 py-1 rounded-[3px] border border-slate-200 transition-all"
+                >
+                  <RefreshCw className={`h-3 w-3 ${loadingPrecedents ? 'animate-spin' : ''}`} />
+                  <span>Refresh Vectors</span>
+                </button>
+                {onNavigateToMemory && (
+                  <button
+                    onClick={onNavigateToMemory}
+                    className="flex items-center gap-1 text-xs font-mono text-indigo-700 bg-indigo-50 hover:bg-indigo-100 px-2.5 py-1 rounded-[3px] border border-indigo-200 font-semibold transition-all"
+                  >
+                    <span>View Memory Library</span>
+                    <ChevronRight className="h-3 w-3" />
+                  </button>
+                )}
+              </div>
+            </div>
+
+            {loadingPrecedents ? (
+              <div className="py-12 text-center">
+                <div className="inline-block h-5 w-5 animate-spin rounded-full border-2 border-solid border-indigo-600 border-r-transparent"></div>
+                <p className="mt-2 text-xs font-mono text-slate-500">Computing 384D cosine dot-product against Defect Memory...</p>
+              </div>
+            ) : precedents.length === 0 ? (
+              <div className="p-8 text-center bg-slate-50 rounded-[4px] border border-slate-200 space-y-2 max-w-xl mx-auto">
+                <BrainCircuit className="h-8 w-8 text-slate-400 mx-auto" />
+                <h4 className="text-xs font-bold text-slate-900 font-sans">No Historical Defect Precedents Above Threshold</h4>
+                <p className="text-xs text-slate-500 leading-relaxed font-sans">
+                  This failure pattern appears to be a zero-day or novel defect mode. Once verified and confirmed by the engineering team, its 384D semantic vector fingerprint will be saved to Defect Memory for future automatic triage.
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {precedents.map((prec) => {
+                  const isHigh = prec.similarity_score >= 0.70;
+                  const isMed = prec.similarity_score >= 0.50;
+
+                  return (
+                    <div 
+                      key={prec.precedent_id}
+                      className={`p-4 rounded-[4px] border space-y-3 font-sans transition-all ${
+                        isHigh
+                          ? 'bg-emerald-50/40 border-emerald-300 shadow-2xs'
+                          : isMed
+                          ? 'bg-amber-50/40 border-amber-300 shadow-2xs'
+                          : 'bg-white border-slate-200'
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2.5">
+                        <div>
+                          <h4 className="text-xs font-bold text-slate-900">{prec.name}</h4>
+                          <span className="text-[10px] text-slate-500 font-mono mt-0.5 block">
+                            Subsystem: <strong className="text-slate-800">{prec.component || 'Component'}</strong>
+                          </span>
+                        </div>
+                        <span className={`px-2 py-0.5 rounded font-mono text-[11px] font-bold border ${
+                          isHigh
+                            ? 'bg-emerald-100 text-emerald-800 border-emerald-300'
+                            : isMed
+                            ? 'bg-amber-100 text-amber-800 border-amber-300'
+                            : 'bg-slate-100 text-slate-800 border-slate-200'
+                        }`}>
+                          {(prec.similarity_score * 100).toFixed(1)}% Cosine Match
+                        </span>
+                      </div>
+
+                      {/* Visual Confidence Bar */}
+                      <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden">
+                        <div 
+                          className={`h-full rounded-full ${
+                            isHigh ? 'bg-emerald-600' : isMed ? 'bg-amber-500' : 'bg-slate-500'
+                          }`}
+                          style={{ width: `${Math.min(100, prec.similarity_score * 100)}%` }}
+                        />
+                      </div>
+
+                      {/* Symptoms */}
+                      <div>
+                        <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold block">Recognized Symptoms:</span>
+                        <div className="flex flex-wrap gap-1 mt-1">
+                          {prec.symptoms.map((s, i) => (
+                            <span key={i} className="text-[10px] font-mono bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded-[2px] border border-slate-200">
+                              {s}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Past Recommended Containment Action */}
+                      <div className="p-2.5 rounded-[3px] bg-white border border-slate-200 text-xs space-y-1">
+                        <span className="text-[10px] font-mono uppercase text-indigo-700 font-bold block">
+                          Past Validated Containment / 8D Action:
+                        </span>
+                        <p className="text-slate-700 leading-relaxed text-[11px]">
+                          {prec.remedy_recommendation}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             )}
           </div>
         )}

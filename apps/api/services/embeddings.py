@@ -111,6 +111,37 @@ def _embed_via_tfidf_svd(texts: List[str]) -> np.ndarray:
         dense_vectors = tfidf_matrix.toarray()
     return normalize(dense_vectors, norm="l2")
 
+def embed_texts(texts: List[str]) -> np.ndarray:
+    """
+    Computes unit-normalized dense embeddings for a list of arbitrary text strings.
+    Uses FastEmbed ONNX -> Ollama -> TF-IDF Fallback.
+    """
+    if not texts:
+        return np.empty((0, 384), dtype=np.float32)
+    
+    provider = settings.EMBEDDING_PROVIDER.lower()
+    vectors = None
+
+    if provider == "ollama" or (settings.USE_OLLAMA and provider != "fastembed"):
+        vectors = _embed_via_ollama(texts)
+
+    if vectors is None:
+        vectors = _embed_via_fastembed(texts)
+
+    if vectors is None:
+        vectors = _embed_via_tfidf_svd(texts)
+
+    return vectors
+
+def embed_text(text: str) -> np.ndarray:
+    """
+    Computes a 1D unit-normalized dense vector for a single text string.
+    """
+    embs = embed_texts([text])
+    if len(embs) > 0:
+        return embs[0]
+    return np.zeros(384, dtype=np.float32)
+
 def compute_embeddings_for_corpus(
     claims: List[Claim], 
     signatures_map: Dict[str, FailureSignature]

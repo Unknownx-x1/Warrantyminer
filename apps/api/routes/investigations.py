@@ -18,6 +18,7 @@ from apps.api.schemas.investigation import (
 )
 from apps.api.services.investigation_orchestrator import orchestrator
 from apps.api.services.fingerprints import create_fingerprint_from_investigation
+from apps.api.services.forensic_copilot import copilot
 
 router = APIRouter(prefix="/investigations", tags=["Investigations"])
 
@@ -184,3 +185,31 @@ def submit_investigation_decision(
         "defect_memory_created": fingerprint_created is not None,
         "fingerprint": fingerprint_created
     }
+
+@router.post("/{cluster_id}/chat", response_model=Dict[str, Any])
+def forensic_copilot_chat(
+    cluster_id: str,
+    payload: Dict[str, Any],
+    db: Session = Depends(get_db)
+):
+    """
+    Forensic Multi-Agent Copilot: Allows engineers to cross-examine the agent mesh
+    regarding defect mechanisms, statistical significance, plant bias, and CAPA actions.
+    """
+    question = payload.get("question", "").strip()
+    if not question:
+        raise HTTPException(status_code=400, detail="Question is required.")
+    
+    try:
+        res = copilot.answer_query(
+            cluster_id=cluster_id,
+            question=question,
+            db=db,
+            chat_history=payload.get("chat_history")
+        )
+        return res
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Forensic copilot error: {str(e)}")
+
