@@ -94,7 +94,7 @@ export const ClaimsExplorer: React.FC = () => {
           <Search className="h-4 w-4 text-slate-400 absolute left-3 top-2.5" />
           <input
             type="text"
-            placeholder="Search narrative text, symptoms, or Claim ID (e.g. C-9001, clunking, bushing)..."
+            placeholder="Search narrative text, symptoms, or Claim ID (e.g. C-10482, clunking, bushing)..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-md text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-blue-500 font-sans"

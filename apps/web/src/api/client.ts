@@ -8,7 +8,11 @@ import {
   BaselineComparison,
   DefectFingerprint,
   MatchResult,
-  AnalysisRunResponse
+  AnalysisRunResponse,
+  InvestigationDetail,
+  SemanticManifoldData,
+  ClusterPrecedent,
+  CopilotChatResponse
 } from '../types';
 
 const API_BASE = '/api';
@@ -36,6 +40,10 @@ export const api = {
   // Summary & Alerts
   getSummary: () => fetchJson<DashboardSummary>(`${API_BASE}/alerts/summary`),
   getAlerts: () => fetchJson<ClusterListItem[]>(`${API_BASE}/alerts`),
+
+  // Semantic Fleet Manifold (2D UMAP / PCA)
+  getSemanticManifold: (method: 'umap' | 'pca' = 'umap') => 
+    fetchJson<SemanticManifoldData>(`${API_BASE}/clusters/semantic-manifold?method=${method}`),
 
   // Clusters
   getClusters: (alertLevel?: string, sortBy?: string) => {
@@ -109,17 +117,51 @@ export const api = {
       body: JSON.stringify(payload)
     }),
 
-  // Defect Fingerprints
+  // Defect Fingerprints & Neural CBR Precedents
   getFingerprints: () => fetchJson<DefectFingerprint[]>(`${API_BASE}/fingerprints`),
   matchFingerprint: (payload: { narrative: string; component?: string; symptom?: string }) =>
     fetchJson<MatchResult[]>(`${API_BASE}/fingerprints/match`, {
       method: 'POST',
       body: JSON.stringify(payload)
     }),
+  getClusterPrecedents: (clusterId: string) =>
+    fetchJson<ClusterPrecedent[]>(`${API_BASE}/fingerprints/precedents/${clusterId}`),
 
   // Database Reset
   resetDatabase: () =>
     fetchJson<{ status: string; message: string; deleted: Record<string, number> }>(`${API_BASE}/claims/reset`, {
       method: 'POST'
+    }),
+
+  // Autonomous Investigations & Engineering War Room
+  getInvestigations: (status?: string, decision?: string) => {
+    const params = new URLSearchParams();
+    if (status) params.append('status', status);
+    if (decision) params.append('decision', decision);
+    return fetchJson<InvestigationDetail[]>(`${API_BASE}/investigations?${params.toString()}`);
+  },
+  getInvestigationDetail: (id: string) => fetchJson<InvestigationDetail>(`${API_BASE}/investigations/${id}`),
+  getInvestigationByCluster: (clusterId: string) => fetchJson<InvestigationDetail>(`${API_BASE}/investigations/cluster/${clusterId}`),
+  runInvestigation: (clusterId?: string, forceRecompute: boolean = false) =>
+    fetchJson<{ status: string; investigations_created: number; investigation_id?: string }>(`${API_BASE}/investigations/run`, {
+      method: 'POST',
+      body: JSON.stringify({ cluster_id: clusterId, force_recompute: forceRecompute })
+    }),
+  submitInvestigationDecision: (
+    id: string,
+    payload: { decision: 'confirmed' | 'rejected' | 'needs_evidence'; rationale?: string; reviewer?: string; custom_label?: string }
+  ) =>
+    fetchJson<{ status: string; investigation_id: string; decision: string; defect_memory_created: boolean }>(
+      `${API_BASE}/investigations/${id}/decision`,
+      {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      }
+    ),
+  askForensicCopilot: (clusterId: string, question: string, chatHistory?: Array<{ role: string; content: string }>) =>
+    fetchJson<CopilotChatResponse>(`${API_BASE}/investigations/${clusterId}/chat`, {
+      method: 'POST',
+      body: JSON.stringify({ question, chat_history: chatHistory })
     })
 };
+

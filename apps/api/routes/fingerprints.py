@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict, Any
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy import desc
@@ -6,7 +6,7 @@ from sqlalchemy import desc
 from apps.api.db.session import get_db
 from apps.api.models.feedback import DefectFingerprint
 from apps.api.schemas.feedback import DefectFingerprintOut, DefectFingerprintCreate, MatchRequest, MatchResult
-from apps.api.services.fingerprints import match_claim_to_fingerprints
+from apps.api.services.fingerprints import match_claim_to_fingerprints, match_cluster_to_precedents
 
 router = APIRouter(prefix="/fingerprints", tags=["Defect Fingerprints"])
 
@@ -46,3 +46,12 @@ def match_narrative(req: MatchRequest, db: Session = Depends(get_db)):
         component=req.component,
         symptom=req.symptom
     )
+
+@router.get("/precedents/{cluster_id}", response_model=List[Dict[str, Any]])
+def get_cluster_precedents(cluster_id: str, db: Session = Depends(get_db)):
+    """
+    Performs Neural Case-Based Reasoning (CBR): finds verified historical defect precedents
+    and prior 8D dossiers matching the target defect cluster.
+    """
+    return match_cluster_to_precedents(db=db, cluster_id=cluster_id)
+

@@ -1,7 +1,7 @@
 import re
 import json
 import logging
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
 import httpx
 from sqlalchemy.orm import Session
 from apps.api.config import settings
@@ -385,16 +385,27 @@ def extract_signature_rule_based(narrative: str) -> Dict[str, Any]:
         "model_version": "hybrid-domain-v1.0"
     }
 
+_OLLAMA_AVAILABILITY_CACHE: Optional[Tuple[bool, float]] = None
+
 def is_ollama_available() -> bool:
-    import sys, os
+    import sys, os, time
     if "pytest" in sys.modules or os.getenv("EVALUATION") == "true" or not settings.USE_OLLAMA:
         return False
+    global _OLLAMA_AVAILABILITY_CACHE
+    now = time.time()
+    if _OLLAMA_AVAILABILITY_CACHE is not None:
+        avail, last_checked = _OLLAMA_AVAILABILITY_CACHE
+        if now - last_checked < 60.0:
+            return avail
     try:
         url = f"{settings.OLLAMA_BASE_URL.rstrip('/')}/api/version"
-        with httpx.Client(timeout=0.8) as client:
+        with httpx.Client(timeout=0.5) as client:
             res = client.get(url)
-            return res.status_code == 200
+            is_avail = (res.status_code == 200)
+            _OLLAMA_AVAILABILITY_CACHE = (is_avail, now)
+            return is_avail
     except Exception:
+        _OLLAMA_AVAILABILITY_CACHE = (False, now)
         return False
 
 def call_ollama_sync(narrative: str) -> Optional[Dict[str, Any]]:
@@ -432,11 +443,35 @@ Narrative: "{narrative}"
                 raw_response = data.get("response", "")
                 parsed = json.loads(raw_response)
                 parsed["model_version"] = f"ollama/{settings.OLLAMA_MODEL}"
+                if "confidence" not in parsed:
+                    parsed["confidence"] = 0.90
                 return parsed
     except Exception as e:
         logger.debug(f"Ollama call skipped/failed: {e}")
         return None
     return None
+
+def extract_signature(narrative: str, mode: Optional[str] = None) -> Dict[str, Any]:
+    """
+    Unified extraction entry point supporting 'llm', 'hybrid', and 'rule_based' modes.
+    """
+    chosen_mode = (mode or settings.EXTRACTION_MODE or "hybrid").lower()
+
+    if chosen_mode == "llm" and is_ollama_available():
+        llm_res = call_ollama_sync(narrative)
+        if llm_res and llm_res.get("component"):
+            return llm_res
+
+    rule_res = extract_signature_rule_based(narrative)
+
+    # In hybrid mode, fallback to LLM only if rule extraction has near-zero confidence or explicit request
+    if chosen_mode == "hybrid" and mode == "hybrid" and is_ollama_available():
+        if rule_res.get("confidence", 0) < 0.50 and rule_res.get("component") == "unspecified component":
+            llm_res = call_ollama_sync(narrative)
+            if llm_res and llm_res.get("component") and llm_res.get("component") != "unspecified component":
+                return llm_res
+
+    return rule_res
 
 def process_claim_extractions(db: Session, force: bool = False) -> int:
     """
@@ -456,7 +491,7 @@ def process_claim_extractions(db: Session, force: bool = False) -> int:
 
     signatures_to_add = []
     for claim in unprocessed_claims:
-        sig_data = extract_signature_rule_based(claim.narrative)
+        sig_data = extract_signature(claim.narrative, mode=settings.EXTRACTION_MODE)
 
         sig_obj = FailureSignature(
             claim_id=claim.id,

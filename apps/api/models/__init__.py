@@ -1,6 +1,7 @@
 from apps.api.models.claim import Claim, FailureSignature, Embedding, CodeMismatch
 from apps.api.models.cluster import Cluster, ClusterClaim
 from apps.api.models.feedback import Feedback, DefectFingerprint, AnalysisRun, AuditLog
+from apps.api.models.investigation import Investigation, AgentFinding, ToolExecutionLog
 
 __all__ = [
     "Claim",
@@ -13,4 +14,8 @@ __all__ = [
     "DefectFingerprint",
     "AnalysisRun",
     "AuditLog",
+    "Investigation",
+    "AgentFinding",
+    "ToolExecutionLog",
 ]
+

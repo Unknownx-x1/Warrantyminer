@@ -56,6 +56,17 @@ def list_clusters(
         ))
     return results
 
+@router.get("/semantic-manifold")
+def get_semantic_manifold(
+    method: str = Query("umap", description="Projection method: umap or pca"),
+    db: Session = Depends(get_db)
+):
+    """
+    Computes 2D manifold coordinates for all fleet claims and cluster boundary hulls.
+    """
+    from apps.api.services.manifold import compute_manifold_projection
+    return compute_manifold_projection(db=db, n_components=2, method=method)
+
 @router.get("/{cluster_id}", response_model=ClusterDetail)
 def get_cluster_detail(cluster_id: str, db: Session = Depends(get_db)):
     c = db.query(Cluster).filter(Cluster.id == cluster_id).first()
